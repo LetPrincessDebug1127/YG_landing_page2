@@ -2,7 +2,7 @@ import Navbar from "../components/Navbar";
 
 export default function LandingPage() {
   return (
-    
+  //lam tiep  
     <div className="w-full h-full flex flex-col overflow-y-auto scroll-snap-y snap-mandatory">
        <Navbar />
       <section id="slide1" className="w-full h-[100vh] bg-gray-800 flex justify-center items-center scroll-snap-start">
