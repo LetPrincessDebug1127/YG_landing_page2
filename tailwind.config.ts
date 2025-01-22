@@ -12,6 +12,18 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontSize: {
+        'xs': ['x-small', '1rem'], 
+      },
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'], 
+      },
+      fontWeight: {
+        regular: "400",
+      },
+      screens: {
+        '3xl': '1900px',
+      },
     },
   },
   plugins: [],
