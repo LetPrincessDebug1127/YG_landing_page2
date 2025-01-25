@@ -6,6 +6,12 @@ const translations = {
     projects: "Projects",
     clients: "Clients",
     contact: "Contact",
+    ABOUT : "About",
+    US : "Us",
+    SERVICES : "SERVICES",
+    PROJECTS : "PROJECTS",
+    CLIENTS : "CLIENTS",
+    CONTACT : "CONTACT"
   },
   vi: {
     home: "Trang chủ",
@@ -14,6 +20,12 @@ const translations = {
     projects: "Dự án",
     clients: "Khách hàng",
     contact: "Liên hệ",
+    ABOUT : "Về",
+    US : "Chúng Tôi",
+    SERVICES : "Dịch vụ",
+    PROJECTS : "Dự án",
+    CLIENTS : "Khách hàng",
+    CONTACT : "Liên hệ "
   },
 };
 

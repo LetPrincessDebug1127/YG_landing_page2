@@ -1,7 +1,10 @@
 import Navbar from "../components/Navbar";
-import Slide2 from "../components/Slide2"
+import Slide2 from "../components/Slide2";
+import { LanguageProvider } from "../context/LanguageContext"
+
 export default function LandingPage() {
   return (
+    <LanguageProvider>
     <div className="w-full h-full flex flex-col overflow-y-auto scroll-snap-y snap-mandatory">
        <Navbar />
       <section id="slide1" className="w-full h-[100vh] bg-gray-800 flex justify-center items-center scroll-snap-start">
@@ -37,5 +40,6 @@ export default function LandingPage() {
       <section id="slide7" className="w-full h-[100vh] bg-gray-900 text-white flex justify-center items-center scroll-snap-start">
       </section>
     </div>
+    </LanguageProvider>
   );
 }

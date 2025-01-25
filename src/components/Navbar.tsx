@@ -2,14 +2,10 @@
 import Image from "next/image";
 import translations from "../../public/translation/translations";
 import { useState } from "react";
+import { useLanguage } from "../context/LanguageContext";
 
 const Navbar = () => {
-  const [language, setLanguage] = useState<"en" | "vi">("vi");
-
-  const toggleLanguage = () => {
-    setLanguage((prevLang) => (prevLang === "vi" ? "en" : "vi"));
-  };
-
+  const { language, toggleLanguage } = useLanguage();
   const t = translations[language];
 
   return (
