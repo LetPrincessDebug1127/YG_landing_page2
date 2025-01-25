@@ -1,4 +1,3 @@
-// translations.ts
 const translations = {
   en: {
     home: "Home",
