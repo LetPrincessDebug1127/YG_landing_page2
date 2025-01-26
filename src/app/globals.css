@@ -11,6 +11,7 @@
 body {
   margin: 0;
   font-family: var(--font-poppins);
+  /* scroll-snap-type: y mandatory; */
 }
 
 code {
@@ -19,4 +20,23 @@ code {
 
 * {
   box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+html {
+  scroll-behavior: smooth;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+
+#slide2,
+#slide3,
+#slide4,
+#slide5,
+#slide6,
+#slide7 {
+  scroll-snap-align: start;
+}
+#container {
+  scroll-snap-type: y mandatory;
 }

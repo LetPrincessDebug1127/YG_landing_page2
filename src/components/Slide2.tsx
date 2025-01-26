@@ -3,10 +3,7 @@
 import { useState, useEffect } from "react";
 import translations from "../../public/translation/translations";
 import { useLanguage } from "../context/LanguageContext";
-import Service from "../../public/media/service.svg";
-import Project from "../../public/media/project.svg";
-import Client from "../../public/media/client.svg";
-import Contact from "../../public/media/contact.svg";
+
 
 const backgroundImages = [
   "/media/slide2.5.png",
@@ -77,69 +74,81 @@ export default function BackgroundSlider() {
         />
       </div>
     </div>
+    <div className="absolute inset-0 bg-black/65 pointer-events-none z-0"></div>
 
-    <div className="absolute left-4 sm:left-8 top-1/2 transform -translate-y-1/2 z-10 text-white">
+
+    <div className="absolute left-4 sm:left-32 top-1/2 transform -translate-y-1/2 z-10 text-white">
       <div className="flex flex-col space-y-2 sm:space-y-4">
         <h1 className="text-[24px] sm:text-[36px] md:text-[48px] lg:text-[64px] xl:text-[72px] 2xl:text-[80px] 3xl:text-[96px] font-bold">
-          <a href="#slide3" className="text-white">{t.ABOUT}</a>{" "}
-          <a href="#slide3" className="text-[#ec6629]">{t.US}</a>
+          <a
+            href="#slide3"
+            className="text-white transition-transform transform scale-100"
+          >
+            {t.ABOUT}
+          </a>{" "}
+          <a
+            href="#slide3"
+            className="text-[#ec6629] transition-transform transform scale-110"
+          >
+            {t.US}
+          </a>
         </h1>
-        
-        <div className="flex items-center">
+
+        <div className="flex items-center gap-[10px]">
           <img
             src="/media/icon1.png"
             className="inline-block mr-2 max-w-full h-auto"
-            width={24}
-            height={24}
+            width={35}
+            height={35}
           />
           <a
             href="#slide4"
-            className="text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[32px] 2xl:text-[44px] 3xl:text-[54px]"
+            className="text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[32px] 2xl:text-[44px] 3xl:text-[54px] transition-transform transform scale-100 hover:scale-110 hover:text-[#ec6629]"
           >
             {t.SERVICES}
           </a>
         </div>
 
-        <div className="flex items-center">
+        <div className="flex items-center gap-[10px]">
           <img
             src="/media/icon2.png"
             className="inline-block mr-2 max-w-full h-auto"
-            width={24}
-            height={24}
+            width={35}
+            height={35}
           />
           <a
             href="#slide5"
-            className="text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[32px] 2xl:text-[44px] 3xl:text-[54px]"
+            className="text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[32px] 2xl:text-[44px] 3xl:text-[54px] transition-transform transform scale-100 hover:scale-110 hover:text-[#ec6629]"
           >
             {t.PROJECTS}
           </a>
         </div>
 
-        <div className="flex items-center">
+        <div className="flex items-center gap-[13px]">
           <img
             src="/media/icon3.png"
             className="inline-block mr-2 max-w-full h-auto"
-            width={24}
-            height={24}
+            width={33}
+            height={33}
           />
           <a
             href="#slide6"
-            className="text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[32px] 2xl:text-[44px] 3xl:text-[54px]"
+            className="text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[32px] 2xl:text-[44px] 3xl:text-[54px] transition-transform transform scale-100 hover:scale-110 hover:text-[#ec6629]"
           >
             {t.CLIENTS}
           </a>
         </div>
 
-        <div className="flex items-center">
+        <div className="flex items-center gap-[16px]">
           <img
             src="/media/icon4.png"
             className="inline-block mr-2 max-w-full h-auto"
-            width={24}
-            height={24}
+            width={30}
+            height={30}
           />
           <a
             href="#slide7"
-            className="text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[32px] 2xl:text-[44px] 3xl:text-[54px]"
+            className="text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[32px] 2xl:text-[44px] 3xl:text-[54px] transition-transform transform scale-100 hover:scale-110 hover:text-[#ec6629]"
           >
             {t.CONTACT}
           </a>

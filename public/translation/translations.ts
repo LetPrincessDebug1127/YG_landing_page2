@@ -22,10 +22,10 @@ const translations = {
     contact: "Liên hệ",
     ABOUT : "Về",
     US : "Chúng Tôi",
-    SERVICES : "Dịch vụ",
-    PROJECTS : "Dự án",
-    CLIENTS : "Khách hàng",
-    CONTACT : "Liên hệ "
+    SERVICES : "DỊCH VỤ",
+    PROJECTS : "DỰ ÁN",
+    CLIENTS : "KHÁCH HÀNG",
+    CONTACT : "LIÊN HỆ"
   },
 };
 

@@ -24,6 +24,10 @@ export default {
       screens: {
         '3xl': '1900px',
       },
+      scale: {
+        200: '1.6', 
+        300: '3', 
+      },
     },
   },
   plugins: [],
