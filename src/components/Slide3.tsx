@@ -22,8 +22,8 @@ const VideoBackgroundSection: React.FC = () => {
 
       const centerX = rect.width / 2;
       const centerY = rect.height / 2;
-      const rotateX = Math.max(Math.min((centerY - y) / 10, 30), -30);
-      const rotateY = Math.max(Math.min((x - centerX) / 10, 30), -30);
+      const rotateX = ((centerY - y) / centerY) * 15; // Góc nghiêng tối đa là ±15 độ
+      const rotateY = ((x - centerX) / centerX) * 15;
 
       image.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
     };
@@ -55,7 +55,7 @@ const VideoBackgroundSection: React.FC = () => {
         {/* Phần bên trái - Hình ảnh */}
         <div
           ref={imageContainerRef} // Gắn ref vào container
-          className="w-[50%] h-full flex items-center justify-center mt-4"
+          className="container w-[50%] h-full flex items-center justify-center mt-4"
         >
           <img
             ref={imageRef}

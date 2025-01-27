@@ -40,3 +40,6 @@ body::-webkit-scrollbar {
 #container {
   scroll-snap-type: y mandatory;
 }
+.container {
+  perspective: 1000px; /* Đặt góc nhìn để tạo hiệu ứng 3D */
+}
