@@ -14,6 +14,7 @@ export default {
       },
       fontSize: {
         'xs': ['x-small', '1rem'], 
+        '2xl': ['1.3rem', { lineHeight: '1.5' }],
       },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'], 
@@ -31,6 +32,9 @@ export default {
       scale: {
         200: '1.6', 
         300: '3', 
+      },
+      boxShadow: {
+        'custom-orange': '0 0 20px 10px rgba(236, 102, 41, 0.5)', // Thêm shadow mới
       },
     },
   },
