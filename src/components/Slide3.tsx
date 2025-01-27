@@ -16,25 +16,25 @@ const VideoBackgroundSection: React.FC = () => {
         muted
         playsInline
       ></video>
-        <div className="relative z-10 w-full h-full flex">
+        <div className="relative z-10 w-full h-full flex mt-[2em]">
         {/* Phần bên trái - Hình ảnh */}
         <div className="w-[50%] h-full flex items-center justify-center mt-4">
           <img
             src="/media/banner-turning.jpg" 
             alt="Banner"
-            className="w-full sm:w-[90%] md:w-[80%] lg:w-[80%] xl:w-[70%] 2xl:w-[60%] 3xl:w-[50%] max-w-[100%] h-auto rounded-lg shadow-lg"
+            className="w-full sm:w-[90%] md:w-[60%] lg-custom:w-[84%] xl-custom:w-[63%] 2xl-custom1:w-[65%] 2xl-custom2:w-[50%] 3xl:w-[55%] max-w-[100%] h-auto rounded-lg shadow-lg"
           />
         </div>
 
         {/* Phần bên phải - Văn bản */}
-        <div className="flex flex-col justify-center items-start text-white w-fit h-auto p-3">
-        <h1 className="text-[24px] sm:text-[36px] md:text-[40px] lg:text-[44px] xl:text-[40px] 2xl:text-[60px] font-bold mb-4 whitespace-nowrap">
+        <div className="flex flex-col justify-center items-start text-white w-fit h-auto p-3 mr-[3em]">
+        <h1 className="text-[#ec6629] text-[24px] sm:text-[36px] md:text-[40px] lg:text-[44px] xl:text-[60px] 2xl:text-[70px] font-bold mb-4 whitespace-nowrap">
             Young Generation Agency
         </h1>
-        <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl mb-3 lg:w-[30em] xl:w-[27em] 2xl:w-[40em] text-justify">
+        <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl mb-3 lg:w-[30em] xl:w-[33.5em] 2xl:w-[31.5em] text-justify">
         {t.text}
         </p>
-        <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl lg:w-[30em] xl:w-[27em] 2xl:w-[40em] text-justify">
+        <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl lg:w-[30em] xl:w-[33.5em] 2xl:w-[31.5em] text-justify">
         {t.textP}
         </p>
 
