@@ -3,6 +3,7 @@ import React from "react";
 import translations from "../../public/translation/translations";
 import { useLanguage } from "../context/LanguageContext";
 import Link from "next/link";
+import Image from 'next/image';
 
 
 const ContactSection: React.FC = () => {
@@ -22,33 +23,33 @@ const ContactSection: React.FC = () => {
        <div className="contact fade-in-section flex flex-col md:flex-row gap-8 p-8 z-10">
       {/* Phần bên trái: Thông tin liên hệ */}
       <div className="inf flex-1 fade-in-section space-y-6">
-        <h1 className="text-2xl font-bold">Liên hệ</h1>
+        <h1 className="text-[#ec6629] text-[24px] sm:text-[36px] md:text-[40px] lg:text-[44px] xl:text-[60px] 2xl:text-[70px] font-black mb-4 whitespace-nowrap font-sans">Liên hệ</h1>
 
         <div className="item-contact flex items-center space-x-4">
-          <i className="fa-solid fa-phone text-xl"></i>
-          <span>
+          <Image src="/media/phone.svg" alt="My SVG" width={20} height={20} />
+          <span className = "text-[#ec6629]">
             Hotline
             <br />
-            <strong>(+84) 377 711 139</strong>
+            <strong className="text-white">(+84) 377 711 139</strong>
           </span>
         </div>
         <div className="border-b border-[#ec6629] h-0"></div>
 
         <div className="item-contact flex items-center space-x-4">
-          <i className="fas fa-envelope text-xl" aria-hidden="true"></i>
-          <span>
+          <Image src="/media/email.svg" alt="My SVG" width={20} height={20} />
+          <span className="text-[#ec6629]">
             Email
             <br />
-            <strong>YGAGENCY@gmail.com</strong>
+            <strong className="text-white">YGAGENCY@gmail.com</strong>
           </span>
         </div>
         <div className="border-b border-[#ec6629] h-0"></div>
         <div className="item-contact flex items-center space-x-4">
-          <i className="fas fa-map-marker-alt text-xl" aria-hidden="true"></i>
-          <span>
+          <Image src="/media/location.svg" alt="My SVG" width={20} height={20} />
+          <span className ="text-[#ec6629]">
             Địa chỉ
             <br />
-            <strong>288/10 Nguyễn Văn Đậu, Bình Thạnh, TP. Hồ Chí Minh</strong>
+            <strong className="text-white">288/10 Nguyễn Văn Đậu, Bình Thạnh, TP. Hồ Chí Minh</strong>
           </span>
         </div>
         <div className="border-b border-[#ec6629] h-0"></div>
