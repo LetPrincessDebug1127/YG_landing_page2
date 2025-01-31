@@ -19,6 +19,30 @@ export default function BackgroundSlider() {
   const { language } = useLanguage();
   const t = translations[language]; 
 
+ // IntersectionObserver setup
+  useEffect(() => {
+    const fadeInSections = document.querySelectorAll('.fade-in-section') as NodeListOf<HTMLElement>;
+
+    const observerOptions: IntersectionObserverInit = {
+      root: null,
+      threshold: 0.2,
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    fadeInSections.forEach((section) => observer.observe(section));
+
+    return () => {
+      fadeInSections.forEach((section) => observer.unobserve(section));
+    };
+  }, []);
 
   const totalImages = backgroundImages.length;
 
@@ -78,7 +102,7 @@ export default function BackgroundSlider() {
 
 
     <div className="absolute left-4 sm:left-32 top-1/2 transform -translate-y-1/2 z-10 text-white">
-      <div className="flex flex-col space-y-2 sm:space-y-4">
+      <div className="fade-in-section flex flex-col space-y-2 sm:space-y-4">
         <h1 className="text-[24px] sm:text-[36px] md:text-[48px] lg:text-[64px] xl:text-[72px] 2xl:text-[80px] 3xl:text-[96px] font-bold">
           <a
             href="#slide3"

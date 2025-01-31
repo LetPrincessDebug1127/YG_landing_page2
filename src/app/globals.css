@@ -11,7 +11,6 @@
 body {
   margin: 0;
   font-family: var(--font-poppins);
-  /* scroll-snap-type: y mandatory; */
 }
 
 code {
@@ -29,17 +28,19 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-#slide2,
-#slide3,
-#slide4,
-#slide5,
-#slide6,
-#slide7 {
-  scroll-snap-align: start;
-}
 #container {
   scroll-snap-type: y mandatory;
 }
 .container {
   perspective: 1000px; /* Đặt góc nhìn để tạo hiệu ứng 3D */
+}
+.fade-in-section {
+  opacity: 0;
+  translate: 0 50px; /* Thay vì transform */
+  transition: opacity 0.6s ease-out, translate 0.6s ease-out;
+}
+
+.fade-in-section.visible {
+  opacity: 1;
+  translate: 0 0;
 }

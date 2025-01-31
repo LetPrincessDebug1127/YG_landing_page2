@@ -36,6 +36,7 @@ export default {
       boxShadow: {
         'custom-orange': '0 0 20px 10px rgba(236, 102, 41, 0.5)', // Thêm shadow mới
       },
+      
     },
   },
   plugins: [],

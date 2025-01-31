@@ -8,7 +8,6 @@ const VideoBackgroundSection: React.FC = () => {
   const t = translations[language];
   const imageContainerRef = useRef<HTMLDivElement>(null); // Tham chiếu tới container
   const imageRef = useRef<HTMLImageElement>(null); // Tham chiếu tới hình ảnh
-
   useEffect(() => {
     const imageContainer = imageContainerRef.current;
     const image = imageRef.current;
@@ -51,6 +50,7 @@ const VideoBackgroundSection: React.FC = () => {
         muted
         playsInline
       ></video>
+      <div className="fade-in-section">
       <div className="relative z-10 w-full h-full flex mt-[2em]">
         {/* Phần bên trái - Hình ảnh */}
         <div
@@ -78,6 +78,8 @@ const VideoBackgroundSection: React.FC = () => {
           </p>
         </div>
       </div>
+      </div>
+
     </section>
   );
 };
