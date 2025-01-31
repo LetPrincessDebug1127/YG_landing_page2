@@ -70,7 +70,7 @@ const VideoBackgroundSection: React.FC = () => {
           <h1 className="text-[#ec6629] text-[24px] sm:text-[36px] md:text-[40px] lg:text-[44px] xl:text-[60px] 2xl:text-[70px] font-bold mb-4 whitespace-nowrap">
             Young Generation Agency
           </h1>
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl mb-3 lg:w-[30em] xl:w-[38.5em] 2xl:w-[31.5em] text-justify">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl lg:w-[30em] xl:w-[38.5em] 2xl:w-[31.5em] text-justify mb-3">
             {t.text}
           </p>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl lg:w-[30em] xl:w-[38.5em] 2xl:w-[31.5em] text-justify">
