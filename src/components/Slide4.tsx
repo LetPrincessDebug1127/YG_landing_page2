@@ -23,6 +23,36 @@ export default function BackgroundSlider() {
   const { language } = useLanguage();
   const t = translations[language]; 
 
+  const services = [
+    {
+      icon: "/media/iconBox1.svg",
+      title: "DECORATION",
+      description: "Thi công trang trí",
+      width: 40,
+      height: 40,
+    },
+    {
+      icon: "/media/iconBox2.svg",
+      title: "EVENT MANAGEMENT",
+      description: "Tổ chức sự kiện",
+      width: 35,
+      height: 35,
+    },
+    {
+      icon: "/media/iconBox3.svg",
+      title: "COMMERCIAL ACTIVITIES",
+      description: "Hoạt động kích hoạt thương mại",
+      width: 50,
+      height: 50,
+    },
+    {
+      icon: "/media/iconBox4.svg",
+      title: "DESIGN",
+      description: "Tư vấn thiết kế",
+      width: 30,
+      height: 30,
+    },
+  ];
 
   const totalImages = backgroundImages.length;
 
@@ -94,37 +124,17 @@ return (
       </p>
     </div>
       <div className="absolute fade-in-section w-[100%] top-[50%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
-        {[
-          {
-            icon: "/media/iconBox1.svg",
-            title: "DECORATION",
-            description: "Thi công trang trí",
-          },
-          {
-            icon: "/media/iconBox2.svg",
-            title: "EVENT MANAGEMENT",
-            description: "Tổ chức sự kiện",
-          },
-          {
-            icon: "/media/iconBox3.svg",
-            title: "COMMERCIAL ACTIVITIES",
-            description: "Hoạt động kích hoạt thương mại",
-          },
-          {
-            icon: "/media/iconBox4.svg",
-            title: "DESIGN",
-            description: "Tư vấn thiết kế",
-          },
-        ].map((item, index) => (
-          <div
-            key={index}
-            className="flex flex-col items-center bg-[rgba(34,34,34,0.4)] backdrop-blur-md p-4 rounded-lg shadow-md hover:scale-105 hover:shadow-lg transition"
-          >
-            <Image src={item.icon} alt={item.title} width={50} height={50} />
-            <h3 className="text-lg font-bold mt-3">{item.title}</h3>
-            <p className="text-sm mt-1">{item.description}</p>
-          </div>
-        ))}
+
+      {services.map((item, index) => (
+        <div
+          key={index}
+          className="flex flex-col items-center bg-[rgba(34,34,34,0.4)] backdrop-blur-md p-4 rounded-lg shadow-md hover:scale-105 hover:shadow-lg transition"
+        >
+          <Image src={item.icon} alt={item.title} width={item.width} height={item.height} />
+          <h3 className="text-lg font-bold mt-3">{item.title}</h3>
+          <p className="text-sm mt-1">{item.description}</p>
+        </div>
+      ))}
       </div>
       <div className="absolute fade-in-section w-[100%] top-[80%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white z-10">
       <p className="text-base sm:text-lg md:text-xl">
