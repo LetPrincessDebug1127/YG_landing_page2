@@ -39,7 +39,7 @@ export default function LandingPage() {
       <section id="slide5" className="w-full h-[100vh] bg-purple-600 text-white flex justify-center items-center snap-start">
       </section>
 
-      <section id="slide6" className="w-full h-[100vh] bg-indigo-700 text-white flex justify-center items-center snap-start">
+      <section id="slide6" className="w-full h-[100vh] bg-gray-900 text-white flex justify-center items-center snap-start">
         <Slide6/>
       </section>
 

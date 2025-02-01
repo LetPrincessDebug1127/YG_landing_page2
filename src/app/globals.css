@@ -44,3 +44,39 @@ body::-webkit-scrollbar {
   opacity: 1;
   translate: 0 0;
 }
+@keyframes scroll-logos {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.logo-grid {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+
+.logo-item {
+  flex-shrink: 0;
+  width: 30%; /* Set the width of each logo */
+  height: 100%; /* Set the height of each logo */
+  /* margin-right: 20px; Set the spacing between logos */
+}
+
+.animate-left-to-right {
+  animation: scroll-logos 30s linear infinite; /* Adjust the duration for the speed of the animation */
+}
+
+.fade-in-section {
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
