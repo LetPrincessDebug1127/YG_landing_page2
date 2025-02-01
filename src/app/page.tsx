@@ -2,8 +2,9 @@ import Navbar from "../components/Navbar";
 import Slide2 from "../components/Slide2";
 import { LanguageProvider } from "../context/LanguageContext"
 import Slide3 from "../components/Slide3";
-import Slide4 from "../components/Slide4"
-import Slide7 from "../components/Slide7"
+import Slide4 from "../components/Slide4";
+import Slide7 from "../components/Slide7";
+import Slide6 from "../components/Slide6";
 export default function LandingPage() {
   return (
     <LanguageProvider>
@@ -39,6 +40,7 @@ export default function LandingPage() {
       </section>
 
       <section id="slide6" className="w-full h-[100vh] bg-indigo-700 text-white flex justify-center items-center snap-start">
+        <Slide6/>
       </section>
 
       <section id="slide7" className="w-full h-[100vh] bg-gray-900 text-white flex justify-center items-center snap-start">

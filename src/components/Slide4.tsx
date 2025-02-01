@@ -27,28 +27,28 @@ export default function BackgroundSlider() {
     {
       icon: "/media/iconBox1.svg",
       title: "DECORATION",
-      description: "Thi công trang trí",
+      description: t.boxOne,
       width: 40,
       height: 40,
     },
     {
       icon: "/media/iconBox2.svg",
       title: "EVENT MANAGEMENT",
-      description: "Tổ chức sự kiện",
+      description: t.boxTwo,
       width: 35,
       height: 35,
     },
     {
       icon: "/media/iconBox3.svg",
       title: "COMMERCIAL ACTIVITIES",
-      description: "Hoạt động kích hoạt thương mại",
+      description: t.boxThree,
       width: 50,
       height: 50,
     },
     {
       icon: "/media/iconBox4.svg",
       title: "DESIGN",
-      description: "Tư vấn thiết kế",
+      description: t.boxFour,
       width: 30,
       height: 30,
     },
@@ -114,16 +114,16 @@ return (
     {/* Nội dung hiển thị */}
     <div className="absolute fade-in-section w-[100%] top-0 left-1/2 transform -translate-x-1/2 text-center text-white z-10 mt-[7%]">
       <p className="text-base sm:text-lg md:text-xl 2xl:text-3xl">
-        YG cung cấp dịch vụ và tối ưu những yêu cầu của khách hàng dựa trên mô hình 4C trong marketing:
+      {t.slide4P1}
       </p>
       <h3 className="text-lg sm:text-xl md:text-2xl font-bold uppercase text-[#ec6629] 2xl:text-3xl">
         CUSTOMER SOLUTION - CUSTOMER COST - CONVENIENCE - COMMUNICATION
       </h3>
       <p className="text-base sm:text-lg md:text-xl 2xl:text-3xl">
-        Giải pháp cho khách hàng - Chi phí khách hàng bỏ ra - Sự tiện lợi - Truyền thông
+      {t.slide4P2}
       </p>
     </div>
-      <div className="absolute fade-in-section  max-w-[1700px] max-h-[270px] w-[90%] h-[35%] top-[50%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+      <div className="absolute fade-in-section  max-w-[1700px] lg:max-h-[270px] 3xl:max-h-[350px] w-[90%] h-[35%] top-[50%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
 
       {services.map((item, index) => (
         <div
@@ -138,10 +138,10 @@ return (
       </div>
       <div className="absolute fade-in-section w-[90%] top-[90%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white z-10">
       <p className="text-base sm:text-lg md:text-xl 2xl:text-3xl">
-        Chúng tôi cam kết mang đến những giải pháp hiệu quả,
+        {t.slide4P3}
       </p>
       <p className="text-base sm:text-lg md:text-xl 2xl:text-3xl">
-        sáng tạo khác biệt dựa trên tinh thần hợp tác, trách nhiệm và giá trị cảm xúc.
+        {t.slide4P4}
       </p>
     </div>
   </div>

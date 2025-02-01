@@ -23,7 +23,7 @@ const ContactSection: React.FC = () => {
        <div className="contact fade-in-section flex flex-col md:flex-row gap-16 p-4 z-10 mt-[2%]">
       {/* Phần bên trái: Thông tin liên hệ */}
       <div className="inf fade-in-section space-y-6">
-        <h1 className="text-[#ec6629] text-[24px] sm:text-[36px] md:text-[40px] lg:text-[44px] xl:text-[60px] 2xl:text-[70px] font-black mb-4 whitespace-nowrap font-sans">{t.contact}</h1>
+        <h1 className="text-[24px] sm:text-[36px] md:text-[48px] lg:text-[64px] xl:text-[72px] 2xl:text-[80px] 3xl:text-[96px] font-black text-[#ec6629] mb-4 whitespace-nowrap font-sans">{t.contact}</h1>
 
         <div className="item-contact flex items-center space-x-4">
           <Image src="/media/phone.svg" alt="My SVG" width={20} height={20} />

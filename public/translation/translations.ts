@@ -25,10 +25,19 @@ const translations = {
     placeHolderEmail : "Enter email address",
     message : "Message",
     placeHolderMessage : "Enter your message",
-    send : "Submit"
-
-
-
+    send : "Submit",
+    boxOne: "Decoration construction",
+    boxTwo : "Event organization",
+    boxThree: "Commercial activation activities",
+    boxFour : "Design consultation",
+    slide4P1 : "YG provides services and optimizes customer requirements based on the 4C model in marketing:",
+    slide4P2 : "Customer Solution - Customer Cost - Convenience - Communication",
+    slide4P3 : "We are committed to delivering effective,",
+    slide4P4 : "creative, and unique solutions based on collaboration, responsibility, and emotional value.",
+    clientTitle: "Clients",
+    clientDescription: "We are proud to partner with top brands across various industries:",
+    clientIndustries: "FMCG, Food & Beverages, Education, Pharma & Cosmetics, Real Estate, Consumer Electronics, Automotive, Finance...",
+    clientLogoAlt: "Partner Logo"
   },
   vi: {
     home: "Trang chủ",
@@ -56,10 +65,19 @@ const translations = {
     placeHolderEmail : "Nhập địa chỉ email",
     message : "Lời nhắn",
     placeHolderMessage : "Nhập lời nhắn của bạn",
-    send : "Gửi"
-
-
-
+    send : "Gửi",
+    boxOne: "Thi công trang trí",
+    boxTwo: "Tổ chức sự kiện",
+    boxThree: "Hoạt động kích hoạt thương mại",
+    boxFour : "Tư vấn thiết kế",
+    slide4P1: "YG cung cấp dịch vụ và tối ưu những yêu cầu của khách hàng dựa trên mô hình 4C trong marketing:",
+    slide4P2 : "Giải pháp cho khách hàng - Chi phí khách hàng bỏ ra - Sự tiện lợi - Truyền thông",
+    slide4P3 : "Chúng tôi cam kết mang đến những giải pháp hiệu quả,",
+    slide4P4 : "sáng tạo khác biệt dựa trên tinh thần hợp tác, trách nhiệm và giá trị cảm xúc.",
+    clientTitle: "Khách hàng",
+    clientDescription: "Chúng tôi tự hào đồng hành cùng các đối tác hàng đầu trong nhiều lĩnh vực:",
+    clientIndustries: "FMCG, Food & Beverages, Giáo dục, Dược & Mỹ Phẩm, Bất Động Sản, Điện Tử Tiêu Dùng, Ô tô, Tài Chính...",
+    clientLogoAlt: "Logo Đối Tác"
 
 
   },
