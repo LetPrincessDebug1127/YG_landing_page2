@@ -32,11 +32,11 @@ body::-webkit-scrollbar {
   scroll-snap-type: y mandatory;
 }
 .container {
-  perspective: 1000px; /* Đặt góc nhìn để tạo hiệu ứng 3D */
+  perspective: 1000px;
 }
 .fade-in-section {
   opacity: 0;
-  translate: 0 50px; /* Thay vì transform */
+  translate: 0 50px;
   transition: opacity 0.6s ease-out, translate 0.6s ease-out;
 }
 
@@ -44,30 +44,49 @@ body::-webkit-scrollbar {
   opacity: 1;
   translate: 0 0;
 }
-@keyframes scroll-logos {
-  0% {
+@keyframes scroll-left {
+  from {
     transform: translateX(0);
   }
-  100% {
-    transform: translateX(-100%);
+  to {
+    transform: translateX(-50%);
   }
 }
 
-.logo-grid {
+@keyframes scroll-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.logo-container {
   display: flex;
   overflow: hidden;
   position: relative;
+  width: 100%;
+}
+
+.logo-track {
+  display: flex;
+  min-width: 200%;
+}
+
+.animate-left-to-right {
+  animation: scroll-right 30s linear infinite;
+}
+
+.animate-right-to-left {
+  animation: scroll-left 30s linear infinite;
 }
 
 .logo-item {
   flex-shrink: 0;
-  width: 30%; /* Set the width of each logo */
-  height: 100%; /* Set the height of each logo */
-  /* margin-right: 20px; Set the spacing between logos */
-}
-
-.animate-left-to-right {
-  animation: scroll-logos 30s linear infinite; /* Adjust the duration for the speed of the animation */
+  width: 120px;
+  height: 80px;
+  margin-right: 20px;
 }
 
 .fade-in-section {
