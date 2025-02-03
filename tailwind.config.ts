@@ -28,6 +28,9 @@ export default {
         'xl-custom': { min: '1400px', max: '1535px' },
         '2xl-custom1': { min: '1536px', max: '1699px' }, 
         '2xl-custom2': { min: '1700px', max: '1899px' }, 
+        'mobile-ui' : { min: '250px', max: '999px' },
+        'desktop-ui' : { min: '1000px'}
+
       },
       scale: {
         200: '1.6', 

@@ -25,7 +25,7 @@ const Navbar = () => {
     };
   }, []);
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-20 bg-black bg-opacity-80 transition-all duration-300 ease-in-out ${
+    <nav className={`fixed top-0 left-0 right-0 z-20 bg-black bg-opacity-80 transition-all duration-300 ease-in-out hidden desktop-ui:block ${
         isNavbarVisible ? 'opacity-100' : 'opacity-0' 
       }`}>
       <div className="flex justify-between items-center w-full">

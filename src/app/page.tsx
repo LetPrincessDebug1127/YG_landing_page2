@@ -1,3 +1,5 @@
+"use client"
+import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import Slide2 from "../components/Slide2";
 import { LanguageProvider } from "../context/LanguageContext"
@@ -6,25 +8,44 @@ import Slide4 from "../components/Slide4";
 import Slide7 from "../components/Slide7";
 import Slide6 from "../components/Slide6";
 export default function LandingPage() {
+    const [scrollEnabled, setScrollEnabled] = useState(false);
+
+    useEffect(() => {
+      document.body.style.overflow = "hidden";
+
+      const timer = setTimeout(() => {
+        setScrollEnabled(true);
+        document.body.style.overflow = "auto";
+
+        const slide2 = document.getElementById("slide2");
+        if (slide2) {
+          slide2.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 5000);
+
+      return () => clearTimeout(timer);
+    }, []);
   return (
     <LanguageProvider>
-    <div id="container" className="w-full h-full flex flex-col overflow-y-auto snap-y snap-mandatory">
+    <div id="container" className={`w-full h-full flex flex-col ${
+          scrollEnabled ? "overflow-y-auto" : "overflow-hidden"
+        } snap-y snap-mandatory`}>
        <Navbar />
       <section id="slide1" className="w-full h-[100vh] bg-black flex justify-center items-center snap-start">
-          <div className="relative w-full h-full overflow-hidden scroll-snap-align-end">
+          <div className="relative w-full h-full overflow-hidden">
           <video
             autoPlay
             muted
             loop
             playsInline
-            className="absolute w-full h-full object-cover"
+            className="absolute w-full h-full object-cover hidden sm:block"
           >
           <source src="/media/logo-fix-5.mp4" type="video/mp4" />
           </video>
         </div>
       </section>
 
-      <section id="slide2" className="w-full h-[100vh] bg-gray-800 flex justify-center items-center snap-start">
+      <section id="slide2" className="w-full lg:h-[100vh] bg-gray-800 flex justify-center items-center snap-start">
          <Slide2 />
       </section>
 

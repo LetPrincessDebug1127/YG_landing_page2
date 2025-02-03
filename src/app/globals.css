@@ -75,16 +75,16 @@ body::-webkit-scrollbar {
 }
 
 .animate-left-to-right {
-  animation: scroll-right 30s linear infinite;
+  animation: scroll-right 60s linear infinite;
 }
 
 .animate-right-to-left {
-  animation: scroll-left 30s linear infinite;
+  animation: scroll-left 60s linear infinite;
 }
 
 .logo-item {
   flex-shrink: 0;
-  width: 120px;
+  width: 200px;
   height: 80px;
   margin-right: 20px;
 }

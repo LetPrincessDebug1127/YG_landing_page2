@@ -113,13 +113,13 @@ return (
 
     {/* Nội dung hiển thị */}
     <div className="absolute fade-in-section w-[100%] top-0 left-1/2 transform -translate-x-1/2 text-center text-white z-10 mt-[7%]">
-      <p className="text-base sm:text-lg md:text-xl 2xl:text-3xl">
+      <p className="text-base sm:text-lg md:text-xl 2xl:text-3xl fade-in-section">
       {t.slide4P1}
       </p>
-      <h3 className="text-lg sm:text-xl md:text-2xl font-bold uppercase text-[#ec6629] 2xl:text-3xl">
+      <h3 className="fade-in-section text-lg sm:text-xl md:text-2xl font-bold uppercase text-[#ec6629] 2xl:text-3xl">
         CUSTOMER SOLUTION - CUSTOMER COST - CONVENIENCE - COMMUNICATION
       </h3>
-      <p className="text-base sm:text-lg md:text-xl 2xl:text-3xl">
+      <p className="fade-in-section text-base sm:text-lg md:text-xl 2xl:text-3xl">
       {t.slide4P2}
       </p>
     </div>

@@ -9,7 +9,7 @@ const ClientSection: React.FC = () => {
   const t = translations[language];
 
   // Dynamic logos array (1 to 12 logos)
-  const logos = Array.from({ length: 12 }, (_, i) => ({
+  const logos = Array.from({ length: 8 }, (_, i) => ({
     src: `/media/logo/logo${i + 1}.png`,
     alt: `${t.clientLogoAlt} ${i + 1}`, 
   }));
@@ -24,7 +24,7 @@ const ClientSection: React.FC = () => {
         alt="Background duplicate"
         className="absolute top-0 left-0 w-full h-full object-cover"
       />
-      <div className="text-center fade-in-section visible lg:mt-[4%]">
+      <div className="fade-in-section text-center fade-in-section visible lg:mt-[4%]">
         <h1 className="text-[24px] sm:text-[36px] md:text-[48px] lg:text-[64px] xl:text-[72px] 2xl:text-[80px] 3xl:text-[96px] font-bold text-[#ec6629]">
           {t.clientTitle}
         </h1>
