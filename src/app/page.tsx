@@ -7,6 +7,7 @@ import Slide3 from "../components/Slide3";
 import Slide4 from "../components/Slide4";
 import Slide7 from "../components/Slide7";
 import Slide6 from "../components/Slide6";
+import MobileNav from "../components/MobileNavBar"
 export default function LandingPage() {
     const [scrollEnabled, setScrollEnabled] = useState(false);
 
@@ -31,6 +32,7 @@ export default function LandingPage() {
           scrollEnabled ? "overflow-y-auto" : "overflow-hidden"
         } snap-y snap-mandatory`}>
        <Navbar />
+       <MobileNav />
       <section id="slide1" className="w-full h-[100vh] bg-black flex justify-center items-center snap-start">
           <div className="relative w-full h-full overflow-hidden">
           <video
