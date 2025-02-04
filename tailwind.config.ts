@@ -29,7 +29,8 @@ export default {
         '2xl-custom1': { min: '1536px', max: '1699px' }, 
         '2xl-custom2': { min: '1700px', max: '1899px' }, 
         'mobile-ui' : { min: '250px', max: '999px' },
-        'desktop-ui' : { min: '1000px'}
+        'desktop-ui' : { min: '1000px'},
+        'image-banner': {max: '639px'}
 
       },
       scale: {
