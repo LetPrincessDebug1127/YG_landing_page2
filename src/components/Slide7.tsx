@@ -11,7 +11,7 @@ const ContactSection: React.FC = () => {
   const t = translations[language];
  
   return (
-    <section className="relative w-full h-screen flex items-center justify-center flex-col">
+    <section className="relative w-full h-screen flex items-center mobile-ui:block justify-center flex-col">
       <video
         className="absolute top-0 left-0 w-full h-full object-cover"
         src="/media/black-silk.mp4"
@@ -22,7 +22,7 @@ const ContactSection: React.FC = () => {
       ></video>
        <div className="contact fade-in-section flex flex-col md:flex-row gap-16 p-4 z-10 mt-[2%]">
       {/* Phần bên trái: Thông tin liên hệ */}
-      <div className="inf fade-in-section space-y-6">
+      <div className="fade-in-section space-y-6 mobile-ui:hidden">
         <h1 className="text-[24px] sm:text-[36px] md:text-[48px] lg:text-[64px] xl:text-[72px] 2xl:text-[80px] 3xl:text-[96px] font-black text-[#ec6629] mb-4 whitespace-nowrap font-sans">{t.contact}</h1>
 
         <div className="item-contact flex items-center space-x-4">
@@ -108,7 +108,7 @@ const ContactSection: React.FC = () => {
       </div>
 
       {/* Phần bên phải: Form liên hệ */}
-      <div className="contact-form flex-1 bg-[rgba(34,34,34,0.4)] text-white p-5 rounded-[15px] shadow-[0_8px_12px_rgba(0,0,0,1)] transition-all duration-300 ease-in-out w-[20em] mx-auto">
+      <div className="contact-form flex-1 bg-[rgba(34,34,34,0.4)] text-white p-5 rounded-[15px] shadow-[0_8px_12px_rgba(0,0,0,1)] transition-all duration-300 ease-in-out w-[20em] mx-auto mobile-ui:mt-[15%]">
         <h2 className="text-[1.5rem] font-semibold mb-4 ml-[5%] text-[#ec6629]">{t.informationToContact}</h2>
         <form action="/submit-contact" method="POST" className="space-y-4 flex flex-col items-center">
           <div className="contain-input w-full">
@@ -168,9 +168,76 @@ const ContactSection: React.FC = () => {
         </form>
       </div>
       </div>
-      <p className = "text-gray-500 z-10">© 2024 YG. All rights reserved.</p>
+      <p className = "text-gray-500 z-10 mobile-ui:hidden">© 2024 YG. All rights reserved.</p>
+    <footer className="bg-[#333333] text-white py-6 hidden mobile-ui:flex w-full absolute flex-col items-start">
+      <div className="w-full px-4 hidden mobile-ui:block">
+        {/* Contact Section */}
+        <div className="mb-6">
+          <h3 className="text-lg font-bold mb-2">{t.contact}</h3>
+          <div className="border-t border-[#ec6629] mb-4"></div>
 
-    
+          <div className="space-y-3">
+            <div className="flex items-center gap-3">
+              <Image src="/media/phone.svg" alt="Phone" width={20} height={20} />
+              <a href="tel:+84377711139" className="text-sm text-white hover:text-gray-300">
+                Hotline: (+84) 377 711 139
+              </a>
+            </div>
+            <div className="flex items-center gap-3">
+              <Image src="/media/email.svg" alt="Email" width={20} height={20} />
+              <span className="text-sm">Email: YGAGENCY@gmail.com</span>
+            </div>
+            <div className="flex items-start gap-3">
+              <Image src="/media/location.svg" alt="Location" width={20} height={20} />
+              <span className="text-sm">
+                {t.addressTitle}: {t.address}
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* Social Media Links */}
+        <div className="mb-6">
+          <h3 className="text-lg font-bold mb-2">{t.FollowUs}</h3>
+          <div className="border-t border-[#ec6629] mb-4"></div>
+
+          <div className="space-y-6 flex flex-col ">
+            <Link href="https://www.facebook.com/ygcompany.vn" target="_blank" passHref>
+              <div className="flex items-center gap-2 text-sm hover:text-gray-300 cursor-pointer">
+                <Image src="/media/Facebook_Logo.png" alt="Facebook" width={30} height={30} />
+                https://www.facebook.com/ygcompany.vn
+              </div>
+            </Link>
+
+            <Link href="https://zalo.me" target="_blank" passHref>
+              <div className="flex items-center gap-2 text-sm hover:text-gray-300 cursor-pointer">
+                <Image src="/media/zalo_icon.png" alt="Zalo" width={30} height={30} />
+                https://zalo.me
+              </div>
+            </Link>
+
+            <Link href="https://www.whatsapp.com" target="_blank" passHref>
+              <div className="flex items-center gap-2 text-sm hover:text-gray-300 cursor-pointer">
+                <Image src="/media/whatsapp2.png" alt="Whatsapp" width={40} height={40} className ="mr-[-0.5em] ml-[-0.5em]" />
+                https://www.whatsapp.com
+              </div>
+            </Link>
+
+            <Link href="https://www.youtube.com" target="_blank" passHref>
+              <div className="flex items-center gap-2 text-sm hover:text-gray-300 cursor-pointer">
+                <Image src="/media/Youtube_Logo.png" alt="Youtube" width={30} height={30} />
+                https://www.youtube.com
+              </div>
+            </Link>
+          </div>
+        </div>
+
+        {/* Copyright */}
+        <div className="border-t border-[#ec6629] pt-4 flex flex-col items-center">
+          <p className="text-sm text-gray-400">© 2024 YG. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
     </section>
     
   );

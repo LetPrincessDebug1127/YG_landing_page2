@@ -51,7 +51,7 @@ const VideoBackgroundSection: React.FC = () => {
         playsInline
       ></video>
       <div className="fade-in-section">
-      <div className="fade-in-section relative z-10 w-full h-full flex mt-[2em] mobile-ui:flex-col mobile-ui:items-center mobile-ui:mt-[0px] mobile-ui:gap-[10px]">
+      <div className="fade-in-section relative z-10 w-full h-full flex mt-[2em] mobile-ui:flex-col mobile-ui:items-center mobile-ui:mt-[0px] mobile-ui:gap-[20px]">
         {/* Phần bên trái - Hình ảnh */}
         <div
           ref={imageContainerRef} // Gắn ref vào container

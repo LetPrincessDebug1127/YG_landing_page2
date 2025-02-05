@@ -72,7 +72,7 @@ export default function BackgroundSlider() {
     return () => clearInterval(interval); 
   }, [currentIndex]);
 return (
-  <div className="relative w-full h-screen overflow-hidden">
+  <div className="relative w-full h-screen image-banner:h-full overflow-hidden">
     <div
       className={`flex h-full transition-transform ${
         isTransitioning ? "duration-[2000ms]" : ""
@@ -111,7 +111,6 @@ return (
     {/* Overlay che nền để dễ đọc chữ */}
     <div className="absolute inset-0 bg-black/65 pointer-events-none z-0"></div>
 
-    {/* Nội dung hiển thị */}
     <div className="absolute fade-in-section w-[100%] top-0 left-1/2 transform -translate-x-1/2 text-center text-white z-10 mt-[7%]">
       <p className="text-base sm:text-lg md:text-xl 2xl:text-3xl fade-in-section">
       {t.slide4P1}
@@ -123,7 +122,7 @@ return (
       {t.slide4P2}
       </p>
     </div>
-      <div className="absolute fade-in-section  max-w-[1700px] lg:max-h-[270px] 3xl:max-h-[350px] w-[90%] h-[35%] top-[50%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+      <div className="absolute fade-in-section  max-w-[1700px] lg:max-h-[270px] 3xl:max-h-[350px] w-[90%] sm:h-[35%] image-banner:h-[100%] top-[50%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
 
       {services.map((item, index) => (
         <div

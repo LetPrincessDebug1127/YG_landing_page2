@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
@@ -10,9 +10,27 @@ export default function Navbar() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const { language, toggleLanguage } = useLanguage();
   const t = translations[language];
+  const [isNavbarVisible, setIsNavbarVisible] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > window.innerHeight / 2) {
+        setIsNavbarVisible(true); 
+      } else {
+        setIsNavbarVisible(false);
+      }
+    };
 
+    window.addEventListener('scroll', handleScroll);
+
+    // Cleanup khi component unmount
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   return (
-    <nav className="fixed top-0 left-0 right-0 z-20 bg-black bg-opacity-80 text-white shadow-lg hidden mobile-ui:block">
+    <nav className={`fixed top-0 left-0 right-0 z-20 bg-black bg-opacity-80 text-white shadow-lg hidden mobile-ui:block ${
+        isNavbarVisible ? 'opacity-100' : 'opacity-0' 
+      }`}>
       <div className="flex items-center justify-between w-full px-4">
         <Image
           className="w-[80px] hidden mobile-ui:block"

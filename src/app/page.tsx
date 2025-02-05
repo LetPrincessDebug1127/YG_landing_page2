@@ -9,7 +9,7 @@ import Slide4 from "../components/Slide4";
 import Slide7 from "../components/Slide7";
 import Slide6 from "../components/Slide6";
 import MobileNav from "../components/MobileNavBar";
-
+// import MobileSlide8 from "../components/MobileSlide8"
 export default function LandingPage() {
   const [scrollEnabled, setScrollEnabled] = useState(false);
   const [imageHeight, setImageHeight] = useState(0);
@@ -86,7 +86,7 @@ export default function LandingPage() {
 
         <section
           id="slide4"
-          className="w-full h-[100vh] bg-blue-500 text-white flex justify-center items-center snap-start"
+          className="w-full h-[100vh] image-banner:h-[150vh] bg-blue-500 text-white flex justify-center items-center snap-start"
         >
           <Slide4 />
         </section>
@@ -109,6 +109,9 @@ export default function LandingPage() {
         >
           <Slide7 />
         </section>
+        {/* <section id = "slide8" className = "hidden mobile-ui:flex w-full h-[100vh] justify-center items-center snap-start ">
+          <MobileSlide8/>
+        </section> */}
       </div>
     </LanguageProvider>
   );

@@ -102,7 +102,7 @@ export default function BackgroundSlider() {
 
 
     <div className="absolute left-4 sm:left-32 top-1/2 transform -translate-y-1/2 z-10 text-white">
-      <div className="fade-in-section flex flex-col space-y-4 sm:space-y-4">
+      <div className="fade-in-section flex flex-col image-banner:space-y-12 sm:space-y-4">
         <h1 className="text-[42px] sm:text-[36px] md:text-[48px] lg:text-[64px] xl:text-[72px] 2xl:text-[80px] 3xl:text-[96px] font-bold">
           <a
             href="#slide3"
