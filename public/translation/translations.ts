@@ -76,7 +76,7 @@ const translations = {
     slide4P4 : "sáng tạo khác biệt dựa trên tinh thần hợp tác, trách nhiệm và giá trị cảm xúc.",
     clientTitle: "Khách hàng",
     clientDescription: "Chúng tôi tự hào đồng hành cùng các đối tác hàng đầu trong nhiều lĩnh vực:",
-    clientIndustries: "FMCG, Food & Beverages, Giáo dục, Dược & Mỹ Phẩm, Bất Động Sản, Điện Tử Tiêu Dùng, Ô tô, Tài Chính...",
+    clientIndustries: " FMCG, Food & Beverages, Giáo dục, Dược & Mỹ Phẩm, Bất Động Sản, Điện Tử Tiêu Dùng, Ô tô, Tài Chính...",
     clientLogoAlt: "Logo Đối Tác"
 
 
