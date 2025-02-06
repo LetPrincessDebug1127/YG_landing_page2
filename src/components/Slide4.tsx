@@ -111,7 +111,7 @@ return (
     {/* Overlay che nền để dễ đọc chữ */}
     <div className="absolute inset-0 bg-black/65 pointer-events-none z-0"></div>
 
-    <div className="absolute fade-in-section w-[100%] top-0 left-1/2 transform -translate-x-1/2 text-center text-white z-10 mt-[7%]">
+    <div className="absolute image-banner:hidden fade-in-section w-[100%] top-0 left-1/2 transform -translate-x-1/2 text-center text-white z-10 mt-[7%]">
       <p className="text-base sm:text-lg md:text-xl 2xl:text-3xl fade-in-section">
       {t.slide4P1}
       </p>
@@ -122,7 +122,7 @@ return (
       {t.slide4P2}
       </p>
     </div>
-      <div className="absolute fade-in-section  max-w-[1700px] lg:max-h-[270px] 3xl:max-h-[350px] w-[90%] sm:h-[35%] image-banner:h-[100%] top-[50%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+    <div className="absolute image-banner:hidden fade-in-section  max-w-[1700px] lg:max-h-[270px] 3xl:max-h-[350px] w-[90%] sm:h-[35%] image-banner:h-[100%] top-[50%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
 
       {services.map((item, index) => (
         <div
@@ -135,14 +135,55 @@ return (
         </div>
       ))}
       </div>
-      <div className="absolute fade-in-section w-[90%] top-[90%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white z-10">
-      <p className="text-base sm:text-lg md:text-xl 2xl:text-3xl">
-        {t.slide4P3}
-      </p>
-      <p className="text-base sm:text-lg md:text-xl 2xl:text-3xl">
-        {t.slide4P4}
-      </p>
-    </div>
+      <div className="absolute image-banner:hidden fade-in-section w-[90%] top-[90%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white z-10">
+          <p className="text-base sm:text-lg md:text-xl 2xl:text-3xl">
+            {t.slide4P3}
+          </p>
+          <p className="text-base sm:text-lg md:text-xl 2xl:text-3xl">
+            {t.slide4P4}
+          </p>
+      </div>
+      <div className="absolute hidden image-banner:block fade-in-section w-full top-0 left-1/2 transform -translate-x-1/2 text-center text-white z-10">
+        {/* Phần tiêu đề */}
+        <div className="w-[100%] mt-[15%] p-4">
+          <p className="text-base sm:text-lg md:text-xl text-start fade-in-section">
+            {t.slide4P1}
+          </p>
+          <h3 className="fade-in-section text-lg sm:text-xl md:text-2xl font-bold uppercase text-[#ec6629] mt-[5%] mb-[3%]">
+            <ul className="text-left list-none">
+              <li>• CUSTOMER SOLUTION</li>
+              <li>• CUSTOMER COST</li>
+              <li>• CONVENIENCE</li>
+              <li>• COMMUNICATION</li>
+            </ul>
+          </h3>
+          <p className="fade-in-section text-base sm:text-lg md:text-xl text-start">
+            {t.slide4P2}
+          </p>
+        </div>
+
+        {/* Phần dịch vụ */}
+        <div className="max-w-[1700px] w-full h-[100%] flex flex-col items-center gap-6 mt-8">
+          {services.map((item, index) => (
+            <div
+              key={index}
+              className="flex flex-col w-[80%] p-[10%] bg-[rgba(34,34,34,0.4)] backdrop-blur-md rounded-lg shadow-md hover:scale-105 hover:shadow-lg transition"
+            >
+              <Image src={item.icon} alt={item.title} width={item.width} height={item.height} />
+              <h3 className="text-lg 2xl:text-3xl font-bold mt-3 text-justify text-[#ec6629]">{item.title}</h3>
+              <p className="text-sm text-start mt-1 md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">{item.description}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Phần văn bản cuối */}
+        <div className="w-[100%] p-4">
+          <p className="text-base sm:text-lg md:text-xl text-start">
+            {t.slide4P3} {t.slide4P4}
+          </p>
+        </div>
+      </div>
+
   </div>
 );
 

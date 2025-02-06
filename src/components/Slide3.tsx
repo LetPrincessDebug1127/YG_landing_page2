@@ -41,7 +41,7 @@ const VideoBackgroundSection: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative w-full h-screen flex items-center justify-center  snap-start">
+    <section className="relative w-full h-screen flex items-center justify-center">
       <video
         className="absolute top-0 left-0 w-full h-full object-cover"
         src="/media/black-silk.mp4"
@@ -70,10 +70,10 @@ const VideoBackgroundSection: React.FC = () => {
           <h1 className="text-[#ec6629] text-[24px] sm:text-[36px] md:text-[40px] lg:text-[44px] xl:text-[60px] 2xl:text-[70px] font-bold mb-4 whitespace-nowrap">
             Young Generation Agency
           </h1>
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl lg:w-[30em] xl:w-[38.5em] 2xl:w-[31.5em] text-justify mb-3">
+          <p className="text-sm sm:text-base text-custom md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl lg:w-[30em] xl:w-[38.5em] 2xl:w-[31.5em] text-justify mb-3">
             {t.text}
           </p>
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl lg:w-[30em] xl:w-[38.5em] 2xl:w-[31.5em] text-justify">
+          <p className="text-sm sm:text-base text-custom md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl lg:w-[30em] xl:w-[38.5em] 2xl:w-[31.5em] text-justify">
             {t.textP}
           </p>
         </div>

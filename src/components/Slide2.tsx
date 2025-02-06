@@ -63,7 +63,7 @@ export default function BackgroundSlider() {
   }, [currentIndex]);
 
   return (
- <div className="relative w-full h-screen overflow-hidden snap-start">
+ <div className="relative w-full h-screen overflow-hidden">
     <div
       className={`flex h-full transition-transform ${
         isTransitioning ? "duration-[2000ms]" : ""
