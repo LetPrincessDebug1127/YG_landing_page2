@@ -85,7 +85,7 @@ export default function LandingPage() {
 
         <section
           id="slide4"
-          className="w-full h-[100vh] image-banner:h-[150vh] iphone-se:h-[200vh] bg-blue-500 text-white flex justify-center items-center"
+          className="w-full h-[100vh] iphone-12 iphone-se bg-blue-500 text-white flex justify-center items-center"
         >
           <Slide4 />
         </section>

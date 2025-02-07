@@ -67,6 +67,16 @@ body::-webkit-scrollbar {
     line-height: 1.8rem;
   }
 }
+@media (max-height: 700px) {
+  .iphone-se {
+    height: 200vh;
+  }
+}
+@media (min-height: 800px) {
+  .iphone-12 {
+    height: 155vh;
+  }
+}
 .logo-container {
   display: flex;
   overflow: hidden;
