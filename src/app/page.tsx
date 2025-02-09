@@ -9,6 +9,8 @@ import Slide4 from "../components/Slide4";
 import Slide7 from "../components/Slide7";
 import Slide6 from "../components/Slide6";
 import MobileNav from "../components/MobileNavBar";
+import Slide5 from "@/components/Slide5";
+
 export default function LandingPage() {
   const [scrollEnabled, setScrollEnabled] = useState(false);
   const [imageHeight, setImageHeight] = useState(0);
@@ -60,7 +62,7 @@ export default function LandingPage() {
               src="/media/banner-mobile.svg"
               alt="Background"
               layout="intrinsic"
-              width={1000} 
+              width={1000}
               height={600}
               className="absolute top-0 left-0 w-full object-cover hidden image-banner:block"
               priority
@@ -92,8 +94,10 @@ export default function LandingPage() {
 
         <section
           id="slide5"
-          className="w-full h-[100vh] bg-purple-600 text-white flex justify-center items-center"
-        ></section>
+          className="w-full h-[100vh] bg-purple-600 text-white flex flex-col justify-start items-center snap-start pt-[4%]"
+        >
+          <Slide5 />
+        </section>
 
         <section
           id="slide6"
@@ -108,7 +112,6 @@ export default function LandingPage() {
         >
           <Slide7 />
         </section>
-
       </div>
     </LanguageProvider>
   );
