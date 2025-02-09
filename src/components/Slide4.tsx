@@ -111,7 +111,7 @@ return (
     {/* Overlay che nền để dễ đọc chữ */}
     <div className="absolute inset-0 bg-black/65 pointer-events-none z-0"></div>
 
-    <div className="absolute image-banner:hidden fade-in-section w-[100%] top-0 left-1/2 transform -translate-x-1/2 text-center text-white z-10 mt-[7%]">
+    <div className="absolute image-banner:hidden fade-in-section w-[100%] top-0 left-1/2 transform -translate-x-1/2 text-center text-white z-10 mt-[7%] sm+:text-justify">
       <p className="text-base sm:text-lg md:text-xl 2xl:text-3xl fade-in-section">
       {t.slide4P1}
       </p>
@@ -122,7 +122,7 @@ return (
       {t.slide4P2}
       </p>
     </div>
-    <div className="absolute image-banner:hidden fade-in-section  max-w-[1700px] lg:max-h-[270px] 3xl:max-h-[350px] w-[90%] sm:h-[35%] image-banner:h-[100%] top-[50%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+    <div className="absolute image-banner:hidden fade-in-section  max-w-[1700px] lg:max-h-[270px] 3xl:max-h-[350px] w-[90%] sm:h-[35%] image-banner:h-[100%] top-[50%] custom-size:top-[42%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white z-10 grid grid-cols-1 custom-size:grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 custom-size:gap-[5.5em] mt-8">
 
       {services.map((item, index) => (
         <div
@@ -135,7 +135,7 @@ return (
         </div>
       ))}
       </div>
-      <div className="absolute image-banner:hidden fade-in-section w-[90%] top-[90%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white z-10">
+      <div className="absolute image-banner:hidden fade-in-section w-[90%] top-[90%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white z-10 sm+:text-justify">
           <p className="text-base sm:text-lg md:text-xl 2xl:text-3xl">
             {t.slide4P3}
           </p>

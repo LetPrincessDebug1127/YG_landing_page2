@@ -32,6 +32,13 @@ export default {
         'desktop-ui' : { min: '1000px'},
         'image-banner': {max: '700px'},
         'iphone-se': {max: '400px'},
+        'custom-size': { raw: '(max-width: 1025px) and (min-height: 1000px)' },
+        'sm+' : { max: '800px'},
+        'surfacePro': { raw: '(min-width: 900px) and (max-width: 1000px) and (min-height: 1300px)' },
+        'min-h-1000': { raw: '(min-width: 900px) and (max-width: 1000px) and (min-height: 1000px)' },
+        'small-screen': { raw: '(max-width: 400px) and (max-height: 750px)' },
+        'tall-screen': { raw: '(min-width: 500px) and (max-width: 899px) and (min-height: 950px)' },
+        'surfacDuo': { raw: '(min-width: 500px) and (max-width: 600px) and (min-height: 700px) and (max-height: 800px)' },
 
       },
       scale: {
