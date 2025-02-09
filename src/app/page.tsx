@@ -44,7 +44,7 @@ export default function LandingPage() {
 
         <section
           id="slide1"
-          className="w-full bg-black flex justify-center items-center snap-start"
+          className="w-full bg-black flex justify-center items-center"
           style={{ height: imageHeight ? `${imageHeight}px` : "100vh" }}
         >
           <div className="relative w-full h-full overflow-hidden">
@@ -73,21 +73,21 @@ export default function LandingPage() {
 
         <section
           id="slide2"
-          className="w-full bg-black flex justify-center items-center snap-start"
+          className="w-full bg-black flex justify-center items-center"
         >
           <Slide2 />
         </section>
 
         <section
           id="slide3"
-          className="w-full h-[100vh] bg-white flex justify-center items-center snap-start"
+          className="w-full h-[100vh] bg-white flex justify-center items-center"
         >
           <Slide3 />
         </section>
 
         <section
           id="slide4"
-          className="w-full h-[100vh] image-banner:h-[150vh] bg-blue-500 text-white flex justify-center items-center snap-start"
+          className="w-full h-[100vh] iphone-12 iphone-se bg-blue-500 text-white flex justify-center items-center"
         >
           <Slide4 />
         </section>
@@ -101,20 +101,17 @@ export default function LandingPage() {
 
         <section
           id="slide6"
-          className="w-full h-[100vh] bg-gray-900 text-white flex justify-center items-center snap-start"
+          className="w-full h-[100vh] bg-gray-900 text-white flex justify-center items-center"
         >
           <Slide6 />
         </section>
 
         <section
           id="slide7"
-          className="w-full h-[100vh] bg-gray-900 text-white flex justify-center items-center snap-start"
+          className="w-full h-[100vh] bg-gray-900 text-white flex justify-center items-center"
         >
           <Slide7 />
         </section>
-        {/* <section id = "slide8" className = "hidden mobile-ui:flex w-full h-[100vh] justify-center items-center snap-start ">
-          <MobileSlide8/>
-        </section> */}
       </div>
     </LanguageProvider>
   );

@@ -30,7 +30,8 @@ export default {
         '2xl-custom2': { min: '1700px', max: '1899px' }, 
         'mobile-ui' : { min: '250px', max: '999px' },
         'desktop-ui' : { min: '1000px'},
-        'image-banner': {max: '639px'}
+        'image-banner': {max: '700px'},
+        'iphone-se': {max: '400px'},
 
       },
       scale: {

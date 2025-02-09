@@ -61,7 +61,22 @@ body::-webkit-scrollbar {
     transform: translateX(0);
   }
 }
-
+@media (max-width: 500px) and (min-height: 800px) {
+  .text-custom {
+    font-size: 0.875rem;
+    line-height: 1.8rem;
+  }
+}
+@media (max-height: 700px) {
+  .iphone-se {
+    height: 200vh;
+  }
+}
+@media (min-height: 800px) {
+  .iphone-12 {
+    height: 155vh;
+  }
+}
 .logo-container {
   display: flex;
   overflow: hidden;

@@ -87,7 +87,7 @@ const translations = {
     clientDescription:
       "Chúng tôi tự hào đồng hành cùng các đối tác hàng đầu trong nhiều lĩnh vực:",
     clientIndustries:
-      "FMCG, Food & Beverages, Giáo dục, Dược & Mỹ Phẩm, Bất Động Sản, Điện Tử Tiêu Dùng, Ô tô, Tài Chính...",
+      " FMCG, Food & Beverages, Giáo dục, Dược & Mỹ Phẩm, Bất Động Sản, Điện Tử Tiêu Dùng, Ô tô, Tài Chính...",
     clientLogoAlt: "Logo Đối Tác",
   },
 };
