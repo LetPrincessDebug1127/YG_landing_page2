@@ -18,18 +18,26 @@ const videos = ["video1", "video2", "video3"];
 export default function Slide5() {
   const { language } = useLanguage();
   const t = translations[language];
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
 
   return (
     <>
       <h1 className="text-[24px] sm:text-[36px] md:text-[48px] lg:text-[64px] xl:text-[72px] 2xl:text-[80px] 3xl:text-[96px] font-bold text-[#ec6629]">
         {t.projects}
       </h1>
-      <SlideShow />
+      <SlideShow onVideoIndexChange={setCurrentVideoIndex} />
+      <div className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
+        Slide {currentVideoIndex + 1}
+      </div>
     </>
   );
 }
 
-function SlideShow() {
+function SlideShow({
+  onVideoIndexChange,
+}: {
+  onVideoIndexChange?: (videoIndex: number) => void;
+}) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slidesToShow = Math.max(MIN_SLIDES_TO_SHOW, videos.length);
   const [screenWidth, setScreenWidth] = useState(
@@ -109,6 +117,8 @@ function SlideShow() {
       .forEach((elem) => elem.remove());
 
     const videoIndex = currentSlide % videos.length;
+    onVideoIndexChange?.(videoIndex);
+
     const videoElement = document.createElement("video");
     videoElement.src = `/media/${videos[videoIndex]}/video.mp4`;
     videoElement.loop = true;
@@ -145,7 +155,7 @@ function SlideShow() {
   }, [currentSlide]);
 
   return (
-    <div className="w-full px-4 my-auto sm:-translate-y-1/2">
+    <div className="w-full px-4">
       <Slider
         infinite
         speed={300}
