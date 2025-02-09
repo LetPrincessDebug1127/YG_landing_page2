@@ -53,7 +53,7 @@ export default function LandingPage() {
               muted
               loop
               playsInline
-              className="absolute w-full h-full object-cover hidden sm:block"
+              className="absolute w-full h-full max-h-full max-w-full object-cover hidden sm:block"
             >
               <source src="/media/logo-fix-5.mp4" type="video/mp4" />
             </video>
@@ -80,14 +80,14 @@ export default function LandingPage() {
 
         <section
           id="slide3"
-          className="w-full h-[100vh] bg-white flex justify-center items-center"
+          className="w-full h-[100vh] bg-white flex justify-center items-center "
         >
           <Slide3 />
         </section>
 
         <section
           id="slide4"
-          className="w-full h-[100vh] iphone-12 iphone-se bg-blue-500 text-white flex justify-center items-center"
+          className="w-full h-[100vh] iphone-se iphone-12 bg-blue-500 text-white flex justify-center items-center"
         >
           <Slide4 />
         </section>

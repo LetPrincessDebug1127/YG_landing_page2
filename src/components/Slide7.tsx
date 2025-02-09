@@ -108,7 +108,7 @@ const ContactSection: React.FC = () => {
       </div>
 
       {/* Phần bên phải: Form liên hệ */}
-      <div className="contact-form flex-1 bg-[rgba(34,34,34,0.4)] text-white p-5 rounded-[15px] shadow-[0_8px_12px_rgba(0,0,0,1)] transition-all duration-300 ease-in-out w-[20em] mx-auto mobile-ui:mt-[15%]">
+      <div className="flex-1 bg-[rgba(34,34,34,0.4)] text-white p-5 rounded-[15px] shadow-[0_8px_12px_rgba(0,0,0,1)] transition-all duration-300 ease-in-out w-[20em] mx-auto custom-size:max-w-[50%] mobile-ui:mt-[15%]">
         <h2 className="text-[1.5rem] font-semibold mb-4 ml-[5%] text-[#ec6629]">{t.informationToContact}</h2>
         <form action="/submit-contact" method="POST" className="space-y-4 flex flex-col items-center">
           <div className="contain-input w-full">
@@ -169,7 +169,7 @@ const ContactSection: React.FC = () => {
       </div>
       </div>
       <p className = "text-gray-500 z-10 mobile-ui:hidden">© 2024 YG. All rights reserved.</p>
-    <footer className="bg-[#333333] text-white py-6 hidden mobile-ui:flex w-full absolute flex-col items-start">
+    <footer className="bg-[#333333] text-white py-6 hidden mobile-ui:flex min-h-1000:flex min-h-1000:pb-[14.5em] w-full absolute flex-col items-start">
       <div className="w-full px-4 hidden mobile-ui:block">
         {/* Contact Section */}
         <div className="mb-6">
