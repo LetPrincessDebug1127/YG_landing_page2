@@ -94,7 +94,7 @@ export default function LandingPage() {
 
         <section
           id="slide5"
-          className="w-full h-[100vh] bg-purple-600 text-white flex flex-col justify-start items-center snap-start pt-[4%]"
+          className="w-full h-[100vh] bg-purple-600 text-white flex flex-col justify-around items-center snap-start pt-[4%]"
         >
           <Slide5 />
         </section>
