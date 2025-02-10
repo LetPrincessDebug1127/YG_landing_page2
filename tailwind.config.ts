@@ -23,7 +23,7 @@ export default {
         regular: "400",
       },
       screens: {
-        '3xl': '1900px',
+        '3xl': { min: '1900px', max: '5000px' },
         'lg-custom': { min: '1280px', max: '1399px' }, 
         'xl-custom': { min: '1400px', max: '1535px' },
         '2xl-custom1': { min: '1536px', max: '1699px' }, 
@@ -31,14 +31,13 @@ export default {
         'mobile-ui' : { min: '250px', max: '999px' },
         'desktop-ui' : { min: '1000px'},
         'image-banner': {max: '700px'},
-        'iphone-se': {max: '400px'},
         'custom-size': { raw: '(max-width: 1025px) and (min-height: 1000px)' },
-        'sm+' : { max: '800px'},
-        'surfacePro': { raw: '(min-width: 900px) and (max-width: 1000px) and (min-height: 1300px)' },
+        'sm+' : { max: '821px'},
         'min-h-1000': { raw: '(min-width: 900px) and (max-width: 1000px) and (min-height: 1000px)' },
-        'small-screen': { raw: '(max-width: 400px) and (max-height: 750px)' },
-        'tall-screen': { raw: '(min-width: 500px) and (max-width: 899px) and (min-height: 950px)' },
-        'surfacDuo': { raw: '(min-width: 500px) and (max-width: 600px) and (min-height: 700px) and (max-height: 800px)' },
+        'heightSE': { raw: '(max-height: 700px)' },
+        'heightS8': { raw: '(min-height: 701px) and (max-height: 800px)' },
+        'Pixel7': { raw: '(min-height: 801px) and (max-height: 950px)' },
+        'iPad': { raw: '(min-width: 765px) and (max-width: 950px) and (max-height: 1200px)' },
 
       },
       scale: {

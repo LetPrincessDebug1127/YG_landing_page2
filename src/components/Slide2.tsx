@@ -48,56 +48,42 @@ export default function BackgroundSlider() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (currentIndex === totalImages) {
-        setIsTransitioning(false);
-        setCurrentIndex(0);
-        setTimeout(() => {
-          setIsTransitioning(true); // Bật lại hiệu ứng sau khi nhảy
-        }, 50); // Đợi 50ms để tránh hiệu ứng xảy ra
-      } else {
-        setCurrentIndex((prevIndex) => prevIndex + 1);
-      }
+      setCurrentIndex((prevIndex) => prevIndex + 1);
     }, 3000);
 
-    return () => clearInterval(interval); // Dọn dẹp interval
-  }, [currentIndex]);
+    return () => clearInterval(interval);
+  }, []);
+
+const handleTransitionEnd = () => {
+  if (currentIndex >= totalImages) {
+    // Dừng hiệu ứng, đặt currentIndex về 0 sau 50ms
+    setTimeout(() => {
+      setIsTransitioning(false);
+      setCurrentIndex(0);
+      setTimeout(() => setIsTransitioning(true), 50); // Kích hoạt lại hiệu ứng
+    }, 50);
+  }
+};
 
   return (
- <div className="relative w-full h-screen overflow-hidden">
-    <div
-      className={`flex h-full transition-transform ${
-        isTransitioning ? "duration-[2000ms]" : ""
-      } ease-in-out`}
-      style={{
-        transform: `translateX(-${(currentIndex * 100) / (totalImages + 1)}%)`,
-        width: `${(totalImages + 1) * 100}%`,
-      }}
-    >
-      {backgroundImages.map((image, index) => (
-        <div
-          key={index}
-          className="flex-shrink-0 w-full h-full"
-          style={{ width: `${100 / (totalImages + 1)}%` }}
-        >
-          <img
-            src={image}
-            alt={`Background ${index + 1}`}
-            className="w-full h-full object-cover"
-          />
-        </div>
-      ))}
-
+    <div className="relative w-full h-screen overflow-hidden">
       <div
-        className="flex-shrink-0 w-full h-full"
-        style={{ width: `${100 / (totalImages + 1)}%` }}
+        className={`flex h-full ${isTransitioning ? "transition-transform duration-[2000ms]" : ""} ease-in-out`}
+        style={{
+          transform: `translateX(-${currentIndex * 100}%)`, // Chỉ dịch chuyển từng ảnh
+        }}
+        onTransitionEnd={handleTransitionEnd}
       >
-        <img
-          src={backgroundImages[0]}
-          alt="Background duplicate"
-          className="w-full h-full object-cover"
-        />
+        {backgroundImages.map((image, index) => (
+          <div key={index} className="flex-shrink-0 w-full h-full">
+            <img src={image} alt={`Background ${index + 1}`} className="w-full h-full object-cover" />
+          </div>
+        ))}
+        {/* Clone ảnh đầu tiên để tạo hiệu ứng vòng lặp */}
+        <div className="flex-shrink-0 w-full h-full">
+          <img src={backgroundImages[0]} alt="Background duplicate" className="w-full h-full object-cover" />
+        </div>
       </div>
-    </div>
     <div className="absolute inset-0 bg-black/65 pointer-events-none z-0"></div>
 
 

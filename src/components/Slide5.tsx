@@ -14,15 +14,20 @@ const MIN_SLIDES_TO_SHOW = 6;
 let triggerVideoAutoPlayFirstTime = false;
 
 const videos = ["video1", "video2", "video3"];
+const backgroundImages = [
+  "/media/video1/thumnail.png",
+  "/media/video2/thumnail.png",
+  "/media/video3/thumnail.png",
+];
 
 export default function Slide5() {
   const { language } = useLanguage();
   const t = translations[language];
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
-
+ 
   return (
-    <>
-      <h1 className="text-[24px] sm:text-[36px] md:text-[48px] lg:text-[64px] xl:text-[72px] 2xl:text-[80px] 3xl:text-[96px] font-bold text-[#ec6629]">
+    <>  
+      <h1 className="text-[42px] sm:text-[36px] md:text-[48px] lg:text-[64px] xl:text-[72px] 2xl:text-[80px] 3xl:text-[96px] font-bold text-[#ec6629]">
         {t.projects}
       </h1>
       <SlideShow onVideoIndexChange={setCurrentVideoIndex} />
@@ -156,6 +161,7 @@ function SlideShow({
 
   return (
     <div className="w-full px-4">
+      
       <Slider
         infinite
         speed={300}

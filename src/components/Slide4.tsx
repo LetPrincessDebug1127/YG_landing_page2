@@ -19,9 +19,10 @@ const backgroundImages = [
 
 export default function BackgroundSlider() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndexService, setCurrentIndexService] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(true);
   const { language } = useLanguage();
-  const t = translations[language]; 
+  const t = translations[language];
 
   const services = [
     {
@@ -56,62 +57,57 @@ export default function BackgroundSlider() {
 
   const totalImages = backgroundImages.length;
 
+  // Chuyển dịch vụ mỗi 2 giây
   useEffect(() => {
     const interval = setInterval(() => {
-      if (currentIndex === totalImages) {
-        setIsTransitioning(false);
-        setCurrentIndex(0);
-        setTimeout(() => {
-          setIsTransitioning(true); 
-        }, 50);
-      } else {
-        setCurrentIndex((prevIndex) => prevIndex + 1);
-      }
+      setCurrentIndexService((prevIndex) => (prevIndex + 1) % services.length);
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, [services.length]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => prevIndex + 1);
     }, 3000);
 
-    return () => clearInterval(interval); 
-  }, [currentIndex]);
-return (
-  <div className="relative w-full h-screen image-banner:h-full overflow-hidden">
-    <div
-      className={`flex h-full transition-transform ${
-        isTransitioning ? "duration-[2000ms]" : ""
-      } ease-in-out`}
-      style={{
-        transform: `translateX(-${(currentIndex * 100) / (totalImages + 1)}%)`,
-        width: `${(totalImages + 1) * 100}%`,
-      }}
-    >
-      {backgroundImages.map((image, index) => (
-        <div
-          key={index}
-          className="flex-shrink-0 w-full h-full"
-          style={{ width: `${100 / (totalImages + 1)}%` }}
-        >
-          <img
-            src={image}
-            alt={`Background ${index + 1}`}
-            className="w-full h-full object-cover"
-          />
-        </div>
-      ))}
+    return () => clearInterval(interval);
+  }, []);
 
+const handleTransitionEnd = () => {
+  if (currentIndex >= totalImages) {
+    // Dừng hiệu ứng, đặt currentIndex về 0 sau 50ms
+    setTimeout(() => {
+      setIsTransitioning(false);
+      setCurrentIndex(0);
+      setTimeout(() => setIsTransitioning(true), 50); // Kích hoạt lại hiệu ứng
+    }, 50);
+  }
+};
+  return (
+    <div className="relative w-full h-screen overflow-hidden">
       <div
-        className="flex-shrink-0 w-full h-full"
-        style={{ width: `${100 / (totalImages + 1)}%` }}
+        className={`flex h-full ${isTransitioning ? "transition-transform duration-[2000ms] ease-in-out" : ""}`}
+        style={{
+          transform: `translateX(-${currentIndex * 100}%)`,
+        }}
+        onTransitionEnd={handleTransitionEnd}
       >
-        <img
-          src={backgroundImages[0]}
-          alt="Background duplicate"
-          className="w-full h-full object-cover"
-        />
+        {backgroundImages.map((image, index) => (
+          <div key={index} className="flex-shrink-0 w-full h-full">
+            <img src={image} alt={`Background ${index + 1}`} className="w-full h-full object-cover" />
+          </div>
+        ))}
+        {/* Clone ảnh đầu tiên để tạo hiệu ứng vòng lặp */}
+        <div className="flex-shrink-0 w-full h-full">
+          <img src={backgroundImages[0]} alt="Background duplicate" className="w-full h-full object-cover" />
+        </div>
       </div>
-    </div>
 
     {/* Overlay che nền để dễ đọc chữ */}
     <div className="absolute inset-0 bg-black/65 pointer-events-none z-0"></div>
 
-    <div className="absolute image-banner:hidden fade-in-section w-[100%] top-0 left-1/2 transform -translate-x-1/2 text-center text-white z-10 mt-[7%] sm+:text-justify">
+    <div className="absolute image-banner:hidden fade-in-section w-[90%] top-0 left-1/2 transform -translate-x-1/2 text-center text-white z-10 mt-[7%] sm+:text-justify">
       <p className="text-base sm:text-lg md:text-xl 2xl:text-3xl fade-in-section">
       {t.slide4P1}
       </p>
@@ -127,7 +123,7 @@ return (
       {services.map((item, index) => (
         <div
           key={index}
-          className="flex flex-col p-[10%] bg-[rgba(34,34,34,0.4)] backdrop-blur-md rounded-lg shadow-md hover:scale-105 hover:shadow-lg transition"
+          className="flex flex-col p-[10%] bg-[rgba(34,34,34,0.4)] backdrop-blur-md rounded-lg shadow-md hover:scale-105 hover:shadow-lg transition h-[13em] Pixel7:h-[16em]"
         >
           <Image src={item.icon} alt={item.title} width={item.width} height={item.height} />
           <h3 className="text-lg 2xl:text-3xl font-bold mt-3 text-justify text-[#ec6629]">{item.title}</h3>
@@ -143,13 +139,13 @@ return (
             {t.slide4P4}
           </p>
       </div>
-      <div className="absolute hidden image-banner:block fade-in-section w-full top-0 left-1/2 transform -translate-x-1/2 text-center text-white z-10">
+      <div className="absolute hidden image-banner:flex fade-in-section w-full top-0 left-1/2 transform -translate-x-1/2 text-center text-white z-10 flex-col heightSE:mt-[12%] heightS8:mt-[13%] Pixel7:mt-[24%] Pixel7:gap-[8%] Pixel7:h-[84%]">
         {/* Phần tiêu đề */}
-        <div className="w-[100%] mt-[15%] p-4">
+        <div className="w-[100%] p-4">
           <p className="text-base sm:text-lg md:text-xl text-start fade-in-section">
             {t.slide4P1}
           </p>
-          <h3 className="fade-in-section text-lg sm:text-xl md:text-2xl font-bold uppercase text-[#ec6629] mt-[5%] mb-[3%]">
+          <h3 className="fade-in-section text-lg sm:text-xl md:text-2xl font-bold uppercase text-[#ec6629] mb-[3%]">
             <ul className="text-left list-none">
               <li>• CUSTOMER SOLUTION</li>
               <li>• CUSTOMER COST</li>
@@ -164,16 +160,11 @@ return (
 
         {/* Phần dịch vụ */}
         <div className="max-w-[1700px] w-full h-[100%] flex flex-col items-center gap-6 mt-8">
-          {services.map((item, index) => (
-            <div
-              key={index}
-              className="flex flex-col w-[80%] p-[10%] bg-[rgba(34,34,34,0.4)] backdrop-blur-md rounded-lg shadow-md hover:scale-105 hover:shadow-lg transition"
-            >
-              <Image src={item.icon} alt={item.title} width={item.width} height={item.height} />
-              <h3 className="text-lg 2xl:text-3xl font-bold mt-3 text-justify text-[#ec6629]">{item.title}</h3>
-              <p className="text-sm text-start mt-1 md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">{item.description}</p>
-            </div>
-          ))}
+          <div className="flex flex-col w-[80%] p-[10%] bg-[rgba(34,34,34,0.4)] backdrop-blur-md rounded-lg shadow-md hover:scale-105 hover:shadow-lg transition heightSE:h-[13em] Pixel7:h-[16em]">
+            <Image src={services[currentIndexService].icon} alt={services[currentIndexService].title} width={services[currentIndexService].width} height={services[currentIndexService].height} />
+            <h3 className="text-lg 2xl:text-3xl font-bold mt-3 text-justify text-[#ec6629]">{services[currentIndexService].title}</h3>
+            <p className="text-sm text-start mt-1 md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">{services[currentIndexService].description}</p>
+          </div>
         </div>
 
         {/* Phần văn bản cuối */}

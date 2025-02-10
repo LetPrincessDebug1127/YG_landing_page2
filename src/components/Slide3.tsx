@@ -66,7 +66,7 @@ const VideoBackgroundSection: React.FC = () => {
         </div>
 
         {/* Phần bên phải - Văn bản */}
-        <div className="fade-in-section flex flex-col justify-center items-start text-white w-fit h-auto p-3 mr-[1em] mobile-ui:mr-[0px]">
+        <div className="fade-in-section flex flex-col justify-center items-start text-white w-fit h-auto p-3 mr-[1em] mobile-ui:mr-[0px] iPad:w-[69%]">
           <h1 className="text-[#ec6629] text-[24px] sm:text-[36px] md:text-[40px] lg:text-[44px] xl:text-[60px] 2xl:text-[70px] font-bold mb-4 whitespace-nowrap">
             Young Generation Agency
           </h1>

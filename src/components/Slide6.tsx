@@ -28,7 +28,7 @@ const ClientSection: React.FC = () => {
         <h1 className="text-[42px] sm:text-[36px] md:text-[48px] lg:text-[64px] xl:text-[72px] 2xl:text-[80px] 3xl:text-[96px] font-bold text-[#ec6629] mobile-ui:mt-[15%]">
           {t.clientTitle}
         </h1>
-        <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-center text-gray-200 mb-[3%] image-banner:text-justify">
+        <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-center text-gray-200 mb-[3%] sm+:text-justify">
           {t.clientDescription}
           <br className="mobile-ui:hidden"/>
           <strong>{t.clientIndustries}</strong>
