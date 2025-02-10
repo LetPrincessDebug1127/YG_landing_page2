@@ -51,14 +51,16 @@ function SlideShow({
 }) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slidesToShow = Math.max(MIN_SLIDES_TO_SHOW, videos.length);
-  const [screenWidth, setScreenWidth] = useState(
-    () => document.body.clientWidth
-  );
+  const [screenWidth, setScreenWidth] = useState(0);
 
   useEffect(() => {
     const abortController = new AbortController();
     document.querySelector<HTMLDivElement>(".slick-list")!.style.overflow =
       "visible";
+
+    if (screenWidth === 0) {
+      setScreenWidth(document.body.clientWidth);
+    }
 
     window.addEventListener(
       "resize",
