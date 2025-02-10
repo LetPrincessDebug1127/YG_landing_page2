@@ -31,12 +31,14 @@ export default function Slide5() {
   return (
     <>
       <div className="absolute inset-0 bg-black/65 pointer-events-none z-10"></div>
-      <h1 className="text-[42px] sm:text-[36px] md:text-[48px] lg:text-[64px] xl:text-[72px] 2xl:text-[80px] 3xl:text-[96px] font-bold text-[#ec6629] z-20">
-        {t.projects}
-      </h1>
-      <SlideShow onVideoIndexChange={setCurrentVideoIndex} />
-      <div className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl z-20">
-        Slide {currentVideoIndex + 1}
+      <div className="absolute size-full z-20 flex flex-col justify-center items-center gap-[20%] slide5:gap-20">
+        <h1 className="text-[42px] sm:text-[36px] md:text-[48px] lg:text-[64px] xl:text-[72px] 2xl:text-[80px] 3xl:text-[96px] font-bold text-[#ec6629]">
+          {t.projects}
+        </h1>
+        <SlideShow onVideoIndexChange={setCurrentVideoIndex} />
+        <div className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
+          Slide {currentVideoIndex + 1}
+        </div>
       </div>
     </>
   );
@@ -111,6 +113,9 @@ function SlideShow({
     backgroundVideoElement.style.objectFit = "cover";
     backgroundVideoElement.style.zIndex = "0";
     backgroundVideoElement.style.transition = "opacity 300ms";
+    backgroundVideoElement.style.left = "0";
+    backgroundVideoElement.style.top = "50%";
+    backgroundVideoElement.style.transform = "translateY(-50%)";
 
     const videoElement = document.createElement("video");
     videoElement.src = videos[videoIndex];
