@@ -13,25 +13,29 @@ import { CircleChevronLeft, CircleChevronRight } from "lucide-react";
 const MIN_SLIDES_TO_SHOW = 6;
 let triggerVideoAutoPlayFirstTime = false;
 
-const videos = ["video1", "video2", "video3"];
+const videos = [
+  "/media/video1/video.mp4",
+  "/media/video2/video.mp4",
+  "/media/video3/video.mp4",
+];
 const backgroundImages = [
-  "/media/video1/thumnail.png",
-  "/media/video2/thumnail.png",
-  "/media/video3/thumnail.png",
+  "/media/video1/thumbnail.png",
+  "/media/video2/thumbnail.png",
+  "/media/video3/thumbnail.png",
 ];
 
 export default function Slide5() {
   const { language } = useLanguage();
   const t = translations[language];
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
- 
   return (
-    <>  
-      <h1 className="text-[42px] sm:text-[36px] md:text-[48px] lg:text-[64px] xl:text-[72px] 2xl:text-[80px] 3xl:text-[96px] font-bold text-[#ec6629]">
+    <>
+      <div className="absolute inset-0 bg-black/65 pointer-events-none z-10"></div>
+      <h1 className="text-[42px] sm:text-[36px] md:text-[48px] lg:text-[64px] xl:text-[72px] 2xl:text-[80px] 3xl:text-[96px] font-bold text-[#ec6629] z-20">
         {t.projects}
       </h1>
       <SlideShow onVideoIndexChange={setCurrentVideoIndex} />
-      <div className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
+      <div className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl z-20">
         Slide {currentVideoIndex + 1}
       </div>
     </>
@@ -87,45 +91,29 @@ function SlideShow({
     // use IntersectionObserver to increase the volume of videos gradually
     // as they come into view
 
-    let intervalId: unknown;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const videoElement = entry.target as HTMLVideoElement;
-          if (intervalId) {
-            clearInterval(intervalId as number);
-          }
-
-          if (entry.isIntersecting) {
-            videoElement.play();
-            if (!triggerVideoAutoPlayFirstTime) {
-              triggerVideoAutoPlayFirstTime = true;
-              return;
-            }
-            intervalId = setInterval(() => {
-              videoElement.volume = Math.min(1, videoElement.volume + 0.1);
-            }, 500);
-          } else {
-            videoElement.pause();
-            videoElement.volume = 0;
-          }
-        });
-      },
-      {
-        threshold: 0.5,
-      }
-    );
-
     document
       .querySelectorAll(".slick-slide > div > div > video")
       .forEach((elem) => elem.remove());
 
+    document.querySelector("#slide5 > video")?.remove();
+
     const videoIndex = currentSlide % videos.length;
     onVideoIndexChange?.(videoIndex);
 
+    const backgroundVideoElement = document.createElement("video");
+    backgroundVideoElement.src = videos[videoIndex];
+    backgroundVideoElement.loop = true;
+    backgroundVideoElement.playsInline = true;
+    backgroundVideoElement.muted = true;
+    backgroundVideoElement.style.position = "absolute";
+    backgroundVideoElement.style.width = "100%";
+    backgroundVideoElement.style.height = "100%";
+    backgroundVideoElement.style.objectFit = "cover";
+    backgroundVideoElement.style.zIndex = "0";
+    backgroundVideoElement.style.transition = "opacity 300ms";
+
     const videoElement = document.createElement("video");
-    videoElement.src = `/media/${videos[videoIndex]}/video.mp4`;
+    videoElement.src = videos[videoIndex];
     videoElement.loop = true;
     videoElement.playsInline = true;
     videoElement.volume = 0;
@@ -133,22 +121,69 @@ function SlideShow({
     videoElement.style.width = "100%";
     videoElement.style.height = "100%";
     videoElement.style.objectFit = "cover";
-    videoElement.style.zIndex = "100";
+    videoElement.style.zIndex = "40";
     videoElement.style.opacity = "0";
     videoElement.style.transition = "opacity 300ms";
     videoElement.style.cursor = "pointer";
 
-    videoElement.onclick = () => {
+    videoElement.onclick = async () => {
       if (videoElement.paused) {
-        videoElement.play();
+        backgroundVideoElement.currentTime = videoElement.currentTime;
+        await Promise.all([backgroundVideoElement.play(), videoElement.play()]);
       } else {
+        backgroundVideoElement.pause();
         videoElement.pause();
+        backgroundVideoElement.currentTime = videoElement.currentTime;
       }
     };
+
+    let intervalId: unknown;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          (async () => {
+            const videoElement = entry.target as HTMLVideoElement;
+            if (intervalId) {
+              clearInterval(intervalId as number);
+            }
+
+            if (entry.isIntersecting) {
+              backgroundVideoElement.currentTime = videoElement.currentTime;
+              await Promise.all([
+                backgroundVideoElement.play(),
+                videoElement.play(),
+              ]);
+              if (!triggerVideoAutoPlayFirstTime) {
+                triggerVideoAutoPlayFirstTime = true;
+                return;
+              }
+              intervalId = setInterval(() => {
+                videoElement.volume = Math.min(1, videoElement.volume + 0.1);
+              }, 500);
+            } else {
+              backgroundVideoElement.pause();
+              videoElement.pause();
+              backgroundVideoElement.currentTime = videoElement.currentTime;
+              videoElement.volume = 0;
+            }
+          })();
+        });
+      },
+      {
+        threshold: 0.5,
+      }
+    );
 
     const currentSlideElement = document.querySelector<HTMLDivElement>(
       `.slick-current > div > div`
     );
+
+    const slide5Element = document.querySelector<HTMLDivElement>("#slide5");
+
+    if (slide5Element) {
+      slide5Element.appendChild(backgroundVideoElement);
+    }
 
     if (currentSlideElement) {
       currentSlideElement.appendChild(videoElement);
@@ -161,7 +196,6 @@ function SlideShow({
 
   return (
     <div className="w-full px-4">
-      
       <Slider
         infinite
         speed={300}
@@ -175,7 +209,7 @@ function SlideShow({
         swipeToSlide={false}
         draggable={false}
         swipe={false}
-        className="relative"
+        className="relative z-30"
       >
         {Array.from({ length: slidesToShow }).map((_, index) => {
           const offsetIndexFromCenter =
@@ -199,7 +233,7 @@ function SlideShow({
                 className="w-full h-1/2 aspect-video !flex justify-center items-center bg-red-500 transition-all duration-[25ms] shadow-2xl relative opacity-0"
               >
                 <Image
-                  src={`/media/${videos[videoIndex]}/thumbnail.png`}
+                  src={backgroundImages[videoIndex]}
                   alt=""
                   fill
                   className="object-cover"
@@ -215,7 +249,7 @@ function SlideShow({
               className="w-full h-1/2 aspect-video !flex justify-center items-center bg-red-500 transition-all duration-300 shadow-2xl relative sm:scale-[calc(var(--init-scale)-max(var(--offset),-1*var(--offset))*0.15)] sm:z-[calc(50-max(var(--offset),-1*var(--offset)))] sm:translate-x-[calc(50%*-1*var(--offset))]"
             >
               <Image
-                src={`/media/${videos[videoIndex]}/thumbnail.png`}
+                src={backgroundImages[videoIndex]}
                 alt=""
                 fill
                 className="object-cover"

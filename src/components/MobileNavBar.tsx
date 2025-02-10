@@ -7,30 +7,31 @@ import { useLanguage } from "../context/LanguageContext";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
   const { language, toggleLanguage } = useLanguage();
   const t = translations[language];
   const [isNavbarVisible, setIsNavbarVisible] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > window.innerHeight / 2) {
-        setIsNavbarVisible(true); 
+        setIsNavbarVisible(true);
       } else {
         setIsNavbarVisible(false);
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     // Cleanup khi component unmount
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-20 bg-black bg-opacity-80 text-white shadow-lg hidden mobile-ui:block ${
-        isNavbarVisible ? 'opacity-100' : 'opacity-0' 
-      }`}>
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-80 text-white shadow-lg hidden mobile-ui:block ${
+        isNavbarVisible ? "opacity-100" : "opacity-0"
+      }`}
+    >
       <div className="flex items-center justify-between w-full px-4">
         <Image
           className="w-[80px] hidden mobile-ui:block"
@@ -57,37 +58,58 @@ export default function Navbar() {
               {language === "vi" ? "EN" : "VI"}
             </span>
           </button>
-          
-          <div className="hidden md:flex space-x-6">
-            <Link href="#slide2" className="hover:text-[#ec6629]">{t.home}</Link>
-            <Link href="#slide3" className="hover:text-[#ec6629]">{t.about}</Link>
-            <Link href="#slide4" className="hover:text-[#ec6629]">{t.services}</Link>
-            <Link href="#slide5" className="hover:text-[#ec6629]">{t.projects}</Link>
-            <Link href="#slide6" className="hover:text-[#ec6629]">{t.clients}</Link>
-            <Link href="#slide7" className="hover:text-[#ec6629]">{t.contact}</Link>
 
+          <div className="hidden md:flex space-x-6">
+            <Link href="#slide2" className="hover:text-[#ec6629]">
+              {t.home}
+            </Link>
+            <Link href="#slide3" className="hover:text-[#ec6629]">
+              {t.about}
+            </Link>
+            <Link href="#slide4" className="hover:text-[#ec6629]">
+              {t.services}
+            </Link>
+            <Link href="#slide5" className="hover:text-[#ec6629]">
+              {t.projects}
+            </Link>
+            <Link href="#slide6" className="hover:text-[#ec6629]">
+              {t.clients}
+            </Link>
+            <Link href="#slide7" className="hover:text-[#ec6629]">
+              {t.contact}
+            </Link>
           </div>
 
-        <button
-          className="md:hidden focus:outline-none"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+          <button
+            className="md:hidden focus:outline-none"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
-
       </div>
 
       {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden flex flex-col absolute top-[60px] right-[20px] bg-[#333] w-[200px] rounded-lg overflow-hidden p-4 items-center space-y-2">
-          <Link href="#slide2" className="hover:text-[#ec6629]">{t.home}</Link>
-          <Link href="#slide3" className="hover:text-[#ec6629]">{t.about}</Link>
-          <Link href="#slide4" className="hover:text-[#ec6629]">{t.services}</Link>
-          <Link href="#slide5" className="hover:text-[#ec6629]">{t.projects}</Link>
-          <Link href="#slide6" className="hover:text-[#ec6629]">{t.clients}</Link>
-          <Link href="#slide7" className="hover:text-[#ec6629]">{t.contact}</Link>
-
+          <Link href="#slide2" className="hover:text-[#ec6629]">
+            {t.home}
+          </Link>
+          <Link href="#slide3" className="hover:text-[#ec6629]">
+            {t.about}
+          </Link>
+          <Link href="#slide4" className="hover:text-[#ec6629]">
+            {t.services}
+          </Link>
+          <Link href="#slide5" className="hover:text-[#ec6629]">
+            {t.projects}
+          </Link>
+          <Link href="#slide6" className="hover:text-[#ec6629]">
+            {t.clients}
+          </Link>
+          <Link href="#slide7" className="hover:text-[#ec6629]">
+            {t.contact}
+          </Link>
         </div>
       )}
     </nav>

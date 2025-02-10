@@ -11,23 +11,25 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > window.innerHeight / 2) {
-        setIsNavbarVisible(true); 
+        setIsNavbarVisible(true);
       } else {
         setIsNavbarVisible(false);
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     // Cleanup khi component unmount
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-20 bg-black bg-opacity-80 transition-all duration-300 ease-in-out hidden desktop-ui:block ${
-        isNavbarVisible ? 'opacity-100' : 'opacity-0' 
-      }`}>
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-80 transition-all duration-300 ease-in-out hidden desktop-ui:block ${
+        isNavbarVisible ? "opacity-100" : "opacity-0"
+      }`}
+    >
       <div className="flex justify-between items-center w-full">
         <Image
           className="imgNav w-full sm:w-[4rem] md:w-[5rem] lg:w-[4rem] xl:w-[5rem] 2xl:w-[6rem] 3xl:w-[8rem] ml-[3%]"
