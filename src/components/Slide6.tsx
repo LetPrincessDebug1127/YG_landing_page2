@@ -69,7 +69,7 @@ const ClientSection: React.FC = () => {
             ))}
           </div>
         </div>
-        <div className="grid-cols-2 sm:grid-cols-3 custom-size:grid-cols-3 gap-[5em] mobile-ui:grid custom-size:grid hidden mb-[5%] custom-size:mt-[15%]">
+        <div className="grid-cols-2 sm:grid-cols-3 custom-size:grid-cols-3 gap-[1em] Pixel7:gap-[5em] mobile-ui:grid custom-size:grid hidden mb-[5%] custom-size:mt-[15%]">
           {logos.map((logo, index) => (
             <div key={index} className="flex justify-center p-2">
               <Image

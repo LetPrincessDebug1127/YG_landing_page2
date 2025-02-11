@@ -11,8 +11,11 @@
 body {
   margin: 0;
   font-family: var(--font-poppins);
+  overflow-x: visible;
 }
-
+.background-slider {
+  overflow: hidden; /* Chỉ chặn scroll ngang của phần carousel */
+}
 code {
   font-family: var(--font-geist-mono); /* Font code */
 }
@@ -28,9 +31,9 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-#container {
+/* #container {
   scroll-snap-type: y mandatory;
-}
+} */
 .container {
   perspective: 1000px;
 }

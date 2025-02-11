@@ -97,7 +97,7 @@ const ContactSection: React.FC = () => {
               target="_blank"
             >
               <img
-                src="/media/Youtube_Logo.png"
+                src="/media/YoutubeLogo.png"
                 alt="Youtube"
                 width="70"
                 height="70"
@@ -225,7 +225,7 @@ const ContactSection: React.FC = () => {
 
             <Link href="https://www.youtube.com" target="_blank" passHref>
               <div className="flex items-center gap-2 text-sm hover:text-gray-300 cursor-pointer">
-                <Image src="/media/Youtube_Logo.png" alt="Youtube" width={30} height={30} />
+                <Image src="/media/YoutubeLogo.png" alt="Youtube" width={30} height={30} />
                 https://www.youtube.com
               </div>
             </Link>

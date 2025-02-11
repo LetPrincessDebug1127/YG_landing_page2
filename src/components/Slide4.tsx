@@ -99,7 +99,7 @@ const handleTransitionEnd = () => {
           </div>
         ))}
         {/* Clone ảnh đầu tiên để tạo hiệu ứng vòng lặp */}
-        <div className="flex-shrink-0 w-full h-full">
+        <div className="flex-shrink-0 min-w-full w-full h-full">
           <img src={backgroundImages[0]} alt="Background duplicate" className="w-full h-full object-cover" />
         </div>
       </div>
@@ -160,7 +160,7 @@ const handleTransitionEnd = () => {
 
         {/* Phần dịch vụ */}
         <div className="max-w-[1700px] w-full h-[100%] flex flex-col items-center gap-6 mt-8">
-          <div className="flex flex-col w-[80%] p-[10%] bg-[rgba(34,34,34,0.4)] backdrop-blur-md rounded-lg shadow-md hover:scale-105 hover:shadow-lg transition heightSE:h-[13em] Pixel7:h-[16em]">
+          <div className="flex flex-col w-[80%] p-[10%] bg-[rgba(34,34,34,0.4)] backdrop-blur-md rounded-lg shadow-md hover:scale-105 hover:shadow-lg transition heightSE:h-[13em] Pixel7:h-[12em]">
             <Image src={services[currentIndexService].icon} alt={services[currentIndexService].title} width={services[currentIndexService].width} height={services[currentIndexService].height} />
             <h3 className="text-lg 2xl:text-3xl font-bold mt-3 text-justify text-[#ec6629]">{services[currentIndexService].title}</h3>
             <p className="text-sm text-start mt-1 md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">{services[currentIndexService].description}</p>

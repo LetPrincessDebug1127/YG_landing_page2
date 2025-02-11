@@ -66,7 +66,7 @@ const handleTransitionEnd = () => {
 };
 
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div className="relative w-full h-screen overflow-hidden background-slider">
       <div
         className={`flex h-full ${isTransitioning ? "transition-transform duration-[2000ms]" : ""} ease-in-out`}
         style={{
@@ -80,7 +80,7 @@ const handleTransitionEnd = () => {
           </div>
         ))}
         {/* Clone ảnh đầu tiên để tạo hiệu ứng vòng lặp */}
-        <div className="flex-shrink-0 w-full h-full">
+        <div className="flex-shrink-0 min-w-full w-full h-full">
           <img src={backgroundImages[0]} alt="Background duplicate" className="w-full h-full object-cover" />
         </div>
       </div>
