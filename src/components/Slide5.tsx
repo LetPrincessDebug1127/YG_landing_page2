@@ -58,14 +58,9 @@ function SlideShow({
     document.querySelector<HTMLDivElement>(".slick-list")!.style.overflow =
       "visible";
 
-    if (screenWidth === 0) {
-      setScreenWidth(document.body.clientWidth);
-    }
-
     window.addEventListener(
       "resize",
       () => {
-        console.log("resize");
         setScreenWidth(document.body.clientWidth);
         document
           .querySelectorAll<HTMLDivElement>("[data-offset-index-from-center]")
@@ -78,6 +73,13 @@ function SlideShow({
       },
       { signal: abortController.signal }
     );
+
+    setScreenWidth(document.body.clientWidth);
+    document
+      .querySelectorAll<HTMLDivElement>("[data-offset-index-from-center]")
+      .forEach((elem) => {
+        elem.style.setProperty("--init-scale", screenWidth < 640 ? "1" : "2");
+      });
 
     return () => {
       abortController.abort();
@@ -212,7 +214,6 @@ function SlideShow({
         nextArrow={<NextArrowIcon />}
         prevArrow={<PrevArrowIcon />}
         beforeChange={(_, next) => setCurrentSlide(next)}
-        afterChange={() => console.log("afterChange")}
         swipeToSlide={false}
         draggable={false}
         swipe={false}
@@ -227,7 +228,6 @@ function SlideShow({
               : offsetIndexFromCenter;
 
           const videoIndex = (currentSlide + index) % videos.length;
-          console.log("videoIndex", videoIndex);
 
           if (
             Math.abs(adjustedOffsetIndexFromCenter) >
