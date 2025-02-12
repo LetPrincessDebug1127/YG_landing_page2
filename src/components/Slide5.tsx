@@ -147,7 +147,14 @@ function SlideShow({
     videoElement.style.cursor = "pointer";
 
     videoElement.onclick = async () => {
-        videoElement.requestFullscreen()
+        if (videoElement.paused) {
+        backgroundVideoElement.currentTime = videoElement.currentTime;
+        await Promise.all([backgroundVideoElement.play(), videoElement.play()]);
+      } else {
+        backgroundVideoElement.pause();
+        videoElement.pause();
+        backgroundVideoElement.currentTime = videoElement.currentTime;
+      }
     };
 
     let intervalId: unknown;
