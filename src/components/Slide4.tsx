@@ -107,7 +107,7 @@ const handleTransitionEnd = () => {
     {/* Overlay che nền để dễ đọc chữ */}
     <div className="absolute inset-0 bg-black/65 pointer-events-none z-0"></div>
 
-    <div className="absolute image-banner:hidden fade-in-section w-[90%] top-0 left-1/2 transform -translate-x-1/2 text-center text-white z-10 mt-[7%] sm+:text-justify">
+    <div className="absolute image-banner:hidden fade-in-section desktop-ui:w-[100%] w-[90%] top-0 left-1/2 transform -translate-x-1/2 text-center text-white z-10 mt-[7%] sm+:text-justify">
       <p className="text-base sm:text-lg md:text-xl 2xl:text-3xl fade-in-section">
       {t.slide4P1}
       </p>
