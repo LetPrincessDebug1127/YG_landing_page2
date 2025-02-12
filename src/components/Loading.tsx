@@ -6,8 +6,16 @@ export default function Loading() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const timeout = setTimeout(() => setIsLoading(false), 1000); //1 giây
-    return () => clearTimeout(timeout);
+    const handleLoad = () => setIsLoading(false);
+
+    if (document.readyState === "complete") {
+      // Nếu tài nguyên đã load xong trước khi effect chạy
+      setIsLoading(false);
+    } else {
+      window.addEventListener("load", handleLoad);
+    }
+
+    return () => window.removeEventListener("load", handleLoad);
   }, []);
 
   if (!isLoading) return null;
