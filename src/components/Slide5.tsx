@@ -59,7 +59,7 @@ function SlideShow({
       if (sliderRef.current) {
         sliderRef.current.slickNext();
       }
-    }, 50000); // 50 giây
+    }, 10000); // 10 giây
 
     return () => clearInterval(interval);
   }, []);
@@ -147,14 +147,7 @@ function SlideShow({
     videoElement.style.cursor = "pointer";
 
     videoElement.onclick = async () => {
-      if (videoElement.paused) {
-        backgroundVideoElement.currentTime = videoElement.currentTime;
-        await Promise.all([backgroundVideoElement.play(), videoElement.play()]);
-      } else {
-        backgroundVideoElement.pause();
-        videoElement.pause();
-        backgroundVideoElement.currentTime = videoElement.currentTime;
-      }
+        videoElement.requestFullscreen()
     };
 
     let intervalId: unknown;
