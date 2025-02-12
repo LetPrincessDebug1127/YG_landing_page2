@@ -38,7 +38,8 @@ export default {
         'heightS8': { raw: '(min-height: 701px) and (max-height: 800px)' },
         'Pixel7': { raw: '(min-height: 801px) and (max-height: 950px)' },
         'iPad': { raw: '(min-width: 765px) and (max-width: 950px) and (max-height: 1200px)' },
-        'slide5' : { max : '650px'}
+        'slide5' : { max : '650px'},
+        'iPhoneSE': { max : '400px'}
       },
       scale: {
         200: '1.6', 

@@ -108,7 +108,7 @@ export default function LandingPage() {
 
         <section
           id="slide7"
-          className="w-full h-[100vh] bg-gray-900 text-white flex justify-center items-center"
+          className="w-full h-[100vh] iPhoneSE:min-h-screen iPhoneSE:overflow-y-auto bg-gray-900 text-white flex justify-center items-center"
         >
           <Slide7 />
         </section>

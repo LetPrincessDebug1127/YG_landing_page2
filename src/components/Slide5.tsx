@@ -4,7 +4,7 @@ import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { ComponentProps, useEffect, useState } from "react";
+import { ComponentProps, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 import translations from "../../public/translation/translations";
@@ -52,6 +52,17 @@ function SlideShow({
   const [currentSlide, setCurrentSlide] = useState(0);
   const slidesToShow = Math.max(MIN_SLIDES_TO_SHOW, videos.length);
   const [screenWidth, setScreenWidth] = useState(0);
+  const sliderRef = useRef<Slider | null>(null);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (sliderRef.current) {
+        sliderRef.current.slickNext();
+      }
+    }, 50000); // 50 giây
+
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     const abortController = new AbortController();
@@ -206,6 +217,7 @@ function SlideShow({
   return (
     <div className="w-full px-4">
       <Slider
+        ref={sliderRef}
         infinite
         speed={300}
         slidesToShow={screenWidth < 640 ? 1 : screenWidth < 768 ? 3 : 5}

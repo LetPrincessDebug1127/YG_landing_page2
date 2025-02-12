@@ -201,35 +201,32 @@ const ContactSection: React.FC = () => {
           <h3 className="text-lg font-bold mb-2">{t.FollowUs}</h3>
           <div className="border-t border-[#ec6629] mb-4"></div>
 
-          <div className="space-y-6 flex flex-col ">
+          <div className="flex flex-row items-center space-x-6">
             <Link href="https://www.facebook.com/ygcompany.vn" target="_blank" passHref>
               <div className="flex items-center gap-2 text-sm hover:text-gray-300 cursor-pointer">
-                <Image src="/media/Facebook_Logo.png" alt="Facebook" width={30} height={30} />
-                https://www.facebook.com/ygcompany.vn
+                <Image src="/media/Facebook_Logo.png" alt="Facebook" width={32} height={32} className="w-8 h-8" />
               </div>
             </Link>
 
             <Link href="https://zalo.me" target="_blank" passHref>
               <div className="flex items-center gap-2 text-sm hover:text-gray-300 cursor-pointer">
-                <Image src="/media/zalo_icon.png" alt="Zalo" width={30} height={30} />
-                https://zalo.me
+                <Image src="/media/zalo_icon.png" alt="Zalo" width={32} height={32} className="w-8 h-8" />
               </div>
             </Link>
 
             <Link href="https://www.whatsapp.com" target="_blank" passHref>
               <div className="flex items-center gap-2 text-sm hover:text-gray-300 cursor-pointer">
-                <Image src="/media/whatsapp2.png" alt="Whatsapp" width={40} height={40} className ="mr-[-0.5em] ml-[-0.5em]" />
-                https://www.whatsapp.com
+                <Image src="/media/whatsapp2.png" alt="Whatsapp" width={42} height={42} className="w-11 h-11" />
               </div>
             </Link>
 
             <Link href="https://www.youtube.com" target="_blank" passHref>
               <div className="flex items-center gap-2 text-sm hover:text-gray-300 cursor-pointer">
-                <Image src="/media/YoutubeLogo.png" alt="Youtube" width={30} height={30} />
-                https://www.youtube.com
+                <Image src="/media/YoutubeLogo.png" alt="Youtube" width={40} height={40} className="w-9 h-8" />
               </div>
             </Link>
           </div>
+
         </div>
 
         {/* Copyright */}
