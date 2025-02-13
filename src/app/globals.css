@@ -27,9 +27,20 @@ code {
 html {
   scroll-behavior: smooth;
 }
-body::-webkit-scrollbar {
+/* Ẩn thanh cuộn trên toàn bộ trang */
+html,
+body {
+  overflow: hidden;
+  height: 100%;
+}
+
+body::-webkit-scrollbar,
+html::-webkit-scrollbar {
   display: none;
 }
+/* * {
+  overflow: hidden !important;
+} */
 
 /* #container {
   scroll-snap-type: y mandatory;

@@ -16,10 +16,10 @@ export default function LandingPage() {
   const [imageHeight, setImageHeight] = useState(0);
 
   useEffect(() => {
-    // Hàm chặn sự kiện cuộn
     const disableScroll = (e: Event) => e.preventDefault();
 
-    // Chặn cuộn bằng chuột, phím mũi tên, thanh cuộn
+    document.body.style.overflow = "hidden";
+
     window.addEventListener("wheel", disableScroll, { passive: false });
     window.addEventListener("touchmove", disableScroll, { passive: false });
     window.addEventListener("keydown", (e) => {
@@ -29,7 +29,7 @@ export default function LandingPage() {
     });
 
     const timer = setTimeout(() => {
-      // Bỏ chặn sau 5 giây
+      document.body.style.overflow = "auto";
       window.removeEventListener("wheel", disableScroll);
       window.removeEventListener("touchmove", disableScroll);
       window.removeEventListener("keydown", disableScroll);
@@ -38,7 +38,7 @@ export default function LandingPage() {
 
     return () => {
       clearTimeout(timer);
-      // Đảm bảo bỏ chặn khi component unmount
+      document.body.style.overflow = "auto";
       window.removeEventListener("wheel", disableScroll);
       window.removeEventListener("touchmove", disableScroll);
       window.removeEventListener("keydown", disableScroll);
@@ -60,7 +60,7 @@ export default function LandingPage() {
 
         <section
           id="slide1"
-          className="w-full bg-black flex justify-center items-center snap-start min-h-screen"
+          className="w-full bg-black flex justify-center items-center snap-start min-h-screen mobile-ui:min-h-[600px] z-[1000]"
           style={{ height: imageHeight ? `${imageHeight}px` : "100vh" }}
         >
           <div className="relative w-full h-full">

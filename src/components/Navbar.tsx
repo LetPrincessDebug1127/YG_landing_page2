@@ -7,28 +7,10 @@ import { useLanguage } from "../context/LanguageContext";
 const Navbar = () => {
   const { language, toggleLanguage } = useLanguage();
   const t = translations[language];
-  const [isNavbarVisible, setIsNavbarVisible] = useState(false);
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > window.innerHeight / 2) {
-        setIsNavbarVisible(true);
-      } else {
-        setIsNavbarVisible(false);
-      }
-    };
 
-    window.addEventListener("scroll", handleScroll);
-
-    // Cleanup khi component unmount
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-80 transition-all duration-300 ease-in-out hidden desktop-ui:block ${
-        isNavbarVisible ? "opacity-100" : "opacity-0"
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-80 transition-all duration-300 ease-in-out hidden desktop-ui:block"
     >
       <div className="flex justify-between items-center w-full">
         <Image
