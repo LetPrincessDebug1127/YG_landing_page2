@@ -16,38 +16,36 @@ export default function LandingPage() {
   const [imageHeight, setImageHeight] = useState(0);
 
   useEffect(() => {
-    document.body.style.overflow = "hidden";
+    document.body.style.overflow = "hidden"; // Giữ body thay vì html
 
     const timer = setTimeout(() => {
-      setScrollEnabled(true);
-      document.body.style.overflow = "auto";
-
-      const slide2 = document.getElementById("slide2");
-      if (slide2) {
-        slide2.scrollIntoView({ behavior: "smooth" });
-      }
+      document.body.style.overflow = "auto"; // Cho phép cuộn lại
+      document.getElementById("slide2")?.scrollIntoView({ behavior: "smooth" });
     }, 5000);
 
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+      document.body.style.overflow = "auto"; // Đảm bảo reset khi unmount
+    };
   }, []);
+
 
   return (
     <LanguageProvider>
       <div
         id="container"
-        className={`w-full h-full flex flex-col ${
-          scrollEnabled ? "overflow-y-auto" : "overflow-hidden"
-        } snap-y snap-mandatory`}
+        className="w-full h-screen flex flex-col overflow-y-auto snap-y snap-mandatory scroll-smooth"
+
       >
         <Navbar />
         <MobileNav />
 
         <section
           id="slide1"
-          className="w-full bg-black flex justify-center items-center"
+          className="w-full bg-black flex justify-center items-center snap-start min-h-screen"
           style={{ height: imageHeight ? `${imageHeight}px` : "100vh" }}
         >
-          <div className="relative w-full h-full overflow-hidden">
+          <div className="relative w-full h-full">
             <video
               autoPlay
               muted
@@ -73,42 +71,42 @@ export default function LandingPage() {
 
         <section
           id="slide2"
-          className="w-full bg-black flex justify-center items-center"
+          className="w-full bg-black flex justify-center items-center snap-start"
         >
           <Slide2 />
         </section>
 
         <section
           id="slide3"
-          className="w-full h-[100vh] bg-white flex justify-center items-center "
+          className="w-full h-[100vh] bg-white flex justify-center items-center snap-start"
         >
           <Slide3 />
         </section>
 
         <section
           id="slide4"
-          className="w-full h-[100vh] bg-blue-500 text-white flex justify-center items-center"
+          className="w-full h-[100vh] bg-blue-500 text-white flex justify-center items-center snap-start"
         >
           <Slide4 />
         </section>
 
         <section
           id="slide5"
-          className="w-full h-[100vh] bg-black text-white flex flex-col justify-around items-center relative overflow-hidden"
+          className="w-full h-[100vh] bg-black text-white flex flex-col justify-around items-center relative overflow-hidden snap-start"
         >
           <Slide5 />
         </section>
 
         <section
           id="slide6"
-          className="w-full h-[100vh] bg-gray-900 text-white flex justify-center items-center"
+          className="w-full h-[100vh] bg-gray-900 text-white flex justify-center items-center snap-start"
         >
           <Slide6 />
         </section>
 
         <section
           id="slide7"
-          className="w-full h-[100vh] iPhoneSE:min-h-screen iPhoneSE:overflow-y-auto bg-gray-900 text-white flex justify-center items-center"
+          className="w-full h-[100vh] iPhoneSE:min-h-screen iPhoneSE:overflow-y-auto bg-gray-900 text-white flex justify-center items-center snap-start"
         >
           <Slide7 />
         </section>
