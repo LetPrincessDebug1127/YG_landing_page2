@@ -60,7 +60,7 @@ export default function LandingPage() {
 
         <section
           id="slide1"
-          className="w-full bg-black flex justify-center items-center snap-start min-h-screen mobile-ui:min-h-[600px] z-[1000]"
+          className="w-full bg-black flex justify-center items-center snap-start min-h-screen mobile-ui:min-h-[100%] z-[1000]"
           style={{ height: imageHeight ? `${imageHeight}px` : "100vh" }}
         >
           <div className="relative w-full h-full">
@@ -69,7 +69,7 @@ export default function LandingPage() {
               muted
               loop
               playsInline
-              className="absolute w-full h-full max-h-full max-w-full object-cover hidden sm:block"
+              className="absolute w-full h-full max-h-full max-w-full object-cover hidden videoDisplay:block"
             >
               <source src="/media/logo-fix-5.mp4" type="video/mp4" />
             </video>
@@ -77,13 +77,11 @@ export default function LandingPage() {
             <Image
               src="/media/banner-mobile.svg"
               alt="Background"
-              layout="intrinsic"
-              width={1000}
-              height={600}
-              className="absolute top-0 left-0 w-full object-cover hidden image-banner:block"
-              priority
-              onLoad={(e) => setImageHeight(e.currentTarget.height)}
+              layout="fill" // Sử dụng fill thay vì intrinsic
+              objectFit="cover" // Đảm bảo ảnh phủ đầy container
+              className="absolute top-0 left-0 hidden banner:block"
             />
+
           </div>
         </section>
 
