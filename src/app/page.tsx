@@ -52,7 +52,7 @@ export default function LandingPage() {
     <LanguageProvider>
       <div
         id="container"
-        className="w-full h-screen flex flex-col overflow-y-auto snap-y snap-mandatory scroll-smooth"
+        className="w-full h-screen flex flex-col overflow-y-auto snap-y snap-mandatory scroll-smooth scroll-container"
 
       >
         <Navbar />

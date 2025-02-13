@@ -27,24 +27,15 @@ code {
 html {
   scroll-behavior: smooth;
 }
-/* Ẩn thanh cuộn trên toàn bộ trang */
-html,
-body {
-  overflow: hidden;
-  height: 100%;
+/* Ẩn thanh cuộn nhưng vẫn giữ khả năng cuộn */
+.scroll-container {
+  scrollbar-width: none; /* Ẩn trên Firefox */
 }
 
-body::-webkit-scrollbar,
-html::-webkit-scrollbar {
+.scroll-container::-webkit-scrollbar {
   display: none;
 }
-/* * {
-  overflow: hidden !important;
-} */
 
-/* #container {
-  scroll-snap-type: y mandatory;
-} */
 .container {
   perspective: 1000px;
 }
