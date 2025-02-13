@@ -16,18 +16,36 @@ export default function LandingPage() {
   const [imageHeight, setImageHeight] = useState(0);
 
   useEffect(() => {
-    document.body.style.overflow = "hidden"; // Giữ body thay vì html
+    // Hàm chặn sự kiện cuộn
+    const disableScroll = (e: Event) => e.preventDefault();
+
+    // Chặn cuộn bằng chuột, phím mũi tên, thanh cuộn
+    window.addEventListener("wheel", disableScroll, { passive: false });
+    window.addEventListener("touchmove", disableScroll, { passive: false });
+    window.addEventListener("keydown", (e) => {
+      if (["ArrowUp", "ArrowDown", "Space", "PageUp", "PageDown"].includes(e.code)) {
+        e.preventDefault();
+      }
+    });
 
     const timer = setTimeout(() => {
-      document.body.style.overflow = "auto"; // Cho phép cuộn lại
+      // Bỏ chặn sau 5 giây
+      window.removeEventListener("wheel", disableScroll);
+      window.removeEventListener("touchmove", disableScroll);
+      window.removeEventListener("keydown", disableScroll);
       document.getElementById("slide2")?.scrollIntoView({ behavior: "smooth" });
     }, 5000);
 
     return () => {
       clearTimeout(timer);
-      document.body.style.overflow = "auto"; // Đảm bảo reset khi unmount
+      // Đảm bảo bỏ chặn khi component unmount
+      window.removeEventListener("wheel", disableScroll);
+      window.removeEventListener("touchmove", disableScroll);
+      window.removeEventListener("keydown", disableScroll);
     };
   }, []);
+
+
 
 
   return (
