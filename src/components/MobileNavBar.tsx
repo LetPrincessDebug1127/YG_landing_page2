@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
@@ -9,11 +9,9 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const { language, toggleLanguage } = useLanguage();
   const t = translations[language];
- 
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-80 text-white shadow-lg transition-all duration-500 ease-in-out transform translate-y-0 opacity-100 desktop-ui:hidden">
-
       <div className="flex items-center justify-between w-full px-4">
         <Image
           className="w-[80px] hidden mobile-ui:block"

@@ -12,8 +12,7 @@ import MobileNav from "../components/MobileNavBar";
 import Slide5 from "@/components/Slide5";
 
 export default function LandingPage() {
-  const [scrollEnabled, setScrollEnabled] = useState(false);
-  const [imageHeight, setImageHeight] = useState(0);
+  const [imageHeight] = useState(0);
 
   useEffect(() => {
     const disableScroll = (e: Event) => e.preventDefault();
@@ -23,7 +22,9 @@ export default function LandingPage() {
     window.addEventListener("wheel", disableScroll, { passive: false });
     window.addEventListener("touchmove", disableScroll, { passive: false });
     window.addEventListener("keydown", (e) => {
-      if (["ArrowUp", "ArrowDown", "Space", "PageUp", "PageDown"].includes(e.code)) {
+      if (
+        ["ArrowUp", "ArrowDown", "Space", "PageUp", "PageDown"].includes(e.code)
+      ) {
         e.preventDefault();
       }
     });
@@ -45,15 +46,11 @@ export default function LandingPage() {
     };
   }, []);
 
-
-
-
   return (
     <LanguageProvider>
       <div
         id="container"
         className="w-full h-screen flex flex-col overflow-y-auto snap-y snap-mandatory scroll-smooth scroll-container"
-
       >
         <Navbar />
         <MobileNav />
@@ -81,7 +78,6 @@ export default function LandingPage() {
               objectFit="cover" // Đảm bảo ảnh phủ đầy container
               className="absolute top-0 left-0 hidden banner:block"
             />
-
           </div>
         </section>
 
@@ -108,7 +104,7 @@ export default function LandingPage() {
 
         <section
           id="slide5"
-          className="w-full h-[100vh] bg-black text-white flex flex-col justify-around items-center relative overflow-hidden snap-start"
+          className="w-full min-h-[100vh] bg-black text-white flex flex-col justify-around items-center relative overflow-hidden snap-start"
         >
           <Slide5 />
         </section>
