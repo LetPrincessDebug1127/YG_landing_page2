@@ -169,7 +169,7 @@ const ContactSection: React.FC = () => {
       </div>
       </div>
       <p className = "text-gray-500 z-10 mobile-ui:hidden">© 2024 YG. All rights reserved.</p>
-    <footer className="bg-[#333333] text-white py-6 hidden mobile-ui:flex min-h-1000:flex min-h-1000:pb-[14.5em] w-full absolute flex-col items-start">
+    <footer className="bg-[#333333] text-white py-6 hidden mobile-ui:flex min-h-1000:flex min-h-1000:pb-[14.5em] w-full absolute flex-col footerIpad:absolute footerIpad:bottom-0">
       <div className="w-full px-4 hidden mobile-ui:block">
         {/* Contact Section */}
         <div className="mb-6">

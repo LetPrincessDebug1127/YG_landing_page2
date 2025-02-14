@@ -32,15 +32,15 @@ return (
         <h1 className="text-[42px] sm:text-[36px] md:text-[48px] lg:text-[64px] xl:text-[72px] 2xl:text-[80px] 3xl:text-[96px] font-bold text-[#ec6629] mobile-ui:mt-[15%]">
           {t.clientTitle}
         </h1>
-        <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-center text-gray-200 mobile-ui:text-justify mobile-ui:p-4">
+        <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-center text-gray-200 mobile-ui:text-justify footerIpad:text-justify mobile-ui:p-4">
           {t.clientDescription}
-          <br className="mobile-ui:hidden"/>
+          <br className="mobile-ui:hidden footerIpad:hidden"/>
           <strong>{t.clientIndustries}</strong>
         </p>
       </div>
 
       {/* Khu vực chứa logo */}
-      <div className="flex flex-col flex-grow justify-center gap-[20%] items-center mobile-ui:hidden">
+      <div className="flex flex-col flex-grow justify-center gap-[20%] items-center mobile-ui:hidden footerIpad:hidden">
         {/* First row (Left to Right) */}
         <div className="logo-container fade-in-section mt-8 mobile-ui:hidden custom-size:hidden">
           <div className="logo-track animate-left-to-right">

@@ -75,7 +75,7 @@ export default function LandingPage() {
               src="/media/banner-mobile.svg"
               alt="Background"
               layout="fill" // Sử dụng fill thay vì intrinsic
-              objectFit="cover" // Đảm bảo ảnh phủ đầy container
+              objectFit="cover" 
               className="absolute top-0 left-0 hidden banner:block"
             />
           </div>
@@ -90,7 +90,7 @@ export default function LandingPage() {
 
         <section
           id="slide3"
-          className="w-full h-[100vh] bg-white flex justify-center items-center snap-start"
+          className="w-full h-[100vh] bg-gray-900 flex justify-center items-center snap-start"
         >
           <Slide3 />
         </section>

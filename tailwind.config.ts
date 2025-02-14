@@ -41,7 +41,8 @@ export default {
         'slide5' : { max : '650px'},
         'iPhoneSE': { max : '400px'},
         'videoDisplay': { min: '1200px'},
-        'banner' : { max : '1199px'}
+        'banner' : { max : '1199px'},
+        'footerIpad' : { raw: '(min-width: 700px) and (max-width:1025px) and (min-height:1000px) and (max-height: 1367px)' }
       },
       scale: {
         200: '1.6', 

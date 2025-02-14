@@ -6,13 +6,20 @@ import { useLanguage } from "../context/LanguageContext";
 const VideoBackgroundSection: React.FC = () => {
   const { language } = useLanguage();
   const t = translations[language];
-  const imageContainerRef = useRef<HTMLDivElement>(null); // Tham chiếu tới container
-  const imageRef = useRef<HTMLImageElement>(null); // Tham chiếu tới hình ảnh
+
+  const imageContainerRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLImageElement>(null);
+
   useEffect(() => {
     const imageContainer = imageContainerRef.current;
     const image = imageRef.current;
 
     if (!imageContainer || !image) return;
+
+    // Thiết lập ban đầu
+    image.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg)";
+    image.style.transformOrigin = "center";
+    image.style.willChange = "transform";
 
     const handleMouseMove = (event: MouseEvent) => {
       const rect = imageContainer.getBoundingClientRect();
@@ -21,14 +28,16 @@ const VideoBackgroundSection: React.FC = () => {
 
       const centerX = rect.width / 2;
       const centerY = rect.height / 2;
+     
       const rotateX = ((centerY - y) / centerY) * 15; // Góc nghiêng tối đa là ±15 độ
       const rotateY = ((x - centerX) / centerX) * 15;
 
-      image.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      image.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
     };
 
+
     const handleMouseLeave = () => {
-      image.style.transform = "rotateX(0) rotateY(0)";
+      image.style.transform = "perspective(1000px) rotateX(0) rotateY(0)";
     };
 
     imageContainer.addEventListener("mousemove", handleMouseMove);
@@ -51,37 +60,39 @@ const VideoBackgroundSection: React.FC = () => {
         playsInline
       ></video>
       <div className="fade-in-section">
-      <div className="fade-in-section relative z-10 w-full h-full flex mt-[2em] mobile-ui:flex-col mobile-ui:items-center mobile-ui:mt-[0px] mobile-ui:gap-[20px]">
-        {/* Phần bên trái - Hình ảnh */}
-        <div
-          ref={imageContainerRef} // Gắn ref vào container
-          className="container w-[50%] h-full flex items-center justify-center mt-4"
-        >
-          <img
-            ref={imageRef}
-            src="/media/banner-turning.jpg"
-            alt="Banner"
-            className="w-full sm:w-[90%] md:w-[60%] lg-custom:w-[84%] xl-custom:w-[63%] 2xl-custom1:w-[65%] 2xl-custom2:w-[50%] 3xl:w-[55%] max-w-[90%] h-auto rounded-lg shadow-custom-orange"
-          />
-        </div>
+        <div className="fade-in-section relative z-10 w-full h-full flex mt-[2em] mobile-ui:flex-col footerIpad:flex-col mobile-ui:items-center footerIpad:items-center mobile-ui:mt-[0px] footerIpad:mt-[0px] mobile-ui:gap-[20px] footerIpad:gap-[40px]">
+          
+          {/* Phần bên trái - Hình ảnh */}
+          <div
+            ref={imageContainerRef}
+            className="relative w-[350px] h-[500px] mobile-ui:w-[200px] mobile-ui:h-[260px] flex items-center justify-center"
+          >
+            <img
+              ref={imageRef}
+              src="/media/banner-turning.jpg"
+              alt="Banner"
+              className="absolute top-0 transform -translate-x-1/2 w-full h-full rounded-lg shadow-custom-orange transition-transform duration-200 ease-out"
+            />
+          </div>
 
-        {/* Phần bên phải - Văn bản */}
-        <div className="fade-in-section flex flex-col justify-center items-start text-white w-fit h-auto p-3 mr-[1em] mobile-ui:mr-[0px] iPad:w-[69%]">
-          <h1 className="text-[#ec6629] text-[24px] sm:text-[36px] md:text-[40px] lg:text-[44px] xl:text-[60px] 2xl:text-[70px] font-bold mb-4 whitespace-nowrap">
-            Young Generation Agency
-          </h1>
-          <p className="text-sm sm:text-base text-custom md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl lg:w-[30em] xl:w-[38.5em] 2xl:w-[31.5em] text-justify mb-3">
-            {t.text}
-          </p>
-          <p className="text-sm sm:text-base text-custom md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl lg:w-[30em] xl:w-[38.5em] 2xl:w-[31.5em] text-justify">
-            {t.textP}
-          </p>
+          {/* Phần bên phải - Văn bản */}
+          <div className="fade-in-section flex flex-col justify-center items-start text-white w-fit h-auto p-3 mr-[-5em] desktop-ui:ml-[2em] desktop-ui:mb-[2.5em] 2xl:mb-[4em]  mobile-ui:mr-[0px] iPad:w-[69%] footerIpad:m-0">
+            <h1 className="text-[#ec6629] text-[24px] sm:text-[36px] md:text-[40px] lg:text-[44px] xl:text-[60px] 2xl:text-[76px] font-bold mb-4 whitespace-nowrap">
+              Young Generation Agency
+            </h1>
+            <p className="text-sm sm:text-base text-custom md:text-lg lg:text-xl xl:text-2xl lg:w-[30em] xl:w-[38.5em] 2xl:w-[48.5em] text-justify mb-3">
+              {t.text}
+            </p>
+            <p className="text-sm sm:text-base text-custom md:text-lg lg:text-xl xl:text-2xl lg:w-[30em] xl:w-[38.5em] 2xl:w-[48.5em] text-justify">
+              {t.textP}
+            </p>
+          </div>
+
         </div>
       </div>
-      </div>
-
     </section>
   );
 };
 
 export default VideoBackgroundSection;
+// 2xl:text-3xl
