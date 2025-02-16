@@ -86,10 +86,10 @@ const ContactSection: React.FC = () => {
               target="_blank"
             >
               <img
-                src="/media/whatsapp2.png"
+                src="/media/whatsapp1.png"
                 alt="Whatsapp"
-                width="80"
-                height="80"
+                width="55"
+                height="55"
               />
             </Link>
             <Link
@@ -177,9 +177,9 @@ const ContactSection: React.FC = () => {
           <div className="border-t border-[#ec6629] mb-4"></div>
 
           <div className="space-y-3">
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 rounded-full">
               <Image src="/media/phone.svg" alt="Phone" width={20} height={20} />
-              <a href="tel:+84377711139" className="text-sm text-white hover:text-gray-300">
+              <a href="tel:+84377711139" className="text-sm text-white hover:text-gray-300 rounded-full">
                 Hotline: (+84) 377 711 139
               </a>
             </div>
@@ -200,6 +200,7 @@ const ContactSection: React.FC = () => {
         <div className="mb-6">
           <h3 className="text-lg font-bold mb-2">{t.FollowUs}</h3>
           <div className="border-t border-[#ec6629] mb-4"></div>
+
 
           <div className="flex flex-row items-center space-x-6">
             <Link href="https://www.facebook.com/ygcompany.vn" target="_blank" passHref>

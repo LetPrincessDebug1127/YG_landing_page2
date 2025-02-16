@@ -36,13 +36,14 @@ export default {
         'min-h-1000': { raw: '(min-width: 900px) and (max-width: 1000px) and (min-height: 1000px)' },
         'heightSE': { raw: '(max-height: 700px)' },
         'heightS8': { raw: '(min-height: 701px) and (max-height: 800px)' },
-        'Pixel7': { raw: '(min-height: 801px) and (max-height: 950px)' },
+        'Pixel7': { raw: '(min-height: 801px) and (max-height: 950px) and (max-width: 1500px)' },
         'iPad': { raw: '(min-width: 765px) and (max-width: 950px) and (max-height: 1200px)' },
         'slide5' : { max : '650px'},
         'iPhoneSE': { max : '400px'},
         'videoDisplay': { min: '1200px'},
         'banner' : { max : '1199px'},
-        'footerIpad' : { raw: '(min-width: 700px) and (max-width:1025px) and (min-height:1000px) and (max-height: 1367px)' }
+        'footerIpad' : { raw: '(min-width: 700px) and (max-width:1025px) and (min-height:1000px) and (max-height: 1367px)' },
+        'desktop-lg' : { raw: '(min-width: 801px) and (max-width: 1535px)' },
       },
       scale: {
         200: '1.6', 

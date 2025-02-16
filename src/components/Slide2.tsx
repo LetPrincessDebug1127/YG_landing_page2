@@ -99,7 +99,7 @@ export default function BackgroundSlider() {
 
       <div className="absolute left-4 sm:left-32 top-1/2 transform -translate-y-1/2 z-10 text-white">
         <div className="fade-in-section flex flex-col image-banner:space-y-12 custom-size:space-y-16 sm:space-y-4">
-          <h1 className="text-[42px] sm:text-[36px] md:text-[48px] lg:text-[64px] xl:text-[72px] 2xl:text-[80px] 3xl:text-[96px] font-bold">
+          <h1 className="text-[42px] sm:text-[36px] md:text-[48px] lg:text-[64px] xl:text-[72px] 2xl:text-[96px] font-bold">
             <a
               href="#slide3"
               className="text-white transition-transform transform scale-100"
@@ -123,7 +123,7 @@ export default function BackgroundSlider() {
             />
             <a
               href="#slide4"
-              className="text-[26px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[32px] 2xl:text-[44px] 3xl:text-[54px] transition-transform transform scale-100 hover:scale-110 hover:text-[#ec6629]"
+              className="text-[26px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[32px] 2xl:text-[54px] transition-transform transform scale-100 hover:scale-110 hover:text-[#ec6629]"
             >
               {t.SERVICES}
             </a>
@@ -138,7 +138,7 @@ export default function BackgroundSlider() {
             />
             <a
               href="#slide5"
-              className="text-[26px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[32px] 2xl:text-[44px] 3xl:text-[54px] transition-transform transform scale-100 hover:scale-110 hover:text-[#ec6629]"
+              className="text-[26px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[32px] 2xl:text-[54px] transition-transform transform scale-100 hover:scale-110 hover:text-[#ec6629]"
             >
               {t.PROJECTS}
             </a>
@@ -153,7 +153,7 @@ export default function BackgroundSlider() {
             />
             <a
               href="#slide6"
-              className="text-[26px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[32px] 2xl:text-[44px] 3xl:text-[54px] transition-transform transform scale-100 hover:scale-110 hover:text-[#ec6629]"
+              className="text-[26px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[32px] 2xl:text-[54px] transition-transform transform scale-100 hover:scale-110 hover:text-[#ec6629]"
             >
               {t.CLIENTS}
             </a>
@@ -168,7 +168,7 @@ export default function BackgroundSlider() {
             />
             <a
               href="#slide7"
-              className="text-[26px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[32px] 2xl:text-[44px] 3xl:text-[54px] transition-transform transform scale-100 hover:scale-110 hover:text-[#ec6629]"
+              className="text-[26px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[32px] 2xl:text-[54px] transition-transform transform scale-100 hover:scale-110 hover:text-[#ec6629]"
             >
               {t.CONTACT}
             </a>

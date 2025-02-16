@@ -107,7 +107,7 @@ const handleTransitionEnd = () => {
     {/* Overlay che nền để dễ đọc chữ */}
     <div className="absolute inset-0 bg-black/65 pointer-events-none z-0"></div>
 
-    <div className="absolute image-banner:hidden fade-in-section desktop-ui:w-[100%] mobile-ui:w-[90%] top-0 left-1/2 transform -translate-x-1/2 text-center text-white z-10 mt-[7%] mobile-ui:text-justify">
+    <div className="absolute image-banner:hidden fade-in-section desktop-ui:w-[100%] mobile-ui:w-[90%] top-0 left-1/2 transform -translate-x-1/2 text-center text-white z-10 mt-[7%] 2xl:mt-[9%] mobile-ui:text-justify">
       <p className="text-base sm:text-lg md:text-xl 2xl:text-3xl fade-in-section">
       {t.slide4P1}
       </p>
@@ -123,15 +123,15 @@ const handleTransitionEnd = () => {
       {services.map((item, index) => (
         <div
           key={index}
-          className="flex flex-col p-[10%] bg-[rgba(34,34,34,0.4)] backdrop-blur-md rounded-lg shadow-md hover:scale-105 hover:shadow-lg transition h-[13em] Pixel7:h-[16em]"
+          className="flex flex-col p-[10%] bg-[rgba(34,34,34,0.4)] backdrop-blur-md rounded-lg shadow-md hover:scale-105 hover:shadow-lg transition h-[13em] Pixel7:h-[16em] 2xl:h-[20em]"
         >
           <Image src={item.icon} alt={item.title} width={item.width} height={item.height} />
-          <h3 className="text-lg 2xl:text-3xl font-bold mt-3 text-justify text-[#ec6629]">{item.title}</h3>
+          <h3 className="text-lg 2xl:text-[38px] 2xl:leading-[46px] font-bold mt-3 text-justify text-[#ec6629]">{item.title}</h3>
           <p className="text-sm text-start mt-1 md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">{item.description}</p>
         </div>
       ))}
       </div>
-      <div className="absolute image-banner:hidden fade-in-section w-[90%] top-[90%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white z-10 sm+:text-justify">
+      <div className="absolute image-banner:hidden fade-in-section w-[90%] top-[90%] 2xl:top-[85%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white z-10 sm+:text-justify">
           <p className="text-base sm:text-lg md:text-xl 2xl:text-3xl">
             {t.slide4P3}
           </p>
