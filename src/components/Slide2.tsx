@@ -95,7 +95,7 @@ export default function BackgroundSlider() {
           />
         </div>
       </div>
-      <div className="absolute inset-0 bg-black/65 pointer-events-none z-0"></div>
+      <div className="absolute inset-0 bg-black/50 pointer-events-none z-0"></div>
 
       <div className="absolute left-4 sm:left-32 top-1/2 transform -translate-y-1/2 z-10 text-white">
         <div className="fade-in-section flex flex-col image-banner:space-y-12 custom-size:space-y-16 sm:space-y-4">

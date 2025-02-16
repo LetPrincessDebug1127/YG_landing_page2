@@ -14,10 +14,10 @@ body {
   overflow-x: visible;
 }
 .background-slider {
-  overflow: hidden; /* Chỉ chặn scroll ngang của phần carousel */
+  overflow: hidden;
 }
 code {
-  font-family: var(--font-geist-mono); /* Font code */
+  font-family: var(--font-geist-mono);
 }
 
 * {
@@ -27,9 +27,8 @@ code {
 html {
   scroll-behavior: smooth;
 }
-/* Ẩn thanh cuộn nhưng vẫn giữ khả năng cuộn */
 .scroll-container {
-  scrollbar-width: none; /* Ẩn trên Firefox */
+  scrollbar-width: none;
 }
 
 .scroll-container::-webkit-scrollbar {
@@ -109,4 +108,28 @@ html {
   to {
     opacity: 1;
   }
+}
+@keyframes color-change-2x {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.background-animation {
+  background: linear-gradient(
+    45deg,
+    #000000,
+    #1a1a1a,
+    #0d0d0d,
+    #333333,
+    #4d4d4d
+  );
+  background-size: 300% 300%;
+  animation: color-change-2x 6s ease-in-out infinite;
 }

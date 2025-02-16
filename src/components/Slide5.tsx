@@ -30,7 +30,7 @@ export default function Slide5() {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   return (
     <>
-      <div className="absolute inset-0 bg-black/65 pointer-events-none z-10"></div>
+      <div className="absolute inset-0 bg-black/45 pointer-events-none z-10"></div>
       <div className="absolute size-full z-20 flex flex-col justify-center items-center gap-[20%] slide5:gap-20">
         <h1 className="text-[42px] sm:text-[36px] md:text-[48px] lg:text-[64px] xl:text-[72px] 2xl:text-[80px] 3xl:text-[96px] font-bold text-[#ec6629]">
           {t.projects}
