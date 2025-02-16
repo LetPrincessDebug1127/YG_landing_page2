@@ -74,16 +74,6 @@ function SlideShow({
     []
   );
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     if (sliderRef.current) {
-  //       sliderRef.current.slickNext();
-  //     }
-  //   }, 10000); // 10 giây
-
-  //   return () => clearInterval(interval);
-  // }, []);
-
   useEffect(() => {
     const abortController = new AbortController();
     document.querySelector<HTMLDivElement>(".slick-list")!.style.overflow =

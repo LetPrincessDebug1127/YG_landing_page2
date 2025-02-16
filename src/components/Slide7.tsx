@@ -20,7 +20,7 @@ const ContactSection: React.FC = () => {
         muted
         playsInline
       ></video>
-       <div className="contact fade-in-section flex flex-col md:flex-row gap-16 p-4 z-10 mt-[2%]">
+       <div className="contact fade-in-section flex flex-col md:flex-row gap-16 desktop-ui:gap-[9rem] p-4 z-10 mt-[2%]">
       {/* Phần bên trái: Thông tin liên hệ */}
       <div className="fade-in-section space-y-6 mobile-ui:hidden">
         <h1 className="text-[24px] sm:text-[36px] md:text-[48px] lg:text-[64px] xl:text-[72px] 2xl:text-[80px] 3xl:text-[96px] font-black text-[#ec6629] mb-4 whitespace-nowrap font-sans">{t.contact}</h1>
@@ -168,7 +168,7 @@ const ContactSection: React.FC = () => {
         </form>
       </div>
       </div>
-      <p className = "text-gray-500 z-10 mobile-ui:hidden">© 2024 YG. All rights reserved.</p>
+      <p className = "text-gray-500 z-10 mobile-ui:hidden 2xl:bottom-0 2xl:absolute 2xl:p-[10px]">© 2024 YG. All rights reserved.</p>
     <footer className="bg-[#333333] text-white py-6 hidden mobile-ui:flex min-h-1000:flex min-h-1000:pb-[14.5em] w-full absolute flex-col footerIpad:absolute footerIpad:bottom-0">
       <div className="w-full px-4 hidden mobile-ui:block">
         {/* Contact Section */}

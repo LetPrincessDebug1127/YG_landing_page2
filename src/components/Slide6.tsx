@@ -18,16 +18,14 @@ const ClientSection: React.FC = () => {
   const secondRowLogos = [...logos, ...logos];
 
 return (
-  <div className="relative w-full h-screen overflow-hidden fade-in-section z-10 flex flex-col">
-    <img
+  <div className="relative background-animation w-full h-screen overflow-hidden fade-in-section z-10 flex flex-col">
+    {/* <img
       src="/media/introduction-banner.svg"
       alt="Background duplicate"
       className="absolute top-0 left-0 w-full h-full object-cover"
-    />
+    /> */}
 
-    {/* Wrapper để căn chỉnh title và logo section */}
     <div className="relative flex flex-col h-full text-center fade-in-section lg:mt-[4%] mobile-ui:p-4 custom-size:p-4">
-      {/* Title và Description */}
       <div className="flex flex-col">
         <h1 className="text-[42px] sm:text-[36px] md:text-[48px] lg:text-[64px] xl:text-[72px] 2xl:text-[80px] 3xl:text-[96px] font-bold text-[#ec6629] mobile-ui:mt-[15%]">
           {t.clientTitle}
