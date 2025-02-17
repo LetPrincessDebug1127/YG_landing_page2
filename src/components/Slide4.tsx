@@ -107,7 +107,7 @@ const handleTransitionEnd = () => {
     {/* Overlay che nền để dễ đọc chữ */}
     <div className="absolute inset-0 bg-black/50 pointer-events-none z-0"></div>
 
-<div className="absolute image-banner:hidden fade-in-section top-0 left-1/2 transform -translate-x-1/2 text-center text-white z-10 desktop-ui:w-[100%] flex flex-col justify-center gap-[8%] h-full">
+<div className="absolute image-banner:hidden fade-in-section top-0 left-1/2 transform -translate-x-1/2 text-center text-white z-10 desktop-ui:w-[100%] flex flex-col justify-evenly mt-[1%] desktop-md:justify-center desktop-md:gap-[8%] h-full desktop-md:mt-[50.17px]">
   {/* Phần 1 */}
   <div className="mobile-ui:text-justify">
     <p className="text-base sm:text-lg md:text-xl 2xl:text-3xl fade-in-section">
@@ -126,7 +126,7 @@ const handleTransitionEnd = () => {
   {services.map((item, index) => (
     <div
       key={index}
-      className="flex flex-col justify-between p-6 bg-[rgba(34,34,34,0.4)] backdrop-blur-md rounded-lg shadow-md hover:scale-105 hover:shadow-lg transition h-[20em] w-full"
+      className="flex flex-col justify-between p-6 bg-[rgba(34,34,34,0.4)] backdrop-blur-md rounded-lg shadow-md hover:scale-105 hover:shadow-lg transition w-full"
     >
       <Image src={item.icon} alt={item.title} width={item.width} height={item.height} />
       <h3 className="text-lg xl:text-[30px] xl:leading-[36px] 2xl:text-[38px] 2xl:leading-[46px] font-bold mt-3 text-start text-[#ec6629]">

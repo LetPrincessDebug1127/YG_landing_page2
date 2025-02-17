@@ -44,7 +44,8 @@ export default {
         'banner' : { max : '1199px'},
         'footerIpad' : { raw: '(min-width: 700px) and (max-width:1025px) and (min-height:1000px) and (max-height: 1367px)' },
         'desktop-lg' : { raw: '(min-width: 801px) and (max-width: 1535px)' },
-        'desktop-xl' : { min : '1350px' , max: '1535px' }
+        'desktop-xl' : { min : '1350px' , max: '1535px' },
+        'desktop-md' : { min : '1350px' }
       },
       scale: {
         200: '1.6', 
