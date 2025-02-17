@@ -155,12 +155,12 @@ const ContactSection: React.FC = () => {
               name="message"
               placeholder={t.placeHolderMessage}
               required
-              className="w-[90%] h-[2.5em] p-2 text-black border border-[#ff8500] outline-none rounded-[5px] no-underline block mx-auto"
+              className="w-[90%] h-[2.5em] p-2 text-black border border-[#ff8500] mb-[20px] outline-none rounded-[5px] no-underline block mx-auto"
             />
           </div>
 
           <button
-            className="w-[90%] bg-gradient-to-r from-[#ff7a00] to-[#ff4d00] text-white border-none rounded-[5px] px-4 py-2 mt-6 text-[16px] font-bold cursor-pointer transition-all duration-300 ease-in-out shadow-lg hover:from-[#ff4d00] hover:to-[#ff7a00] hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 active:shadow-lg"
+            className="w-[90%] bg-gradient-to-r from-[#ff7a00] to-[#ff4d00] text-white border-none rounded-[5px] px-4 py-2 text-[16px] font-bold cursor-pointer transition-all duration-300 ease-in-out shadow-lg hover:from-[#ff4d00] hover:to-[#ff7a00] hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 active:shadow-lg"
             type="submit"
           >
             {t.send}
@@ -168,7 +168,7 @@ const ContactSection: React.FC = () => {
         </form>
       </div>
       </div>
-      <p className = "text-gray-500 z-10 mobile-ui:hidden 2xl:bottom-0 2xl:absolute 2xl:p-[10px]">© 2024 YG. All rights reserved.</p>
+      <p className = "text-gray-500 z-10 mobile-ui:hidden xl:bottom-0 xl:absolute xl:p-[10px]">© 2024 YG. All rights reserved.</p>
     <footer className="bg-[#333333] text-white py-6 hidden mobile-ui:flex min-h-1000:flex min-h-1000:pb-[14.5em] w-full absolute flex-col footerIpad:absolute footerIpad:bottom-0">
       <div className="w-full px-4 hidden mobile-ui:block">
         {/* Contact Section */}

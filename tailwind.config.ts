@@ -52,7 +52,7 @@ export default {
         300: '3', 
       },
       boxShadow: {
-        'custom-orange': '0 0 20px 10px rgba(255, 255, 240, 0.5)', 
+        'custom-orange': '0 0 20px 10px rgba(255, 255, 240, 0.3)', // Màu mờ hơn
       },
 
       

@@ -295,7 +295,7 @@ function NextArrowIcon({ onClick }: ComponentProps<"div">) {
       onClick={onClick}
       className="cursor-pointer absolute z-[60] right-0 md:right-5 lg:right-10 top-1/2 -translate-y-1/2"
     >
-      <CircleChevronRight className="xl:size-20 lg:size-16 md:size-12 size-10 opacity-60 focus-visible:text-[#ec6629] transition-all" />
+      <CircleChevronRight className="xl:size-20 lg:size-16 md:size-12 size-10 opacity-40 focus-visible:text-[#ec6629] transition-all" />
     </div>
   );
 }
@@ -306,7 +306,7 @@ function PrevArrowIcon({ onClick }: ComponentProps<"div">) {
       onClick={onClick}
       className="cursor-pointer absolute z-[60] left-0 md:left-5 lg:left-10 top-1/2 -translate-y-1/2"
     >
-      <CircleChevronLeft className="xl:size-20 lg:size-16 md:size-12 size-10 opacity-60 focus-visible:text-[#ec6629] transition-all" />
+      <CircleChevronLeft className="xl:size-20 lg:size-16 md:size-12 size-10 opacity-40 focus-visible:text-[#ec6629] transition-all" />
     </div>
   );
 }

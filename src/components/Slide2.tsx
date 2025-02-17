@@ -5,7 +5,6 @@ import translations from "../../public/translation/translations";
 import { useLanguage } from "../context/LanguageContext";
 
 const backgroundImages = [
-  "/media/slide2.5.png",
   "/media/slide2.1.jpg",
   "/media/slide2.2.jpg",
   "/media/slide2.3.jpg",

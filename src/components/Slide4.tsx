@@ -126,10 +126,10 @@ const handleTransitionEnd = () => {
   {services.map((item, index) => (
     <div
       key={index}
-      className="flex flex-col justify-between p-6 bg-[rgba(34,34,34,0.4)] backdrop-blur-md rounded-lg shadow-md hover:scale-105 hover:shadow-lg transition w-full"
+      className="flex flex-col justify-between p-6 bg-[rgba(34,34,34,0.6)] backdrop-blur-md rounded-lg shadow-md hover:scale-105 hover:shadow-lg transition w-full"
     >
       <Image src={item.icon} alt={item.title} width={item.width} height={item.height} />
-      <h3 className="text-lg xl:text-[30px] xl:leading-[36px] 2xl:text-[38px] 2xl:leading-[46px] font-bold mt-3 text-start text-[#ec6629]">
+      <h3 className="text-lg xl:text-[30px] xl:leading-[36px] 2xl:text-[46px] 2xl:leading-[50px] font-bold mt-3 text-start text-[#ec6629]">
         {item.title}
       </h3>
       <p className="text-sm text-start md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl flex-grow">
