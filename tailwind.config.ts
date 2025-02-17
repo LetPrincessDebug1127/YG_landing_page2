@@ -50,8 +50,9 @@ export default {
         300: '3', 
       },
       boxShadow: {
-        'custom-orange': '0 0 20px 10px rgba(236, 102, 41, 0.5)', // Thêm shadow mới
+        'custom-orange': '0 0 20px 10px rgba(255, 255, 240, 0.5)', 
       },
+
       
     },
   },

@@ -118,15 +118,15 @@ const handleTransitionEnd = () => {
       {t.slide4P2}
       </p>
     </div>
-    <div className="absolute image-banner:hidden fade-in-section  max-w-[1700px] lg:max-h-[270px] 3xl:max-h-[350px] w-[90%] sm:h-[35%] image-banner:h-[100%] top-[50%] custom-size:top-[42%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white z-10 grid grid-cols-1 custom-size:grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 custom-size:gap-[5.5em] mt-8">
+    <div className="absolute image-banner:hidden backdrop-blur-md fade-in-section  max-w-[1700px] lg:max-h-[270px] 3xl:max-h-[350px] w-[90%] sm:h-[35%] image-banner:h-[100%] top-[50%] custom-size:top-[42%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white z-10 grid grid-cols-1 custom-size:grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 custom-size:gap-[5.5em] mt-8">
 
       {services.map((item, index) => (
         <div
           key={index}
-          className="flex flex-col p-[10%] bg-[rgba(34,34,34,0.4)] backdrop-blur-md rounded-lg shadow-md hover:scale-105 hover:shadow-lg transition h-[13em] Pixel7:h-[16em] 2xl:h-[20em]"
+          className="flex flex-col p-[10%] bg-[rgba(34,34,34,0.4)] backdrop-blur-md rounded-lg shadow-md hover:scale-105 hover:shadow-lg transition h-[14em] Pixel7:h-[16em] 2xl:h-[20em]"
         >
           <Image src={item.icon} alt={item.title} width={item.width} height={item.height} />
-          <h3 className="text-lg 2xl:text-[38px] 2xl:leading-[46px] font-bold mt-3 text-justify text-[#ec6629]">{item.title}</h3>
+          <h3 className="text-lg xl:text-[30px] xl:leading-[36px] 2xl:text-[38px] 2xl:leading-[46px] font-bold mt-3 text-justify text-[#ec6629]">{item.title}</h3>
           <p className="text-sm text-start mt-1 md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">{item.description}</p>
         </div>
       ))}
