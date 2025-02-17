@@ -18,12 +18,12 @@ const ClientSection: React.FC = () => {
   const secondRowLogos = [...logos, ...logos];
 
 return (
-  <div className="relative background-animation w-full h-screen overflow-hidden fade-in-section z-10 flex flex-col">
-    {/* <img
+  <div className="relative w-full h-screen overflow-hidden fade-in-section z-10 flex flex-col">
+    <img
       src="/media/introduction-banner.svg"
       alt="Background duplicate"
       className="absolute top-0 left-0 w-full h-full object-cover"
-    /> */}
+    />
 
     <div className="relative flex flex-col h-full text-center fade-in-section lg:mt-[4%] mobile-ui:p-4 custom-size:p-4">
       <div className="flex flex-col">
@@ -38,7 +38,7 @@ return (
       </div>
 
       {/* Khu vực chứa logo */}
-      <div className="flex flex-col flex-grow justify-center gap-[20%] items-center mobile-ui:hidden footerIpad:hidden">
+      <div className="flex flex-col flex-grow justify-start items-center mobile-ui:hidden footerIpad:hidden">
         {/* First row (Left to Right) */}
         <div className="logo-container fade-in-section mt-8 mobile-ui:hidden custom-size:hidden">
           <div className="logo-track animate-left-to-right">

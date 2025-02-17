@@ -54,25 +54,23 @@ function SlideShow({
   const [screenWidth, setScreenWidth] = useState(0);
   const sliderRef = useRef<Slider | null>(null);
 
-  const calculatedVideos = useMemo(
-    () =>
-      videos.length < MIN_SLIDES_TO_SHOW
-        ? videos.concat(videos.toSpliced(MIN_SLIDES_TO_SHOW - videos.length))
-        : videos,
-    []
-  );
+  const calculatedVideos = useMemo(() => {
+    if (videos.length < MIN_SLIDES_TO_SHOW) {
+      const missingItems = MIN_SLIDES_TO_SHOW - videos.length;
+      return videos.concat(videos.slice(0, missingItems));
+    }
+    return videos;
+  }, [videos, MIN_SLIDES_TO_SHOW]);
 
-  const calculatedBackgroundImages = useMemo(
-    () =>
-      backgroundImages.length < MIN_SLIDES_TO_SHOW
-        ? backgroundImages.concat(
-            backgroundImages.toSpliced(
-              MIN_SLIDES_TO_SHOW - backgroundImages.length
-            )
-          )
-        : backgroundImages,
-    []
-  );
+
+  const calculatedBackgroundImages = useMemo(() => {
+    if (backgroundImages.length < MIN_SLIDES_TO_SHOW) {
+      const missingItems = MIN_SLIDES_TO_SHOW - backgroundImages.length;
+      return backgroundImages.concat(backgroundImages.slice(0, missingItems));
+    }
+    return backgroundImages;
+  }, [backgroundImages, MIN_SLIDES_TO_SHOW]);
+
 
   useEffect(() => {
     const abortController = new AbortController();
@@ -297,7 +295,7 @@ function NextArrowIcon({ onClick }: ComponentProps<"div">) {
       onClick={onClick}
       className="cursor-pointer absolute z-[60] right-0 md:right-5 lg:right-10 top-1/2 -translate-y-1/2"
     >
-      <CircleChevronRight className="xl:size-20 lg:size-16 md:size-12 size-10 focus-visible:text-[#ec6629] transition-all" />
+      <CircleChevronRight className="xl:size-20 lg:size-16 md:size-12 size-10 opacity-60 focus-visible:text-[#ec6629] transition-all" />
     </div>
   );
 }
@@ -308,7 +306,7 @@ function PrevArrowIcon({ onClick }: ComponentProps<"div">) {
       onClick={onClick}
       className="cursor-pointer absolute z-[60] left-0 md:left-5 lg:left-10 top-1/2 -translate-y-1/2"
     >
-      <CircleChevronLeft className="xl:size-20 lg:size-16 md:size-12 size-10 focus-visible:text-[#ec6629] transition-all" />
+      <CircleChevronLeft className="xl:size-20 lg:size-16 md:size-12 size-10 opacity-60 focus-visible:text-[#ec6629] transition-all" />
     </div>
   );
 }
