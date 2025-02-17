@@ -107,7 +107,7 @@ const handleTransitionEnd = () => {
     {/* Overlay che nền để dễ đọc chữ */}
     <div className="absolute inset-0 bg-black/50 pointer-events-none z-0"></div>
 
-<div className="absolute image-banner:hidden fade-in-section top-0 left-1/2 transform -translate-x-1/2 text-center text-white z-10 desktop-ui:w-[100%] flex flex-col justify-evenly mt-[1%] desktop-md:justify-center desktop-md:gap-[8%] h-full desktop-md:mt-[50.17px]">
+<div className="absolute image-banner:hidden fade-in-section top-0 left-1/2 transform -translate-x-1/2 text-center text-white z-10 desktop-ui:w-[100%] flex flex-col justify-evenly mt-[1%] desktop-md:justify-center desktop-md:gap-[10%] h-full desktop-md:mt-[50.17px]">
   {/* Phần 1 */}
   <div className="mobile-ui:text-justify">
     <p className="text-base sm:text-lg md:text-xl 2xl:text-3xl fade-in-section">
