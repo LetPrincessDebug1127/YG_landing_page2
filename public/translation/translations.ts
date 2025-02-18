@@ -29,7 +29,7 @@ const translations = {
     send: "Submit",
     boxOne: "Decoration construction",
     boxTwo: "Event organization",
-    boxThree: "Commercial activation activities",
+    boxThree: "Brand activation",
     boxFour: "Design consultation",
     slide4P1:
       "YG provides services and optimizes customer requirements based on the 4C model in marketing:",
@@ -74,7 +74,7 @@ const translations = {
     send: "Gửi",
     boxOne: "Thi công trang trí",
     boxTwo: "Tổ chức sự kiện",
-    boxThree: "Hoạt động kích hoạt thương mại",
+    boxThree: "Kích hoạt thương hiệu",
     boxFour: "Tư vấn thiết kế",
     slide4P1:
       "YG cung cấp dịch vụ và tối ưu những yêu cầu của khách hàng dựa trên mô hình 4C trong marketing:",

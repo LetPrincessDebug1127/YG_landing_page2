@@ -41,7 +41,7 @@ export default function BackgroundSlider() {
     },
     {
       icon: "/media/iconBox3.svg",
-      title: "COMMERCIAL ACTIVITIES",
+      title: "BRAND ACTIVATION",
       description: t.boxThree,
       width: 50,
       height: 50,
@@ -107,7 +107,7 @@ const handleTransitionEnd = () => {
     {/* Overlay che nền để dễ đọc chữ */}
     <div className="absolute inset-0 bg-black/50 pointer-events-none z-0"></div>
 
-<div className="absolute image-banner:hidden fade-in-section top-0 left-1/2 transform -translate-x-1/2 text-center text-white z-10 desktop-ui:w-[100%] flex flex-col justify-evenly mt-[3%] desktop-md:justify-center desktop-md:gap-[10%] h-full">
+<div className="absolute image-banner:hidden fade-in-section top-0 left-1/2 transform -translate-x-1/2 text-center text-white z-10 desktop-ui:w-[100%] flex flex-col justify-evenly desktop-md:justify-center desktop-md:gap-[10%] h-full lg:pt-[52px] xl:pt-[60px] 2xl:pt-[78px] 3xl:pt-[104px] ">
   {/* Phần 1 */}
   <div className="mobile-ui:text-justify">
     <p className="text-base sm:text-lg md:text-xl 2xl:text-3xl fade-in-section">
