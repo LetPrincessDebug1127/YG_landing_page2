@@ -54,7 +54,7 @@ const ContactSection: React.FC = () => {
         </div>
         <div className="border-b border-[#ec6629] h-0"></div>
 
-        <div className="social-icons space-y-2 flex items-center gap-[10%]">
+        <div className="social-icons space-y-2 flex items-center gap-[14%]">
           <strong className = "flex-shrink-0 w-[10em]">{t.FollowUs}</strong>
           <div className="flex gap-[7%] justify-center items-center">
             <Link
