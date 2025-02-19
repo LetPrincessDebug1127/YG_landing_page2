@@ -13,7 +13,7 @@ const ContactSection: React.FC = () => {
   return (
     <section className="relative w-full h-screen flex items-center mobile-ui:block justify-center flex-col">
       <video
-        className="absolute top-0 left-0 w-full h-full object-cover"
+        className="absolute top-0 left-0 w-full h-full object-cover iPhoneSE:h-[85%]"
         src="/media/black-silk.mp4"
         autoPlay
         loop
@@ -169,11 +169,38 @@ const ContactSection: React.FC = () => {
       </div>
       </div>
       <p className = "text-gray-500 z-10 mobile-ui:hidden xl:bottom-0 xl:absolute xl:p-[10px]">© 2024 YG. All rights reserved.</p>
-    <footer className="bg-[#333333] text-white py-6 hidden mobile-ui:flex min-h-1000:flex min-h-1000:pb-[14.5em] w-full absolute flex-col footerIpad:absolute footerIpad:bottom-0">
+    <footer className="bg-[#333333] text-white pt-[0.5rem] pb-[0.5rem] hidden mobile-ui:flex min-h-1000:flex min-h-1000:pb-[14.5em] w-full absolute flex-col footerIpad:absolute bottom-0 iPhoneSE:static">
       <div className="w-full px-4 hidden mobile-ui:block">
         {/* Contact Section */}
         <div className="mb-6">
-          <h3 className="text-lg font-bold mb-2">{t.contact}</h3>
+          <div className="flex flex-row items-center gap-[10%]">
+          <h3 className="text-lg font-bold">{t.contact}</h3>
+          <div className="flex flex-row items-center space-x-6">
+            <Link href="https://www.facebook.com/ygcompany.vn" target="_blank" passHref className="pb-[3%]">
+              <div className="flex items-center gap-2 text-sm hover:text-gray-300 cursor-pointer">
+                <Image src="/media/Facebook_Logo.png" alt="Facebook" width={32} height={32} className="w-8 h-8" />
+              </div>
+            </Link>
+
+            <Link href="https://zalo.me" target="_blank" passHref className="pb-[3%]">
+              <div className="flex items-center gap-2 text-sm hover:text-gray-300 cursor-pointer" >
+                <Image src="/media/zalo_icon.png" alt="Zalo" width={32} height={32} className="w-8 h-8" />
+              </div>
+            </Link>
+
+            <Link href="https://www.whatsapp.com" target="_blank" passHref className="pb-[3%]">
+              <div className="flex items-center gap-2 text-sm hover:text-gray-300 cursor-pointer">
+                <Image src="/media/whatsapp2.png" alt="Whatsapp" width={42} height={42} className="w-11 h-11" />
+              </div>
+            </Link>
+
+            <Link href="https://www.youtube.com" target="_blank" passHref className="pb-[3%]">
+              <div className="flex items-center gap-2 text-sm hover:text-gray-300 cursor-pointer">
+                <Image src="/media/YoutubeLogo.png" alt="Youtube" width={40} height={40} className="w-9 h-8" />
+              </div>
+            </Link>
+          </div>
+          </div>
           <div className="border-t border-[#ec6629] mb-4"></div>
 
           <div className="space-y-3">
@@ -196,39 +223,6 @@ const ContactSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Social Media Links */}
-        <div className="mb-6">
-          <h3 className="text-lg font-bold mb-2">{t.FollowUs}</h3>
-          <div className="border-t border-[#ec6629] mb-4"></div>
-
-
-          <div className="flex flex-row items-center space-x-6">
-            <Link href="https://www.facebook.com/ygcompany.vn" target="_blank" passHref>
-              <div className="flex items-center gap-2 text-sm hover:text-gray-300 cursor-pointer">
-                <Image src="/media/Facebook_Logo.png" alt="Facebook" width={32} height={32} className="w-8 h-8" />
-              </div>
-            </Link>
-
-            <Link href="https://zalo.me" target="_blank" passHref>
-              <div className="flex items-center gap-2 text-sm hover:text-gray-300 cursor-pointer">
-                <Image src="/media/zalo_icon.png" alt="Zalo" width={32} height={32} className="w-8 h-8" />
-              </div>
-            </Link>
-
-            <Link href="https://www.whatsapp.com" target="_blank" passHref>
-              <div className="flex items-center gap-2 text-sm hover:text-gray-300 cursor-pointer">
-                <Image src="/media/whatsapp2.png" alt="Whatsapp" width={42} height={42} className="w-11 h-11" />
-              </div>
-            </Link>
-
-            <Link href="https://www.youtube.com" target="_blank" passHref>
-              <div className="flex items-center gap-2 text-sm hover:text-gray-300 cursor-pointer">
-                <Image src="/media/YoutubeLogo.png" alt="Youtube" width={40} height={40} className="w-9 h-8" />
-              </div>
-            </Link>
-          </div>
-
-        </div>
 
         {/* Copyright */}
         <div className="border-t border-[#ec6629] pt-4 flex flex-col items-center">
