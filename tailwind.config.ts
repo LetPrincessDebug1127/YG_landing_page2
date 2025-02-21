@@ -40,7 +40,7 @@ export default {
         'iPad': { raw: '(min-width: 765px) and (max-width: 950px) and (max-height: 1200px)' },
         'slide5' : { max : '650px'},
         'iPhoneSE': { raw: '(max-height: 700px) and (max-width: 400px)' },
-        'S8Galaxy': { raw: '(min-height: 701px) and (max-width: 400px) and (max-height: 750px)' },
+        'S8Galaxy': { raw: '(min-height: 701px) and (max-width: 700px) and (max-height: 750px)' },
         'videoDisplay': { min: '1200px'},
         'banner' : { max : '1199px'},
         'footerIpad' : { raw: '(min-width: 700px) and (max-width:1025px) and (min-height:1000px) and (max-height: 1367px)' },
