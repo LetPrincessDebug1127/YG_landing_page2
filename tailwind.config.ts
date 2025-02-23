@@ -46,7 +46,9 @@ export default {
         'footerIpad' : { raw: '(min-width: 700px) and (max-width:1025px) and (min-height:1000px) and (max-height: 1367px)' },
         'desktop-lg' : { raw: '(min-width: 801px) and (max-width: 1535px)' },
         'desktop-xl' : { min : '1350px' , max: '1535px' },
-        'desktop-md' : { min : '1350px' }
+        'desktop-md' : { min : '1350px' },
+        'slide2-gap' : { raw: '(max-height: 600px) and (min-width: 1100px) and (max-width:1500px)' },
+        'slide3-gap' : { raw: '(max-width: 1400px)' }
       },
       scale: {
         200: '1.6', 

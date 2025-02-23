@@ -65,7 +65,7 @@ const VideoBackgroundSection: React.FC = () => {
           {/* Phần bên trái - Hình ảnh */}
           <div
             ref={imageContainerRef}
-            className="relative w-[350px] h-[500px] mobile-ui:w-[200px] mobile-ui:h-[260px] flex items-center justify-center"
+            className="relative w-[350px] h-[500px] mobile-ui:w-[200px] mobile-ui:h-[260px] flex items-center justify-center slide3-gap:h-[450px] slide3-gap:w-[330px]"
           >
             <img
               ref={imageRef}
@@ -76,7 +76,7 @@ const VideoBackgroundSection: React.FC = () => {
           </div>
 
           {/* Phần bên phải - Văn bản */}
-          <div className="fade-in-section flex flex-col justify-center items-start text-white w-fit h-auto p-3 mr-[-5em] desktop-lg:ml-[2em] desktop-lg:mb-[2.5em] desktop-xl:ml-[6em] 2xl:mb-[4em] 2xl:ml-[6em] mobile-ui:mr-[0px] iPad:w-[69%] footerIpad:m-0">
+          <div className="fade-in-section flex flex-col justify-center items-start text-white w-fit h-auto p-3 mr-[-5em] desktop-lg:ml-[2em] desktop-lg:mb-[2.5em] desktop-xl:ml-[6em] 2xl:mb-[4em] 2xl:ml-[6em] slide3-gap:mb-[0.6em] mobile-ui:mr-[0px] iPad:w-[69%] footerIpad:m-0">
             <h1 className="text-[#ec6629] text-[24px] sm:text-[36px] md:text-[40px] lg:text-[44px] xl:text-[60px] 2xl:text-[76px] font-bold mb-4 whitespace-nowrap">
               Young Generation Agency
             </h1>
