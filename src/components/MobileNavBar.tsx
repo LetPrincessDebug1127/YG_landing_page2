@@ -39,7 +39,7 @@ export default function Navbar() {
             </span>
           </button>
 
-          <div className="hidden md:flex space-x-6">
+          <div className="hidden desktop-ui:flex space-x-6">
             <Link href="#slide2" className="hover:text-[#ec6629]">
               {t.home}
             </Link>
@@ -61,7 +61,7 @@ export default function Navbar() {
           </div>
 
           <button
-            className="md:hidden focus:outline-none"
+            className="desktop-ui:hidden focus:outline-none"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -71,7 +71,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden flex flex-col absolute top-[60px] right-[20px] bg-[#333] w-[200px] rounded-lg overflow-hidden p-4 items-center space-y-2">
+        <div className="desktop-ui:hidden flex flex-col absolute top-[60px] right-[20px] bg-[#333] w-[200px] rounded-lg overflow-hidden p-4 items-center space-y-2">
           <Link href="#slide2" className="hover:text-[#ec6629]">
             {t.home}
           </Link>

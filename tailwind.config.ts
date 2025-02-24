@@ -40,7 +40,7 @@ export default {
         'iPad': { raw: '(min-width: 765px) and (max-width: 950px) and (max-height: 1200px)' },
         'slide5' : { max : '650px'},
         'iPhoneSE': { raw: '(max-height: 700px) and (max-width: 400px)' },
-        'S8Galaxy': { raw: '(min-height: 701px) and (max-width: 700px) and (max-height: 750px)' },
+        'S8Galaxy': { raw: '(min-height: 701px) and (max-width: 700px) and (max-height: 800px)' },
         'videoDisplay': { min: '1200px'},
         'banner' : { max : '1199px'},
         'footerIpad' : { raw: '(min-width: 700px) and (max-width:1025px) and (min-height:1000px) and (max-height: 1367px)' },
@@ -48,7 +48,7 @@ export default {
         'desktop-xl' : { min : '1350px' , max: '1535px' },
         'desktop-md' : { min : '1350px' },
         'slide2-gap' : { raw: '(max-height: 600px) and (min-width: 1100px) and (max-width:1500px)' },
-        'slide3-gap' : { raw: '(max-width: 1400px)' }
+        'slide3-gap' : { raw: '(max-width: 1400px)and (min-width: 1000px)' }
       },
       scale: {
         200: '1.6', 
