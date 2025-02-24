@@ -15,6 +15,7 @@ export default function LandingPage() {
   const [imageHeight] = useState(0);
 
   useEffect(() => {
+    if (window.innerWidth <= 1200) return;
     const disableScroll = (e: Event) => e.preventDefault();
 
     document.body.style.overflow = "hidden";
