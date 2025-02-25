@@ -85,11 +85,11 @@ html {
 }
 
 .animate-left-to-right {
-  animation: scroll-right 60s linear infinite;
+  animation: scroll-right 40s linear infinite;
 }
 
 .animate-right-to-left {
-  animation: scroll-left 60s linear infinite;
+  animation: scroll-left 40s linear infinite;
 }
 
 .logo-item {

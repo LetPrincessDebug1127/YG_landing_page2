@@ -14,7 +14,11 @@ export default {
       },
       fontSize: {
         'xs': ['x-small', '1rem'], 
-        '2xl': ['1.3rem', { lineHeight: '1.5' }],
+        '2xl': ['1.05rem', { lineHeight: '1.5' }],
+        xl: ['1.05rem','1.75rem'],
+        '3xl': ['1.05rem',{ lineHeight: '1.5' }]
+
+
       },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'], 
@@ -49,7 +53,8 @@ export default {
         'desktop-xl' : { min : '1350px' , max: '1535px' },
         'desktop-md' : { min : '1350px' },
         'slide2-gap' : { raw: '(max-height: 600px) and (min-width: 1100px) and (max-width:1500px)' },
-        'slide3-gap' : { raw: '(max-width: 1400px)and (min-width: 1000px)' }
+        'slide3-gap' : { raw: '(max-width: 1400px)and (min-width: 1000px)' },
+        'smallerX-desktop': { max: '1250px' }
       },
       scale: {
         200: '1.6', 

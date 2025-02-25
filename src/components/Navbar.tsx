@@ -23,7 +23,7 @@ const Navbar = () => {
           <li>
             <a
               href="#slide2"
-              className="text-white text-sm lg:text-sm xl:text-lg 2xl:text-[1.6rem] 3xl:text-[2rem] hover:text-[#ec6629]"
+              className="text-white text-sm lg:text-sm xl:text-[1rem] 2xl:text-xl 3xl:text-2xl hover:text-[#ec6629]"
             >
               {t.home}
             </a>
@@ -31,7 +31,7 @@ const Navbar = () => {
           <li>
             <a
               href="#slide3"
-              className="text-white text-sm lg:text-sm xl:text-lg 2xl:text-[1.6rem] 3xl:text-[2rem] hover:text-[#ec6629]"
+              className="text-white text-sm lg:text-sm xl:text-[1rem] 2xl:text-xl 3xl:text-2xl hover:text-[#ec6629]"
             >
               {t.about}
             </a>
@@ -39,7 +39,7 @@ const Navbar = () => {
           <li>
             <a
               href="#slide4"
-              className="text-white text-sm lg:text-sm xl:text-lg 2xl:text-[1.6rem] 3xl:text-[2rem] hover:text-[#ec6629]"
+              className="text-white text-sm lg:text-sm xl:text-[1rem] 2xl:text-xl 3xl:text-2xl hover:text-[#ec6629]"
             >
               {t.services}
             </a>
@@ -47,7 +47,7 @@ const Navbar = () => {
           <li>
             <a
               href="#slide5"
-              className="text-white text-sm lg:text-sm xl:text-lg 2xl:text-[1.6rem] 3xl:text-[2rem] hover:text-[#ec6629]"
+              className="text-white text-sm lg:text-sm xl:text-[1rem] 2xl:text-xl 3xl:text-2xl hover:text-[#ec6629]"
             >
               {t.projects}
             </a>
@@ -55,7 +55,7 @@ const Navbar = () => {
           <li>
             <a
               href="#slide6"
-              className="text-white text-sm lg:text-sm xl:text-lg 2xl:text-[1.6rem] 3xl:text-[2rem] hover:text-[#ec6629]"
+              className="text-white text-sm lg:text-sm xl:text-[1rem] 2xl:text-xl 3xl:text-2xl hover:text-[#ec6629]"
             >
               {t.clients}
             </a>
@@ -63,7 +63,7 @@ const Navbar = () => {
           <li>
             <a
               href="#slide7"
-              className="text-white text-sm lg:text-sm xl:text-lg 2xl:text-[1.6rem] 3xl:text-[2rem] hover:text-[#ec6629]"
+              className="text-white text-sm lg:text-sm xl:text-[1rem] 2xl:text-xl 3xl:text-2xl hover:text-[#ec6629]"
             >
               {t.contact}
             </a>
@@ -72,7 +72,7 @@ const Navbar = () => {
             <button
               id="language-toggle"
               onClick={toggleLanguage}
-              className="bg-transparent border border-white cursor-pointer text-xs font-thin text-white px-0.5 py-0.5 rounded-[7px] transition-colors duration-300 ease-in-out hover:bg-[#ec6629] hover:text-white flex items-center leading-[0.8rem] lg:leading-[0.8rem] xl:leading-[1.1rem] 2xl:leading-[1.5rem] 3xl:leading-[1.6rem]"
+              className="bg-transparent border border-white cursor-pointer text-xs font-thin text-white px-0.5 py-0.5 rounded-[7px] transition-colors duration-300 ease-in-out hover:bg-[#ec6629] hover:text-white flex items-center leading-[0.8rem] lg:leading-[0.8rem] xl:leading-[1.1rem] 2xl:leading-[1.5rem] 3xl:leading-[1.6rem] smallerX-desktop:mt-[0.5em]"
             >
               <span className="text-white px-1 font-regular">
                 {language === "vi" ? "VI" : "EN"}
