@@ -12,9 +12,11 @@ const backgroundImages = [
   "/media/slide4.3.jpg",
   "/media/slide4.4.jpg",
   "/media/slide4.5.jpg",
-  "/media/slide4.6.jpg",
+  "/media/slide4.6.jpeg",
   "/media/slide4.7.jpg",
   "/media/slide4.8.jpg",
+  "/media/slide4.9.png",
+  "/media/slide4.10.jpg",
 ];
 
 export default function BackgroundSlider() {
