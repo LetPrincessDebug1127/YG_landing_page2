@@ -17,11 +17,54 @@ const videos = [
   "/media/video1/video.mp4",
   "/media/video2/video.mp4",
   "/media/video3/video.mp4",
+  "/media/video4/video.mp4",
+  "/media/video5/video.mp4",
+  "/media/video6/video.mp4",
+  "/media/video7/video.mp4",
+  "/media/video8/video.mp4",
+  "/media/video9/video.mp4",
+  "/media/video10/video.mp4",
 ];
+
 const backgroundImages = [
   "/media/video1/thumbnail.png",
   "/media/video2/thumbnail.png",
   "/media/video3/thumbnail.png",
+  "/media/video4/thumbnail.png",
+  "/media/video5/thumbnail.png",
+  "/media/video6/thumbnail.png",
+  "/media/video7/thumbnail.png",
+  "/media/video8/thumbnail.png",
+  "/media/video9/thumbnail.png",
+  "/media/video10/thumbnail.png",
+];
+
+const projectNames = [
+  "Hội thi đầu bếp trẻ TP HCM 2024 - Wilmar CLV",
+  " ",
+  "Hội nghị đại lý - Lễ trao giải đại lý xuất sắc 2024 - Hyundai | TC Motor",
+  "3D Tiệc tri ân 2024 - HVH",
+  "Lễ ra mắt xe Hyundai Custin & Palisade",
+  "Lễ kỷ niệm 10 năm thành lập  - QSR VietNam",
+  "Lễ giới thiệu và ra mắt xe Hyndai Accent",
+  "Mừng đại lễ 30.4 - Cityland",
+  "Tiệc tân niên 2025 - Wilmar CLV",
+  "TIỆC TRI ÂN 2024 - HVH",
+  "Ra mắt Iphone 16 Series - Minh Tuấn Mobile",
+];
+
+const urls = [
+  "https://onedrive.live.com/?authkey=%21AHE8jL2tnOme5Bk&cid=C3686AE64453CEA3&id=C3686AE64453CEA3%2114764&parId=C3686AE64453CEA3%2114762&o=OneUp",
+  "",
+  "",
+  "https://onedrive.live.com/?authkey=%21AHE8jL2tnOme5Bk&cid=C3686AE64453CEA3&id=C3686AE64453CEA3%2114346&parId=C3686AE64453CEA3%2114762&o=OneUp",
+  "https://onedrive.live.com/?authkey=%21AHE8jL2tnOme5Bk&cid=C3686AE64453CEA3&id=C3686AE64453CEA3%2114798&parId=C3686AE64453CEA3%2114762&o=OneUp",
+  "https://onedrive.live.com/?authkey=%21AHE8jL2tnOme5Bk&cid=C3686AE64453CEA3&id=C3686AE64453CEA3%2113760&parId=C3686AE64453CEA3%2114762&o=OneUp",
+  "https://onedrive.live.com/?authkey=%21AHE8jL2tnOme5Bk&cid=C3686AE64453CEA3&id=C3686AE64453CEA3%2114797&parId=C3686AE64453CEA3%2114762&o=OneUp",
+  "https://onedrive.live.com/?authkey=%21AHE8jL2tnOme5Bk&cid=C3686AE64453CEA3&id=C3686AE64453CEA3%2114796&parId=C3686AE64453CEA3%2114762&o=OneUp",
+  "https://onedrive.live.com/?authkey=%21AHE8jL2tnOme5Bk&cid=C3686AE64453CEA3&id=C3686AE64453CEA3%2114763&parId=C3686AE64453CEA3%2114762&o=OneUp",
+  "https://onedrive.live.com/?authkey=%21AHE8jL2tnOme5Bk&cid=C3686AE64453CEA3&id=C3686AE64453CEA3%2114345&parId=C3686AE64453CEA3%2114762&o=OneUp",
+  "https://onedrive.live.com/?authkey=%21AHE8jL2tnOme5Bk&cid=C3686AE64453CEA3&id=C3686AE64453CEA3%2113758&parId=C3686AE64453CEA3%2114762&o=OneUp",
 ];
 
 export default function Slide5() {
@@ -36,8 +79,18 @@ export default function Slide5() {
           {t.projects}
         </h1>
         <SlideShow onVideoIndexChange={setCurrentVideoIndex} />
-        <div className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
-          Slide {currentVideoIndex + 1}
+        <div className="flex flex-col gap-4 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-center">
+          <span>{projectNames[currentVideoIndex]}</span>
+          <span>
+            Xem chi tiết tại{" "}
+            <a
+              href={urls[currentVideoIndex]}
+              target="_blank"
+              className="text-[#ec6629] underline font-semibold"
+            >
+              LINK
+            </a>
+          </span>
         </div>
       </div>
     </>
@@ -62,7 +115,6 @@ function SlideShow({
     return videos;
   }, [videos, MIN_SLIDES_TO_SHOW]);
 
-
   const calculatedBackgroundImages = useMemo(() => {
     if (backgroundImages.length < MIN_SLIDES_TO_SHOW) {
       const missingItems = MIN_SLIDES_TO_SHOW - backgroundImages.length;
@@ -70,7 +122,6 @@ function SlideShow({
     }
     return backgroundImages;
   }, [backgroundImages, MIN_SLIDES_TO_SHOW]);
-
 
   useEffect(() => {
     const abortController = new AbortController();
@@ -167,6 +218,13 @@ function SlideShow({
       sliderRef.current?.slickNext();
     };
 
+    window.onblur = () => {
+      backgroundVideoElement.pause();
+      videoElement.pause();
+      backgroundVideoElement.currentTime = videoElement.currentTime;
+      videoElement.volume = 0;
+    };
+
     let intervalId: unknown;
 
     const observer = new IntersectionObserver(
@@ -257,7 +315,7 @@ function SlideShow({
               <div
                 key={index}
                 data-offset-index-from-center={adjustedOffsetIndexFromCenter}
-                className="w-full h-1/2 aspect-video !flex justify-center items-center bg-red-500 transition-all duration-[25ms] shadow-2xl relative opacity-0"
+                className="w-full h-1/2 aspect-video !flex justify-center items-center bg-transparent transition-all duration-[25ms] shadow-2xl relative opacity-0"
               >
                 <Image
                   src={calculatedBackgroundImages[index]}
@@ -273,7 +331,7 @@ function SlideShow({
             <div
               key={index}
               data-offset-index-from-center={adjustedOffsetIndexFromCenter}
-              className="w-full h-1/2 aspect-video !flex justify-center items-center bg-red-500 transition-all duration-300 shadow-2xl relative sm:scale-[calc(var(--init-scale)-max(var(--offset),-1*var(--offset))*0.15)] sm:z-[calc(50-max(var(--offset),-1*var(--offset)))] sm:translate-x-[calc(50%*-1*var(--offset))]"
+              className="w-full h-1/2 aspect-video !flex justify-center items-center bg-transparent transition-all duration-300 shadow-2xl relative sm:scale-[calc(var(--init-scale)-max(var(--offset),-1*var(--offset))*0.15)] sm:z-[calc(50-max(var(--offset),-1*var(--offset)))] sm:translate-x-[calc(50%*-1*var(--offset))]"
             >
               <Image
                 src={calculatedBackgroundImages[index]}
