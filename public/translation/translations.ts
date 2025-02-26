@@ -44,7 +44,7 @@ const translations = {
       "FMCG, Food & Beverages, Education, Pharma & Cosmetics, Real Estate, Consumer Electronics, Automotive, Finance...",
     clientLogoAlt: "Partner Logo",
     event1: "Young Chef Competition Ho Chi Minh City 2024 - Wilmar CLV",
-    event2: "Teacher Appreciation Ceremony 11/20 - Starlit Touchpoint - Hướng Nghiệp Á Âu",
+    event2: "Teacher Appreciation Ceremony 11/20 - Starlit Touchpoint - Asian-European Career Orientation",
     event3: "Dealer Conference - 2024 Outstanding Dealer Awards - Hyundai | TC Motor",
     event4: "3D Appreciation Party 2024 - HVH",
     event5: "Hyundai Custin & Palisade Launch Ceremony",
