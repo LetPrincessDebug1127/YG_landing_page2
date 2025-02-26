@@ -1,8 +1,7 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { useState, useEffect } from "react";
-import translations from "../../public/translation/translations";
-import { useLanguage } from "../context/LanguageContext";
 
 const backgroundImages = [
   "/media/slide2.1.jpg",
@@ -14,8 +13,8 @@ const backgroundImages = [
 export default function BackgroundSlider() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(true); // Điều khiển hiệu ứng chuyển động
-  const { language } = useLanguage();
-  const t = translations[language];
+
+  const t = useTranslations("Page");
 
   // IntersectionObserver setup
   useEffect(() => {
@@ -103,13 +102,13 @@ export default function BackgroundSlider() {
               href="#slide3"
               className="text-white transition-transform transform scale-100"
             >
-              {t.ABOUT}
+              {t("ABOUT")}
             </a>{" "}
             <a
               href="#slide3"
               className="text-[#ec6629] transition-transform transform scale-110"
             >
-              {t.US}
+              {t("US")}
             </a>
           </h1>
 
@@ -124,7 +123,7 @@ export default function BackgroundSlider() {
               href="#slide4"
               className="text-[26px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[32px] 2xl:text-[54px] transition-transform transform scale-100 hover:scale-110 hover:text-[#ec6629]"
             >
-              {t.SERVICES}
+              {t("SERVICES")}
             </a>
           </div>
 
@@ -139,7 +138,7 @@ export default function BackgroundSlider() {
               href="#slide5"
               className="text-[26px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[32px] 2xl:text-[54px] transition-transform transform scale-100 hover:scale-110 hover:text-[#ec6629]"
             >
-              {t.PROJECTS}
+              {t("PROJECTS")}
             </a>
           </div>
 
@@ -154,7 +153,7 @@ export default function BackgroundSlider() {
               href="#slide6"
               className="text-[26px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[32px] 2xl:text-[54px] transition-transform transform scale-100 hover:scale-110 hover:text-[#ec6629]"
             >
-              {t.CLIENTS}
+              {t("CLIENTS")}
             </a>
           </div>
 
@@ -169,7 +168,7 @@ export default function BackgroundSlider() {
               href="#slide7"
               className="text-[26px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[32px] 2xl:text-[54px] transition-transform transform scale-100 hover:scale-110 hover:text-[#ec6629]"
             >
-              {t.CONTACT}
+              {t("CONTACT")}
             </a>
           </div>
         </div>
