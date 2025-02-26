@@ -54,7 +54,8 @@ const translations = {
     event9: "New Year Party 2025 - Wilmar CLV",
     event10: "APPRECIATION PARTY 2024 - HVH",
     event11: "iPhone 16 Series Launch - Minh Tuấn Mobile",
-    linkDetail: "View details at"
+    linkDetail: "View details at",
+    sendSuccess: "Send successfully!"
   },
   vi: {
     home: "Trang chủ",
@@ -112,7 +113,8 @@ const translations = {
     event9: "Tiệc tân niên 2025 - Wilmar CLV",
     event10: "TIỆC TRI ÂN 2024 - HVH",
     event11: "Ra mắt Iphone 16 Series - Minh Tuấn Mobile",
-    linkDetail : "Xem chi tiết tại"
+    linkDetail : "Xem chi tiết tại",
+    sendSuccess : "Gửi thành công!"
   },
 };
 

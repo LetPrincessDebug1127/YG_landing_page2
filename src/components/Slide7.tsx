@@ -1,5 +1,5 @@
 "use client"
-import React from "react";
+import React, { FormEvent} from "react";
 import translations from "../../public/translation/translations";
 import { useLanguage } from "../context/LanguageContext";
 import Link from "next/link";
@@ -9,7 +9,41 @@ import Image from 'next/image';
 const ContactSection: React.FC = () => {
   const { language } = useLanguage();
   const t = translations[language];
- 
+const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+  event.preventDefault(); // Ngăn chặn hành vi submit mặc định
+
+  // Lấy dữ liệu từ form
+  const formElement = event.target as HTMLFormElement;
+  const formData = new FormData(formElement);
+  const data = Object.fromEntries(formData.entries());
+
+  // Thay entry.XXXXXX bằng Entry ID của Google Form
+  const googleFormURL =
+    "https://docs.google.com/forms/d/e/1FAIpQLSdMjEkzxxD7WfWQ348oP9yUImgTV9PF8MqurFKV-SEer1zGyA/formResponse";
+
+  const formEntries = new URLSearchParams({
+    "entry.391856216": data.name as string,
+    "entry.86789803": data.phone as string,
+    "entry.1983827446": data.email as string,
+    "entry.1805973767": data.message as string,
+  });
+
+  try {
+    const response = await fetch(googleFormURL, {
+      method: "POST",
+      mode: "no-cors", // Bắt buộc do Google Forms không hỗ trợ CORS
+      body: formEntries,
+    });
+
+    // Hiển thị thông báo thành công (do mode: "no-cors", không thể kiểm tra response)
+    alert(t.sendSuccess);
+    formElement.reset();
+  } catch (error) {
+    console.error("Lỗi khi gửi form:", error);
+    alert("Có lỗi xảy ra, vui lòng thử lại!");
+  }
+};
+
   return (
     <section className="relative w-full h-screen flex items-center mobile-ui:block justify-center flex-col">
       <video
@@ -110,62 +144,63 @@ const ContactSection: React.FC = () => {
       {/* Phần bên phải: Form liên hệ */}
       <div className="flex-1 bg-[rgba(34,34,34,0.4)] text-white p-5 rounded-[15px] shadow-[0_8px_12px_rgba(0,0,0,1)] transition-all duration-300 ease-in-out w-[20em] mx-auto custom-size:max-w-[50%] mobile-ui:mt-[15%]">
         <h2 className="text-[1.5rem] font-semibold mb-4 ml-[5%] text-[#ec6629]">{t.informationToContact}</h2>
-        <form action="/submit-contact" method="POST" className="space-y-4 flex flex-col items-center">
-          <div className="contain-input w-full">
-            <label htmlFor="name" className="block font-medium ml-[5%]">{t.name}</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder={t.placeHolderName}
-              required
-              className="w-[90%] h-[2.5em] p-2 text-black border border-[#ff8500] outline-none rounded-[5px] no-underline block mx-auto"
-            />
-          </div>
+        <form onSubmit={handleSubmit} id="" className="space-y-4 flex flex-col items-center">
+        <div className="contain-input w-full">
+          <label htmlFor="name" className="block font-medium ml-[5%]">{t.name}</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder={t.placeHolderName}
+            required
+            className="w-[90%] h-[2.5em] p-2 text-black border border-[#ff8500] outline-none rounded-[5px] no-underline block mx-auto"
+          />
+        </div>
 
-          <div className="contain-input w-full">
-            <label htmlFor="phone" className="block font-medium ml-[5%]">{t.numberPhone}</label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              placeholder={t.placeHolderPhone}
-              pattern="[0-9]{10,11}"
-              required
-              className="w-[90%] h-[2.5em] p-2 text-black border border-[#ff8500] outline-none rounded-[5px] no-underline block mx-auto"
-            />
-          </div>
+        <div className="contain-input w-full">
+          <label htmlFor="phone" className="block font-medium ml-[5%]">{t.numberPhone}</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder={t.placeHolderPhone}
+            pattern="[0-9]{10,11}"
+            required
+            className="w-[90%] h-[2.5em] p-2 text-black border border-[#ff8500] outline-none rounded-[5px] no-underline block mx-auto"
+          />
+        </div>
 
-          <div className="contain-input w-full">
-            <label htmlFor="email" className="block font-medium ml-[5%]">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder={t.placeHolderEmail}
-              required
-              className="w-[90%] h-[2.5em] p-2 text-black border border-[#ff8500] outline-none rounded-[5px] no-underline block mx-auto"
-            />
-          </div>
+        <div className="contain-input w-full">
+          <label htmlFor="email" className="block font-medium ml-[5%]">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder={t.placeHolderEmail}
+            required
+            className="w-[90%] h-[2.5em] p-2 text-black border border-[#ff8500] outline-none rounded-[5px] no-underline block mx-auto"
+          />
+        </div>
 
-          <div className="contain-input w-full">
-            <label htmlFor="message" className="block font-medium ml-[5%]">{t.message}</label>
-            <input
-              id="message"
-              name="message"
-              placeholder={t.placeHolderMessage}
-              required
-              className="w-[90%] h-[2.5em] p-2 text-black border border-[#ff8500] mb-[20px] outline-none rounded-[5px] no-underline block mx-auto"
-            />
-          </div>
+        <div className="contain-input w-full">
+          <label htmlFor="message" className="block font-medium ml-[5%]">{t.message}</label>
+          <input
+            id="message"
+            name="message"
+            placeholder={t.placeHolderMessage}
+            required
+            className="w-[90%] h-[2.5em] p-2 text-black border border-[#ff8500] mb-[20px] outline-none rounded-[5px] no-underline block mx-auto"
+          />
+        </div>
 
-          <button
-            className="w-[90%] bg-gradient-to-r from-[#ff7a00] to-[#ff4d00] text-white border-none rounded-[5px] px-4 py-2 text-[16px] font-bold cursor-pointer transition-all duration-300 ease-in-out shadow-lg hover:from-[#ff4d00] hover:to-[#ff7a00] hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 active:shadow-lg"
-            type="submit"
-          >
-            {t.send}
-          </button>
-        </form>
+        <button
+          className="w-[90%] bg-gradient-to-r from-[#ff7a00] to-[#ff4d00] text-white border-none rounded-[5px] px-4 py-2 text-[16px] font-bold cursor-pointer transition-all duration-300 ease-in-out shadow-lg hover:from-[#ff4d00] hover:to-[#ff7a00] hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 active:shadow-lg"
+          type="submit"
+        >
+          {t.send}
+        </button>
+      </form>
+
       </div>
       </div>
       <p className = "text-gray-500 z-10 mobile-ui:hidden xl:bottom-0 xl:absolute xl:p-[10px]">© 2024 YG. All rights reserved.</p>
