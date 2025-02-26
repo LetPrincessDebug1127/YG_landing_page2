@@ -43,6 +43,18 @@ const translations = {
     clientIndustries:
       "FMCG, Food & Beverages, Education, Pharma & Cosmetics, Real Estate, Consumer Electronics, Automotive, Finance...",
     clientLogoAlt: "Partner Logo",
+    event1: "Young Chef Competition Ho Chi Minh City 2024 - Wilmar CLV",
+    event2: "Teacher Appreciation Ceremony 11/20 - Starlit Touchpoint - Hướng Nghiệp Á Âu",
+    event3: "Dealer Conference - 2024 Outstanding Dealer Awards - Hyundai | TC Motor",
+    event4: "3D Appreciation Party 2024 - HVH",
+    event5: "Hyundai Custin & Palisade Launch Ceremony",
+    event6: "10th Anniversary Celebration - QSR Vietnam",
+    event7: "Hyundai Accent Introduction & Launch Ceremony",
+    event8: "April 30 Grand Celebration - Cityland",
+    event9: "New Year Party 2025 - Wilmar CLV",
+    event10: "APPRECIATION PARTY 2024 - HVH",
+    event11: "iPhone 16 Series Launch - Minh Tuấn Mobile",
+    linkDetail: "View details at"
   },
   vi: {
     home: "Trang chủ",
@@ -89,6 +101,18 @@ const translations = {
     clientIndustries:
       " FMCG, Food & Beverages, Giáo dục, Dược & Mỹ Phẩm, Bất Động Sản, Điện Tử Tiêu Dùng, Ô tô, Tài Chính...",
     clientLogoAlt: "Logo Đối Tác",
+    event1: "Hội thi đầu bếp trẻ TP HCM 2024 - Wilmar CLV",
+    event2: "Lễ Tri Ân 20/11 - Điểm Chạm Tinh Tú - Hướng Nghiệp Á Âu",
+    event3: "Hội nghị đại lý - Lễ trao giải đại lý xuất sắc 2024 - Hyundai | TC Motor",
+    event4: "3D Tiệc tri ân 2024 - HVH",
+    event5: "Lễ ra mắt xe Hyundai Custin & Palisade",
+    event6: "Lễ kỷ niệm 10 năm thành lập  - QSR VietNam",
+    event7: "Lễ giới thiệu và ra mắt xe Hyndai Accent",
+    event8: "Mừng đại lễ 30.4 - Cityland",
+    event9: "Tiệc tân niên 2025 - Wilmar CLV",
+    event10: "TIỆC TRI ÂN 2024 - HVH",
+    event11: "Ra mắt Iphone 16 Series - Minh Tuấn Mobile",
+    linkDetail : "Xem chi tiết tại"
   },
 };
 

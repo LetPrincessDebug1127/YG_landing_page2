@@ -54,7 +54,8 @@ export default {
         'desktop-md' : { min : '1350px' },
         'slide2-gap' : { raw: '(max-height: 600px) and (min-width: 1100px) and (max-width:1500px)' },
         'slide3-gap' : { raw: '(max-width: 1400px)and (min-width: 1000px)' },
-        'smallerX-desktop': { max: '1250px' }
+        'smallerX-desktop': { max: '1250px' },
+        'NestHub' : { raw: '(width: 1024px)and (height: 600px)' }
       },
       scale: {
         200: '1.6', 

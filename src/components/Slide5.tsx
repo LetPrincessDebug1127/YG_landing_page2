@@ -40,17 +40,17 @@ const backgroundImages = [
 ];
 
 const projectNames = [
-  "Hội thi đầu bếp trẻ TP HCM 2024 - Wilmar CLV",
-  " ",
-  "Hội nghị đại lý - Lễ trao giải đại lý xuất sắc 2024 - Hyundai | TC Motor",
-  "3D Tiệc tri ân 2024 - HVH",
-  "Lễ ra mắt xe Hyundai Custin & Palisade",
-  "Lễ kỷ niệm 10 năm thành lập  - QSR VietNam",
-  "Lễ giới thiệu và ra mắt xe Hyndai Accent",
-  "Mừng đại lễ 30.4 - Cityland",
-  "Tiệc tân niên 2025 - Wilmar CLV",
-  "TIỆC TRI ÂN 2024 - HVH",
-  "Ra mắt Iphone 16 Series - Minh Tuấn Mobile",
+  "event1",
+  "event2",
+  "event3",
+  "event4",
+  "event5",
+  "event6",
+  "event7",
+  "event8",
+  "event9",
+  "event10",
+  "event11",
 ];
 
 const urls = [
@@ -74,15 +74,15 @@ export default function Slide5() {
   return (
     <>
       <div className="absolute inset-0 bg-black/50 pointer-events-none z-10"></div>
-      <div className="absolute size-full z-20 flex flex-col justify-center items-center gap-6 sm:gap-24 md:gap-20 lg:gap-28 xl:gap-32 2xl:gap-36">
-        <h1 className="text-[42px] sm:text-[36px] md:text-[48px] lg:text-[64px] xl:text-[72px] 2xl:text-[80px] 3xl:text-[96px] font-bold text-[#ec6629]">
+      <div className="absolute size-full z-20 flex flex-col justify-center items-center gap-6 sm:gap-24 md:gap-20 lg:gap-24 xl:gap-28 2xl:gap-32">
+        <h1 className="text-[42px] sm:text-[36px] md:text-[48px] lg:text-[64px] xl:text-[72px] 2xl:text-[80px] 3xl:text-[96px] font-bold text-[#ec6629] lg:pt-[52px] xl:pt-[65.17px] 2xl:pt-[78px] 3xl:pt-[104px]">
           {t.projects}
         </h1>
         <SlideShow onVideoIndexChange={setCurrentVideoIndex} />
         <div className="flex flex-col gap-4 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-center">
-          <span>{projectNames[currentVideoIndex]}</span>
+          <span>{t[projectNames[currentVideoIndex] as keyof typeof t]}</span>
           <span>
-            Xem chi tiết tại{" "}
+            {t.linkDetail}{" "}
             <a
               href={urls[currentVideoIndex]}
               target="_blank"

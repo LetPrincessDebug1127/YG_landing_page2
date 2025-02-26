@@ -76,14 +76,14 @@ const VideoBackgroundSection: React.FC = () => {
           </div>
 
           {/* Phần bên phải - Văn bản */}
-          <div className="fade-in-section flex flex-col justify-center items-start text-white w-fit h-auto p-3 mr-[-5em] desktop-lg:ml-[2em] desktop-lg:mb-[5.5em] desktop-xl:ml-[6em] 2xl:mb-[8.2em] 2xl:ml-[6em] slide3-gap:mb-[4.3em] mobile-ui:mr-[0px] iPad:w-[74%] footerIpad:m-0">
-            <h1 className="text-[#ec6629] text-[24px] sm:text-[36px] md:text-[40px] lg:text-[44px] xl:text-[60px] 2xl:text-[76px] font-bold mb-4 whitespace-nowrap">
+          <div className="fade-in-section flex flex-col justify-center items-start text-white w-fit h-auto p-3 mr-[-5em] desktop-lg:ml-[2em] smallerX-desktop:mb-[-0.7em] desktop-lg:mb-[6.3em] desktop-xl:ml-[6em] 2xl:mb-[8.2em] 2xl:ml-[6em] slide3-gap:mb-[4.3em] mobile-ui:mr-[0px] iPad:w-[74%] footerIpad:m-0">
+            <h1 className="text-[#ec6629] text-[24px] sm:text-[36px] md:text-[40px] lg:text-[44px] xl:text-[60px] 2xl:text-[76px] font-bold mb-4 whitespace-nowrap NestHub:text-[43px]">
               Young Generation Agency
             </h1>
-            <p className="text-sm sm:text-base text-custom md:text-lg lg:text-xl xl:text-2xl lg:w-[36.5em] xl:w-[47.5em] 2xl:w-[60em] text-justify mb-3">
+            <p className="text-sm sm:text-base text-custom md:text-lg lg:text-xl xl:text-2xl NestHub:w-[34em] lg:w-[36.5em] xl:w-[47.5em] 2xl:w-[60em] text-justify mb-3">
               {t.text}
             </p>
-            <p className="text-sm sm:text-base text-custom md:text-lg lg:text-xl xl:text-2xl lg:w-[36.5em] xl:w-[47.5em] 2xl:w-[60em] text-justify">
+            <p className="text-sm sm:text-base text-custom md:text-lg lg:text-xl xl:text-2xl NestHub:w-[34em] lg:w-[36.5em] xl:w-[47.5em] 2xl:w-[60em] text-justify">
               {t.textP}
             </p>
           </div>
