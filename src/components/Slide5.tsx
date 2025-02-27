@@ -6,9 +6,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { ComponentProps, useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
-import { useLanguage } from "@/context/LanguageContext";
-import translations from "../../public/translation/translations";
 import { CircleChevronLeft, CircleChevronRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 const MIN_SLIDES_TO_SHOW = 6;
 let triggerVideoAutoPlayFirstTime = false;
@@ -68,21 +67,20 @@ const urls = [
 ];
 
 export default function Slide5() {
-  const { language } = useLanguage();
-  const t = translations[language];
+  const t = useTranslations("Page");
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   return (
     <>
       <div className="absolute inset-0 bg-black/50 pointer-events-none z-10"></div>
       <div className="absolute size-full z-20 flex flex-col justify-center items-center gap-6 sm:gap-24 md:gap-20 lg:gap-24 xl:gap-28 2xl:gap-32">
         <h1 className="text-[42px] sm:text-[36px] md:text-[48px] lg:text-[64px] xl:text-[72px] 2xl:text-[80px] 3xl:text-[96px] font-bold text-[#ec6629] lg:pt-[52px] xl:pt-[65.17px] 2xl:pt-[78px] 3xl:pt-[104px]">
-          {t.projects}
+          {t("projects")}
         </h1>
         <SlideShow onVideoIndexChange={setCurrentVideoIndex} />
         <div className="flex flex-col gap-4 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-center">
-          <span>{t[projectNames[currentVideoIndex] as keyof typeof t]}</span>
+          <span>{t(projectNames[currentVideoIndex])}</span>
           <span>
-            {t.linkDetail}{" "}
+            {t("linkDetail")}{" "}
             <a
               href={urls[currentVideoIndex]}
               target="_blank"

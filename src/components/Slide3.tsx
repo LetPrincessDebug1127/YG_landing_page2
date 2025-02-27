@@ -1,11 +1,10 @@
-"use client"
+"use client";
+import { useTranslations } from "next-intl";
 import React, { useEffect, useRef } from "react";
-import translations from "../../public/translation/translations";
-import { useLanguage } from "../context/LanguageContext";
+import Image from "next/image";
 
 const VideoBackgroundSection: React.FC = () => {
-  const { language } = useLanguage();
-  const t = translations[language];
+  const t = useTranslations("Page");
 
   const imageContainerRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
@@ -28,13 +27,12 @@ const VideoBackgroundSection: React.FC = () => {
 
       const centerX = rect.width / 2;
       const centerY = rect.height / 2;
-     
+
       const rotateX = ((centerY - y) / centerY) * 15; // Góc nghiêng tối đa là ±15 độ
       const rotateY = ((x - centerX) / centerX) * 15;
 
       image.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
     };
-
 
     const handleMouseLeave = () => {
       image.style.transform = "perspective(1000px) rotateX(0) rotateY(0)";
@@ -61,17 +59,17 @@ const VideoBackgroundSection: React.FC = () => {
       ></video>
       <div className="fade-in-section">
         <div className="fade-in-section relative z-10 w-full h-full flex mt-[2em] mobile-ui:flex-col footerIpad:flex-col mobile-ui:items-center footerIpad:items-center mobile-ui:mt-[0px] footerIpad:mt-[0px] mobile-ui:gap-[20px] footerIpad:gap-[40px] mobile-ui:pt-[60.17px]">
-          
           {/* Phần bên trái - Hình ảnh */}
           <div
             ref={imageContainerRef}
             className="relative w-[350px] h-[500px] mobile-ui:w-[200px] mobile-ui:h-[260px] flex items-center justify-center slide3-gap:h-[450px] footerIpad:h-[450px] footerIpad:w-[330px] slide3-gap:w-[330px]"
           >
-            <img
+            <Image
               ref={imageRef}
               src="/media/banner-turning.jpg"
               alt="Banner"
               className="absolute top-0 transform -translate-x-1/2 w-full h-full rounded-lg shadow-custom-orange transition-transform duration-200 ease-out"
+              fill
             />
           </div>
 
@@ -81,13 +79,12 @@ const VideoBackgroundSection: React.FC = () => {
               Young Generation Agency
             </h1>
             <p className="text-sm sm:text-base text-custom md:text-lg lg:text-xl xl:text-2xl NestHub:w-[34em] lg:w-[36.5em] xl:w-[47.5em] 2xl:w-[60em] text-justify mb-3">
-              {t.text}
+              {t("text")}
             </p>
             <p className="text-sm sm:text-base text-custom md:text-lg lg:text-xl xl:text-2xl NestHub:w-[34em] lg:w-[36.5em] xl:w-[47.5em] 2xl:w-[60em] text-justify">
-              {t.textP}
+              {t("textP")}
             </p>
           </div>
-
         </div>
       </div>
     </section>

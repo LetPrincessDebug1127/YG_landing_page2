@@ -1,8 +1,8 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { useState, useEffect } from "react";
-import translations from "../../public/translation/translations";
-import { useLanguage } from "../context/LanguageContext";
+import Image from "next/image";
 
 const backgroundImages = [
   "/media/slide2.1.jpg",
@@ -14,8 +14,8 @@ const backgroundImages = [
 export default function BackgroundSlider() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(true); // Điều khiển hiệu ứng chuyển động
-  const { language } = useLanguage();
-  const t = translations[language];
+
+  const t = useTranslations("Page");
 
   // IntersectionObserver setup
   useEffect(() => {
@@ -77,20 +77,22 @@ export default function BackgroundSlider() {
         onTransitionEnd={handleTransitionEnd}
       >
         {backgroundImages.map((image, index) => (
-          <div key={index} className="flex-shrink-0 w-full h-full">
-            <img
+          <div key={index} className="flex-shrink-0 w-full h-full relative">
+            <Image
               src={image}
               alt={`Background ${index + 1}`}
               className="w-full h-full object-cover"
+              fill
             />
           </div>
         ))}
         {/* Clone ảnh đầu tiên để tạo hiệu ứng vòng lặp */}
-        <div className="flex-shrink-0 min-w-full w-full h-full">
-          <img
+        <div className="flex-shrink-0 min-w-full w-full h-full relative">
+          <Image
             src={backgroundImages[0]}
             alt="Background duplicate"
             className="w-full h-full object-cover"
+            fill
           />
         </div>
       </div>
@@ -103,19 +105,20 @@ export default function BackgroundSlider() {
               href="#slide3"
               className="text-white transition-transform transform scale-100"
             >
-              {t.ABOUT}
+              {t("ABOUT")}
             </a>{" "}
             <a
               href="#slide3"
               className="text-[#ec6629] transition-transform transform scale-110"
             >
-              {t.US}
+              {t("US")}
             </a>
           </h1>
 
           <div className="flex items-center gap-[10px]">
-            <img
+            <Image
               src="/media/icon1.png"
+              alt="service icon"
               className="inline-block mr-2 max-w-full h-auto"
               width={35}
               height={35}
@@ -124,13 +127,14 @@ export default function BackgroundSlider() {
               href="#slide4"
               className="text-[26px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[32px] 2xl:text-[54px] transition-transform transform scale-100 hover:scale-110 hover:text-[#ec6629]"
             >
-              {t.SERVICES}
+              {t("SERVICES")}
             </a>
           </div>
 
           <div className="flex items-center gap-[10px]">
-            <img
+            <Image
               src="/media/icon2.png"
+              alt="projects icon"
               className="inline-block mr-2 max-w-full h-auto"
               width={35}
               height={35}
@@ -139,13 +143,14 @@ export default function BackgroundSlider() {
               href="#slide5"
               className="text-[26px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[32px] 2xl:text-[54px] transition-transform transform scale-100 hover:scale-110 hover:text-[#ec6629]"
             >
-              {t.PROJECTS}
+              {t("PROJECTS")}
             </a>
           </div>
 
           <div className="flex items-center gap-[13px]">
-            <img
+            <Image
               src="/media/icon3.png"
+              alt="clients icon"
               className="inline-block mr-2 max-w-full h-auto"
               width={33}
               height={33}
@@ -154,13 +159,14 @@ export default function BackgroundSlider() {
               href="#slide6"
               className="text-[26px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[32px] 2xl:text-[54px] transition-transform transform scale-100 hover:scale-110 hover:text-[#ec6629]"
             >
-              {t.CLIENTS}
+              {t("CLIENTS")}
             </a>
           </div>
 
           <div className="flex items-center gap-[16px]">
-            <img
+            <Image
               src="/media/icon4.png"
+              alt="contact icon"
               className="inline-block mr-2 max-w-full h-auto"
               width={30}
               height={30}
@@ -169,7 +175,7 @@ export default function BackgroundSlider() {
               href="#slide7"
               className="text-[26px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[32px] 2xl:text-[54px] transition-transform transform scale-100 hover:scale-110 hover:text-[#ec6629]"
             >
-              {t.CONTACT}
+              {t("CONTACT")}
             </a>
           </div>
         </div>
