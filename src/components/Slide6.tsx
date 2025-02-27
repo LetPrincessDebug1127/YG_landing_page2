@@ -17,10 +17,11 @@ const ClientSection: React.FC = () => {
 
   return (
     <div className="relative w-full h-screen overflow-hidden fade-in-section z-10 flex flex-col">
-      <img
+      <Image
         src="/media/introduction-banner.svg"
         alt="Background duplicate"
         className="absolute top-0 left-0 w-full h-full object-cover"
+        fill
       />
 
       <div className="relative flex flex-col h-full text-center fade-in-section lg:mt-[4%] mobile-ui:p-4 custom-size:p-4">

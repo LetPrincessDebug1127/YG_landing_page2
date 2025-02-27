@@ -98,20 +98,22 @@ export default function BackgroundSlider() {
         onTransitionEnd={handleTransitionEnd}
       >
         {backgroundImages.map((image, index) => (
-          <div key={index} className="flex-shrink-0 w-full h-full">
-            <img
+          <div key={index} className="flex-shrink-0 w-full h-full relative">
+            <Image
               src={image}
               alt={`Background ${index + 1}`}
               className="w-full h-full object-cover"
+              fill
             />
           </div>
         ))}
         {/* Clone ảnh đầu tiên để tạo hiệu ứng vòng lặp */}
-        <div className="flex-shrink-0 min-w-full w-full h-full">
-          <img
+        <div className="flex-shrink-0 min-w-full w-full h-full relative">
+          <Image
             src={backgroundImages[0]}
             alt="Background duplicate"
             className="w-full h-full object-cover"
+            fill
           />
         </div>
       </div>

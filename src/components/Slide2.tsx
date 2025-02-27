@@ -2,6 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 const backgroundImages = [
   "/media/slide2.1.jpg",
@@ -76,20 +77,22 @@ export default function BackgroundSlider() {
         onTransitionEnd={handleTransitionEnd}
       >
         {backgroundImages.map((image, index) => (
-          <div key={index} className="flex-shrink-0 w-full h-full">
-            <img
+          <div key={index} className="flex-shrink-0 w-full h-full relative">
+            <Image
               src={image}
               alt={`Background ${index + 1}`}
               className="w-full h-full object-cover"
+              fill
             />
           </div>
         ))}
         {/* Clone ảnh đầu tiên để tạo hiệu ứng vòng lặp */}
-        <div className="flex-shrink-0 min-w-full w-full h-full">
-          <img
+        <div className="flex-shrink-0 min-w-full w-full h-full relative">
+          <Image
             src={backgroundImages[0]}
             alt="Background duplicate"
             className="w-full h-full object-cover"
+            fill
           />
         </div>
       </div>
@@ -113,8 +116,9 @@ export default function BackgroundSlider() {
           </h1>
 
           <div className="flex items-center gap-[10px]">
-            <img
+            <Image
               src="/media/icon1.png"
+              alt="service icon"
               className="inline-block mr-2 max-w-full h-auto"
               width={35}
               height={35}
@@ -128,8 +132,9 @@ export default function BackgroundSlider() {
           </div>
 
           <div className="flex items-center gap-[10px]">
-            <img
+            <Image
               src="/media/icon2.png"
+              alt="projects icon"
               className="inline-block mr-2 max-w-full h-auto"
               width={35}
               height={35}
@@ -143,8 +148,9 @@ export default function BackgroundSlider() {
           </div>
 
           <div className="flex items-center gap-[13px]">
-            <img
+            <Image
               src="/media/icon3.png"
+              alt="clients icon"
               className="inline-block mr-2 max-w-full h-auto"
               width={33}
               height={33}
@@ -158,8 +164,9 @@ export default function BackgroundSlider() {
           </div>
 
           <div className="flex items-center gap-[16px]">
-            <img
+            <Image
               src="/media/icon4.png"
+              alt="contact icon"
               className="inline-block mr-2 max-w-full h-auto"
               width={30}
               height={30}

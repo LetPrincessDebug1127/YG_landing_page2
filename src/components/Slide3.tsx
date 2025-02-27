@@ -1,6 +1,7 @@
 "use client";
 import { useTranslations } from "next-intl";
 import React, { useEffect, useRef } from "react";
+import Image from "next/image";
 
 const VideoBackgroundSection: React.FC = () => {
   const t = useTranslations("Page");
@@ -63,11 +64,12 @@ const VideoBackgroundSection: React.FC = () => {
             ref={imageContainerRef}
             className="relative w-[350px] h-[500px] mobile-ui:w-[200px] mobile-ui:h-[260px] flex items-center justify-center slide3-gap:h-[450px] footerIpad:h-[450px] footerIpad:w-[330px] slide3-gap:w-[330px]"
           >
-            <img
+            <Image
               ref={imageRef}
               src="/media/banner-turning.jpg"
               alt="Banner"
               className="absolute top-0 transform -translate-x-1/2 w-full h-full rounded-lg shadow-custom-orange transition-transform duration-200 ease-out"
+              fill
             />
           </div>
 

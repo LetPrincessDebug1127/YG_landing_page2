@@ -2,10 +2,11 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Poppins } from "next/font/google";
 import Loading from "../../components/Loading";
 import { redirect, routing } from "@/i18n/routing";
-import { NextIntlClientProvider } from "next-intl";
+import { AbstractIntlMessages, NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
 
 import "@/app/globals.css";
+import { Metadata } from "next";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -27,21 +28,48 @@ export async function generateMetadata({
   params,
 }: {
   params: Promise<{ locale: string }>;
-}) {
+}): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "Metadata" });
+  const translations = await getTranslations({ locale, namespace: "metadata" });
+  const messages = await getMessages();
+
+  const title = translations("title");
+  const description = translations("description");
+
+  const info = {
+    title,
+    description,
+    images: [
+      {
+        url: "/favicon.ico",
+      },
+    ],
+  };
 
   return {
-    title: t("title"),
-    description: t("description"),
+    title,
+    description,
+    applicationName: title,
     openGraph: {
-      title: t("title"),
-      description: t("description"),
+      type: "website",
+      url: "https://ygcompany.vn",
+      siteName: title,
+      ...info,
     },
     twitter: {
-      title: t("title"),
-      description: t("description"),
+      ...info,
+      card: "summary_large_image",
     },
+    keywords: Object.keys(
+      (messages.metadata as AbstractIntlMessages).keywords
+    ).map(
+      (key) =>
+        (
+          (messages.metadata as AbstractIntlMessages)
+            .keywords as AbstractIntlMessages
+        )[key] as string
+    ),
+    icons: "/favicon.ico",
   };
 }
 

@@ -1,7 +1,15 @@
 {
-  "Metadata": {
+  "metadata": {
     "title": "YG - Công ty tổ chức sự kiện, kích hoạt thương hiệu, trang trí",
-    "description": "Chuyên cung cấp các dịch vụ tổ chức sự kiện, hoạt động kích hoạt thương hiệu, marketing, thiết kế - trang trí.... tại thị trường Việt Nam. Với đội ngũ nhân sự có nhiều kinh nghiệm trong lĩnh vực cùng sự tận tâm trong từng dự án, YG sẵn sàng đồng hành cùng Khách Hàng trong hành trình tạo ra những giá trị khác biệt đầy cảm hứng sáng tạo từ cảm xúc."
+    "description": "Chuyên cung cấp các dịch vụ tổ chức sự kiện, hoạt động kích hoạt thương hiệu, marketing, thiết kế - trang trí.... tại thị trường Việt Nam. Với đội ngũ nhân sự có nhiều kinh nghiệm trong lĩnh vực cùng sự tận tâm trong từng dự án, YG sẵn sàng đồng hành cùng Khách Hàng trong hành trình tạo ra những giá trị khác biệt đầy cảm hứng sáng tạo từ cảm xúc.",
+    "keywords": [
+      "YG",
+      "tổ chức sự kiện",
+      "kích hoạt thương hiệu",
+      "trang trí",
+      "marketing",
+      "thiết kế"
+    ]
   },
   "Page": {
     "home": "Trang chủ",

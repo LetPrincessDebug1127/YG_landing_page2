@@ -100,7 +100,7 @@ const ContactSection: React.FC = () => {
                 target="_blank"
                 aria-label="Facebook"
               >
-                <img
+                <Image
                   src="/media/Facebook_Logo.png"
                   alt="Facebook"
                   width="55"
@@ -108,7 +108,7 @@ const ContactSection: React.FC = () => {
                 />
               </Link>
               <Link href="https://zalo.me" target="_blank" aria-label="Zalo">
-                <img
+                <Image
                   src="/media/zalo_icon.png"
                   alt="Zalo"
                   width="55"
@@ -116,7 +116,7 @@ const ContactSection: React.FC = () => {
                 />
               </Link>
               <Link href="https://www.whatsapp.com/" target="_blank">
-                <img
+                <Image
                   src="/media/whatsapp1.png"
                   alt="Whatsapp"
                   width="55"
@@ -124,7 +124,7 @@ const ContactSection: React.FC = () => {
                 />
               </Link>
               <Link href="https://www.youtube.com" target="_blank">
-                <img
+                <Image
                   src="/media/YoutubeLogo.png"
                   alt="Youtube"
                   width="70"
