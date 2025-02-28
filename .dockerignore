@@ -1,0 +1,13 @@
+.git
+.vscode
+node_modules
+docker-compose.yml
+Dockerfile
+.prettierrc
+.gitignore
+.eslintrc.js
+*.md
+.env.example
+.env*.local
+LICENSE
+dist

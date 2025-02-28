@@ -1,12 +1,13 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import { Poppins } from "next/font/google";
 import Loading from "../../components/Loading";
-import { redirect, routing } from "@/i18n/routing";
+import { routing } from "@/i18n/routing";
 import { AbstractIntlMessages, NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
 
 import "@/app/globals.css";
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -83,7 +84,7 @@ export default async function RootLayout({
   const { locale } = await params;
 
   if (!routing.locales.includes(locale as (typeof routing.locales)[number])) {
-    redirect({ locale: routing.defaultLocale, href: "/" });
+    notFound();
   }
 
   const messages = await getMessages();
