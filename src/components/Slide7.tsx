@@ -147,7 +147,7 @@ const ContactSection: React.FC = () => {
           >
             <div className="contain-input w-full">
               <label htmlFor="name" className="block font-medium ml-[5%]">
-                {t.name}
+                {t("name")}
               </label>
               <input
                 type="text"
