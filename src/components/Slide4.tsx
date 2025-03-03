@@ -169,7 +169,7 @@ export default function BackgroundSlider() {
         </div>
       </div>
 
-      <div className="absolute hidden image-banner:flex fade-in-section w-full top-0 left-1/2 transform -translate-x-1/2 text-center text-white z-10 flex-col heightSE:mt-[12%] heightS8:mt-[13%] Pixel7:mt-[24%] Pixel7:gap-[8%] Pixel7:h-[84%] mobile-ui:pt-[60.17px]">
+      <div className="absolute hidden image-banner:flex fade-in-section w-full top-0 left-1/2 transform -translate-x-1/2 text-center text-white z-10 flex-col Pixel7:mt-[24%] Pixel7:gap-[8%] Pixel7:h-[84%]">
         {/* Phần tiêu đề */}
         <div className="w-[100%] p-4">
           <p className="text-base sm:text-lg md:text-xl text-start fade-in-section">

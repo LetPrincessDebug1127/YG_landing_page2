@@ -1,8 +1,10 @@
 "use client";
 import { useState, useEffect } from "react";
+import { useTranslations } from "next-intl";
 
 const LoadingScreen = ({ children }: { children: React.ReactNode }) => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const t = useTranslations("Page");
 
   useEffect(() => {
     const imagesToLoad = [
@@ -14,7 +16,6 @@ const LoadingScreen = ({ children }: { children: React.ReactNode }) => {
 
     imagesToLoad.forEach((src) => {
       if (src.endsWith(".mp4")) {
-        // Nếu là video, kiểm tra khi nó có thể phát
         const video = document.createElement("video");
         video.src = src;
         video.oncanplaythrough = () => {
@@ -22,7 +23,6 @@ const LoadingScreen = ({ children }: { children: React.ReactNode }) => {
           if (loadedCount === imagesToLoad.length) setIsLoaded(true);
         };
       } else {
-        // Nếu là hình ảnh
         const img = document.createElement("img"); 
         img.src = src;
         img.onload = () => {
@@ -38,7 +38,7 @@ const LoadingScreen = ({ children }: { children: React.ReactNode }) => {
   ) : (
     <div className="loading-screen">
       <div className="spinner"></div>
-      <p>Đang tải...</p>
+      <p>{t("loading")}</p>
     </div>
   );
 };

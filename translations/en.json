@@ -62,6 +62,7 @@
     "event10": "APPRECIATION PARTY 2024 - HVH",
     "event11": "iPhone 16 Series Launch - Minh Tuấn Mobile",
     "linkDetail": "View details at",
-    "sendSuccess": "Send successfully!"
+    "sendSuccess": "Send successfully!",
+    "loading" : "Loading..."
   }
 }
