@@ -9,6 +9,7 @@ import Slide7 from "../../components/Slide7";
 import Slide6 from "../../components/Slide6";
 import MobileNav from "../../components/MobileNavBar";
 import Slide5 from "@/components/Slide5";
+import LoadingScreen from "../../components/Loading";
 
 export default function LandingPage() {
   const [imageHeight] = useState(0);
@@ -47,6 +48,7 @@ export default function LandingPage() {
   }, []);
 
   return (
+    <LoadingScreen>
     <div
       id="container"
       className="w-full h-screen flex flex-col overflow-y-auto snap-y snap-mandatory scroll-smooth scroll-container"
@@ -122,5 +124,7 @@ export default function LandingPage() {
         <Slide7 />
       </section>
     </div>
+    </LoadingScreen>
+
   );
 }

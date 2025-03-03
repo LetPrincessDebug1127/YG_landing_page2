@@ -1,28 +1,47 @@
 "use client";
+import { useState, useEffect } from "react";
+import Image from "next/image";
 
-import { useEffect, useState } from "react";
-
-export default function Loading() {
-  const [isLoading, setIsLoading] = useState(true);
+const LoadingScreen = ({ children }: { children: React.ReactNode }) => {
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    const handleLoad = () => setIsLoading(false);
+    const imagesToLoad = [
+      "/media/banner-mobile.svg",
+      "/media/logo-fix-5.mp4",
+    ];
 
-    if (document.readyState === "complete") {
-      // Nếu tài nguyên đã load xong trước khi effect chạy
-      setIsLoading(false);
-    } else {
-      window.addEventListener("load", handleLoad);
-    }
+    let loadedCount = 0;
 
-    return () => window.removeEventListener("load", handleLoad);
+    imagesToLoad.forEach((src) => {
+      if (src.endsWith(".mp4")) {
+        // Nếu là video, kiểm tra khi nó có thể phát
+        const video = document.createElement("video");
+        video.src = src;
+        video.oncanplaythrough = () => {
+          loadedCount++;
+          if (loadedCount === imagesToLoad.length) setIsLoaded(true);
+        };
+      } else {
+        // Nếu là hình ảnh
+        const img = document.createElement("img"); 
+        img.src = src;
+        img.onload = () => {
+          loadedCount++;
+          if (loadedCount === imagesToLoad.length) setIsLoaded(true);
+        };
+      }
+    });
   }, []);
 
-  if (!isLoading) return null;
-
-  return (
-    <div className="fixed inset-0 flex items-center justify-center bg-transparent z-50">
-      <div className="w-12 h-12 border-4 border-gray-300 border-t-gray-600 rounded-full animate-spin"></div>
+  return isLoaded ? (
+    <>{children}</>
+  ) : (
+    <div className="loading-screen">
+      <div className="spinner"></div>
+      <p>Đang tải...</p>
     </div>
   );
-}
+};
+
+export default LoadingScreen;
