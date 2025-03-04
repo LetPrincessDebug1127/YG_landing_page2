@@ -20,7 +20,7 @@ const ClientSection: React.FC = () => {
       <Image
         src="/media/introduction-banner.svg"
         alt="Background duplicate"
-        className="absolute top-0 left-0 w-full h-full object-cover"
+        className="absolute top-0 left-0 w-full h-full object-cover slide5:hidden"
         fill
       />
 

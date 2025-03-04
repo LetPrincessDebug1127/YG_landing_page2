@@ -44,7 +44,7 @@ const ContactSection: React.FC = () => {
   return (
     <section className="relative w-full h-screen flex items-center mobile-ui:block justify-center flex-col">
       <video
-        className="absolute top-0 left-0 w-full h-full object-cover iPhoneSE:h-[85%] S8Galaxy:h-[76%]"
+        className="absolute top-0 left-0 w-full h-full object-cover iPhoneSE:h-[100%] S8Galaxy:h-[76%]"
         src="/media/black-silk.mp4"
         autoPlay
         loop
@@ -213,8 +213,8 @@ const ContactSection: React.FC = () => {
       <p className="text-gray-500 z-10 mobile-ui:hidden xl:bottom-0 xl:absolute xl:p-[10px]">
         © 2024 YG. All rights reserved.
       </p>
-      <footer className="bg-[#333333] text-white pt-[0.5rem] pb-[0.5rem] hidden mobile-ui:flex min-h-1000:flex min-h-1000:pb-[14.5em] w-full absolute flex-col footerIpad:absolute bottom-0 iPhoneSE:static S8Galaxy:static">
-        <div className="w-full px-4 hidden mobile-ui:block">
+      <footer className="bg-[#333333] text-white pt-[0.5rem] pb-[0.5rem] iphoneSE:pt-[3.5rem] hidden mobile-ui:flex min-h-1000:flex min-h-1000:pb-[14.5em] w-full absolute flex-col footerIpad:absolute bottom-0 iPhoneSE:static S8Galaxy:static">
+        <div className="w-full px-4 hidden mobile-ui:block z-100 bg-[#333333]">
           {/* Contact Section */}
           <div className="mb-6">
             <div className="flex flex-row items-center gap-[10%]">
