@@ -214,7 +214,7 @@ const ContactSection: React.FC = () => {
         © 2024 YG. All rights reserved.
       </p>
       <footer className="bg-[#333333] text-white pt-[0.5rem] pb-[0.5rem] iphoneSE:pt-[3.5rem] hidden mobile-ui:flex min-h-1000:flex min-h-1000:pb-[14.5em] w-full absolute flex-col footerIpad:absolute bottom-0 iPhoneSE:static S8Galaxy:static">
-        <div className="w-full px-4 hidden mobile-ui:block z-100 bg-[#333333]">
+        <div className="w-full px-4 hidden mobile-ui:block z-[100] bg-[#333333]">
           {/* Contact Section */}
           <div className="mb-6">
             <div className="flex flex-row items-center gap-[10%]">
