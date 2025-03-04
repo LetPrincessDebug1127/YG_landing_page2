@@ -112,7 +112,7 @@ export default function LandingPage() {
 
       <section
         id="slide6"
-        className="w-full h-[100vh] bg-gray-900 text-white flex justify-center items-center snap-start"
+        className="w-full h-[100vh] bg-black text-white flex justify-center items-center snap-start"
       >
         <Slide6 />
       </section>
