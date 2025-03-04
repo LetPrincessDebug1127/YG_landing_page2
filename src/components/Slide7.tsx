@@ -63,7 +63,7 @@ const ContactSection: React.FC = () => {
             <span className="text-[#ec6629]">
               Hotline
               <br />
-              <strong className="text-white">(+84) 377 711 139</strong>
+              <strong className="text-white">(+84) 090 699 1672</strong>
             </span>
           </div>
           <div className="border-b border-[#ec6629] h-0"></div>
@@ -73,7 +73,7 @@ const ContactSection: React.FC = () => {
             <span className="text-[#ec6629]">
               Email
               <br />
-              <strong className="text-white">YGAGENCY@gmail.com</strong>
+              <strong className="text-white">Phuc.lu@ygcompany.vn</strong>
             </span>
           </div>
           <div className="border-b border-[#ec6629] h-0"></div>
@@ -303,7 +303,7 @@ const ContactSection: React.FC = () => {
                   href="tel:+84377711139"
                   className="text-sm text-white hover:text-gray-300 rounded-full"
                 >
-                  Hotline: (+84) 377 711 139
+                  Hotline: (+84) 090 699 1672
                 </a>
               </div>
               <div className="flex items-center gap-3">
@@ -313,7 +313,7 @@ const ContactSection: React.FC = () => {
                   width={20}
                   height={20}
                 />
-                <span className="text-sm">Email: YGAGENCY@gmail.com</span>
+                <span className="text-sm">Email: Phuc.lu@ygcompany.vn</span>
               </div>
               <div className="flex items-start gap-3">
                 <Image
