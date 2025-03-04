@@ -7,27 +7,37 @@ const LoadingScreen = ({ children }: { children: React.ReactNode }) => {
   const t = useTranslations("Page");
 
   useEffect(() => {
-    const imagesToLoad = [
-      "/media/banner-mobile.svg",
-      "/media/logo-fix-5.mp4",
-    ];
+    const isMobile = window.innerWidth <= 1199; 
+    const isDesktop = window.innerWidth > 1199;
 
     let loadedCount = 0;
+    let itemsToLoad: string[] = [];
 
-    imagesToLoad.forEach((src) => {
+    if (isMobile) {
+      itemsToLoad = ["/media/banner-mobile.svg"]; 
+    } else if (isDesktop) {
+      itemsToLoad = ["/media/logo-fix-5.mp4"]; 
+    }
+
+    if (itemsToLoad.length === 0) {
+      setIsLoaded(true);
+      return;
+    }
+
+    itemsToLoad.forEach((src) => {
       if (src.endsWith(".mp4")) {
         const video = document.createElement("video");
         video.src = src;
         video.oncanplaythrough = () => {
           loadedCount++;
-          if (loadedCount === imagesToLoad.length) setIsLoaded(true);
+          if (loadedCount === itemsToLoad.length) setIsLoaded(true);
         };
       } else {
-        const img = document.createElement("img"); 
+        const img = document.createElement("img");
         img.src = src;
         img.onload = () => {
           loadedCount++;
-          if (loadedCount === imagesToLoad.length) setIsLoaded(true);
+          if (loadedCount === itemsToLoad.length) setIsLoaded(true);
         };
       }
     });
