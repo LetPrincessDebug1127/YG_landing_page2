@@ -123,7 +123,7 @@ export default function BackgroundSlider() {
 
       <div className="absolute image-banner:hidden fade-in-section top-0 left-1/2 transform -translate-x-1/2 text-center text-white z-10 desktop-ui:w-[100%] footerIpad:w-[100%] flex flex-col justify-evenly desktop-md:justify-center desktop-md:gap-[10%] slide2-gap:gap-[4%] h-full lg:pt-[52px] xl:pt-[60px] 2xl:pt-[78px] 3xl:pt-[104px] IpadMini&IpadAir:p-12">
         {/* Phần 1 */}
-        <div className="mobile-ui:text-justify">
+        <div className="mobile-ui:text-justify footerIpad:text-center">
           <p className="text-base sm:text-lg md:text-xl 2xl:text-3xl fade-in-section">
             {t("slide4P1")}
           </p>

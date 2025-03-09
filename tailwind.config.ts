@@ -47,7 +47,7 @@ export default {
         'S8Galaxy': { raw: '(min-height: 701px) and (max-width: 700px) and (max-height: 800px)' },
         'videoDisplay': { min: '1200px'},
         'banner' : { max : '1199px'},
-        'footerIpad' : { raw: '(min-width: 700px) and (max-width:1025px) and (min-height:1000px) and (max-height: 1367px)' },
+        'footerIpad' : { raw: '(min-width: 700px) and (max-width:1025px) and (min-height:1000px) and (max-height: 1370px)' },
         'IpadMini&IpadAir': { raw: '(min-width: 750px) and (max-width: 900px) and (min-height:1000px) and (max-height:1200px)'},
         'desktop-lg' : { raw: '(min-width: 801px) and (max-width: 1535px)' },
         'desktop-xl' : { min : '1350px' , max: '1535px' },
