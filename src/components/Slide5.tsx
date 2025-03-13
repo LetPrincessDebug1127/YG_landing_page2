@@ -23,6 +23,7 @@ const videos = [
   "/media/video8/video.mp4",
   "/media/video9/video.mp4",
   "/media/video10/video.mp4",
+  "/media/video11/video.mp4",
 ];
 
 const backgroundImages = [
@@ -36,6 +37,7 @@ const backgroundImages = [
   "/media/video8/thumbnail.png",
   "/media/video9/thumbnail.png",
   "/media/video10/thumbnail.png",
+  "/media/video11/thumbnail.png",
 ];
 
 const projectNames = [
@@ -53,17 +55,17 @@ const projectNames = [
 ];
 
 const urls = [
-  "https://onedrive.live.com/?authkey=%21AHE8jL2tnOme5Bk&cid=C3686AE64453CEA3&id=C3686AE64453CEA3%2114764&parId=C3686AE64453CEA3%2114762&o=OneUp",
+  "https://1drv.ms/v/c/c3686ae64453cea3/EaPOU0TmamgggMOsOQAAAAABfEWINgZVTBGYlmQKD_TL9w",
   "",
   "",
-  "https://onedrive.live.com/?authkey=%21AHE8jL2tnOme5Bk&cid=C3686AE64453CEA3&id=C3686AE64453CEA3%2114346&parId=C3686AE64453CEA3%2114762&o=OneUp",
-  "https://onedrive.live.com/?authkey=%21AHE8jL2tnOme5Bk&cid=C3686AE64453CEA3&id=C3686AE64453CEA3%2114798&parId=C3686AE64453CEA3%2114762&o=OneUp",
-  "https://onedrive.live.com/?authkey=%21AHE8jL2tnOme5Bk&cid=C3686AE64453CEA3&id=C3686AE64453CEA3%2113760&parId=C3686AE64453CEA3%2114762&o=OneUp",
-  "https://onedrive.live.com/?authkey=%21AHE8jL2tnOme5Bk&cid=C3686AE64453CEA3&id=C3686AE64453CEA3%2114797&parId=C3686AE64453CEA3%2114762&o=OneUp",
-  "https://onedrive.live.com/?authkey=%21AHE8jL2tnOme5Bk&cid=C3686AE64453CEA3&id=C3686AE64453CEA3%2114796&parId=C3686AE64453CEA3%2114762&o=OneUp",
-  "https://onedrive.live.com/?authkey=%21AHE8jL2tnOme5Bk&cid=C3686AE64453CEA3&id=C3686AE64453CEA3%2114763&parId=C3686AE64453CEA3%2114762&o=OneUp",
-  "https://onedrive.live.com/?authkey=%21AHE8jL2tnOme5Bk&cid=C3686AE64453CEA3&id=C3686AE64453CEA3%2114345&parId=C3686AE64453CEA3%2114762&o=OneUp",
-  "https://onedrive.live.com/?authkey=%21AHE8jL2tnOme5Bk&cid=C3686AE64453CEA3&id=C3686AE64453CEA3%2113758&parId=C3686AE64453CEA3%2114762&o=OneUp",
+  "https://1drv.ms/v/c/c3686ae64453cea3/EaPOU0TmamgggMMKOAAAAAABfVhSVlNL_yXvyfkb0lWM1Q",
+  "https://1drv.ms/v/c/c3686ae64453cea3/EaPOU0TmamgggMPOOQAAAAABBfPdgj8c_IbSy6dwoheP0Q",
+  "https://1drv.ms/v/c/c3686ae64453cea3/EaPOU0TmamgggMPANQAAAAABJ4qczsTb-cC-aQJZKQzolw",
+  "https://1drv.ms/v/c/c3686ae64453cea3/EaPOU0TmamgggMPNOQAAAAABiWnm8vCDxW0XkmJF9cNkIg",
+  "https://1drv.ms/v/c/c3686ae64453cea3/EaPOU0TmamgggMPMOQAAAAABtk2kk54Axjqpu0i9kBqvaw",
+  "https://1drv.ms/v/c/c3686ae64453cea3/EaPOU0TmamgggMOrOQAAAAAB9GZz9cnH1woIAX7FAsGsOA",
+  "https://1drv.ms/v/c/c3686ae64453cea3/EaPOU0TmamgggMMJOAAAAAAB0gS2NlZtz1Nglaf1XaHWmg",
+  "https://1drv.ms/v/c/c3686ae64453cea3/EaPOU0TmamgggMO-NQAAAAABrGbYUKiiBKhdfVBuQCMqYw",
 ];
 
 export default function Slide5() {
