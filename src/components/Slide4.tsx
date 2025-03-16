@@ -159,7 +159,7 @@ export default function BackgroundSlider() {
         </div>
 
         {/* Phần 3 */}
-        <div className="fade-in-section w-[90%] desktop-ui:w-[100%] text-center sm+:text-justify">
+        <div className="fade-in-section iPad:w-[100%] w-[90%] desktop-ui:w-[100%] text-center iPad:text-center sm+:text-justify">
           <p className="text-base sm:text-lg md:text-xl 2xl:text-3xl">
             {t("slide4P3")}
           </p>
