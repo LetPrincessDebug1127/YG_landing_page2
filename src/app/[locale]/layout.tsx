@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import { routing } from "@/i18n/routing";
 import { AbstractIntlMessages, NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
+import Script from "next/script"; // Import next/script
 
 import "@/app/globals.css";
 import { Metadata } from "next";
@@ -90,6 +91,21 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} className={poppins.variable}>
+      <head>
+        {/* Google Analytics */}
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-F5KLVK5QP8"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-F5KLVK5QP8');
+          `}
+        </Script>
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
