@@ -56,8 +56,8 @@ const projectNames = [
 
 const urls = [
   "https://1drv.ms/v/c/c3686ae64453cea3/EaPOU0TmamgggMOsOQAAAAABfEWINgZVTBGYlmQKD_TL9w",
-  "",
-  "",
+  "https://drive.google.com/file/d/1U92kwTkCkbSZI82tXzCUR9wYjScdpdGw/view",
+  "https://drive.google.com/file/d/1G_AYUSIRAejcdJ0lYHST9BqfCvKVDuC5/view",
   "https://1drv.ms/v/c/c3686ae64453cea3/EaPOU0TmamgggMMKOAAAAAABfVhSVlNL_yXvyfkb0lWM1Q",
   "https://1drv.ms/v/c/c3686ae64453cea3/EaPOU0TmamgggMPOOQAAAAABBfPdgj8c_IbSy6dwoheP0Q",
   "https://1drv.ms/v/c/c3686ae64453cea3/EaPOU0TmamgggMPANQAAAAABJ4qczsTb-cC-aQJZKQzolw",
